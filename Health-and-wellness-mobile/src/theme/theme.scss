@@ -1,0 +1,19 @@
+$pad-sm: 2px;
+$pad-md: 4px;
+$pad-lg: 8px;
+
+@mixin font-regular($size: 11px, $lineHeight: 10px) {
+    text-align: center;
+    font-size: $size;
+    line-height: $lineHeight;
+}
+
+@mixin font-bold($size: 11px, $lineHeight: 10px) {
+    @include font-regular($size, $lineHeight);
+    font-weight: bold;
+}
+
+@mixin font-underlined($size: 11px, $lineHeight: 10px) {
+    @include font-regular($size, $lineHeight);
+    text-decoration: font-underlined;
+}

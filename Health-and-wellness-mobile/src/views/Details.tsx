@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonBackButton, IonButtons, IonHeader, IonPage, IonToolbar, IonTitle, IonContent } from '@ionic/react';
+import { IonBackButton, IonButtons, IonHeader, IonPage, IonToolbar, IonTitle, IonContent } from '@ionic/react'
 
 const Details: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const Details: React.FC = () => {
         <p>Details</p>
       </IonContent>
     </IonPage>
-  );
-};
+  )
+}
 
 export default Details;
