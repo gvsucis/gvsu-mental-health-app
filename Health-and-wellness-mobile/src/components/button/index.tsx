@@ -1,6 +1,7 @@
-import {
-    IonButton
-} from '@ionic/react'
+import { IonButton } from '@/ionic/react'
+import * as React from "react"
+
+import '@/components/button/index.scss'
 
 export type ButtonType = 'icon' | 'standard'
 export type ButtonColor = 'primary' | 'secondary'
@@ -15,4 +16,15 @@ export interface ButtonProps {
     onClick: () => void
 }
 
-const Button: React.
+export default class Button extends React.Component<ButtonProps> {
+
+    public render() {
+        return (
+            <div>
+                <IonButton onClick={this.props.onClick}>
+                    {this.props.children}
+                </IonButton>
+            </div>
+        )
+    }
+}
