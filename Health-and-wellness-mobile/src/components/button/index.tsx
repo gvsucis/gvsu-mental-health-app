@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { IonButton, IonLabel } from '@ionic/react'
+import { IonButton } from '@ionic/react'
 import { classNames } from '../../utils/system'
 
 import './index.scss' //scss import
@@ -15,6 +15,7 @@ export interface ButtonProps {
     busy: boolean
     fillWidth: boolean
     disabled?: boolean
+    className?: string
     onClick?: () => void
 }
 
@@ -29,21 +30,22 @@ export default class Button extends React.Component<ButtonProps> {
     }
 
     public render() {
-        const { onClick, type, fillWidth } = this.props
+        const { onClick, type, fillWidth, className } = this.props
 
-        const buttonClass = classNames('button-wrapper', 
-        [{name: 'button-wrapper__fill-width', include: fillWidth}])
+        const buttonClass = classNames('button-wrapper',
+            [{ name: 'button-wrapper__fill-width', include: fillWidth },
+            { name: className!, include: className !== null || className !== undefined }
+            ])
         if (type === 'standard') {
             return (
                 <div className={buttonClass}>
                     <IonButton onClick={onClick}>
-                    <span>{this.props.children}</span>
-                </IonButton>
+                        <span>{this.props.children}</span>
+                    </IonButton>
                 </div >
             )
         }
         else if (type === 'icon') {
-
         }
     }
 }
