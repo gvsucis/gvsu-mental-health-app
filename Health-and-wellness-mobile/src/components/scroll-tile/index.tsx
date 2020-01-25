@@ -1,6 +1,5 @@
 import React from "react";
 import { IonItem, IonCard, IonIcon, IonCardHeader, IonCardContent } from '@ionic/react'
-import Button from "../button";
 import { arrowDown } from "ionicons/icons";
 import { classNames } from "../../utils/system";
 
