@@ -35,7 +35,7 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
                     }
                     {enableDropdown && this.open ?
                         <div className="scroll-tile__description">
-                            some sample bullshit
+                            {description}
                     </div> : null
                     }
                 </div>
