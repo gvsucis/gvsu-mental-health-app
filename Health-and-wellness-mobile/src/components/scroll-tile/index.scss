@@ -3,10 +3,18 @@
 .scroll-tile {
     display: flex;
     flex-direction: column;
+    border: 1px solid grey;
+    border-radius: $border-radius;
+    margin: $pad-lg;
+}
+
+.scroll-tile__button {
+    display: flex;
+    flex-direction: row;
     margin: $pad-md $pad-lg;
 }
 
-.scroll-title__label {
+.scroll-tile__button-label {
     flex-grow: 1;
     display: flex;
     flex-direction: row;
@@ -15,11 +23,13 @@
 }
 
 .scroll-tile__description {
-    width: 100%;
     height: 200px;
     margin: calc(2 * #{$pad-lg});
     padding: $pad-lg;
-    border: 1px solid grey;
+}
+
+.scroll-tile__icon-wrapper {
+    padding: 15px $pad-lg;
 }
 
 .scroll-tile__icon {
@@ -27,8 +37,9 @@
     height: $scroll-icon;
     width: $scroll-icon;
     background: transparent;
+    line-height: 10px;
 }
 
 .scroll-tile__icon--open {
-    transform: rotate (180deg);
+    transform: rotate(180deg);
 }
