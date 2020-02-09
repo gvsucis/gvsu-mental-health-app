@@ -11,7 +11,7 @@ import {
 } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
 import { apps, flash, send } from 'ionicons/icons'
-import { Resources, Symptoms } from './views/tabs'
+import { Resources, Symptoms, Login } from './views/tabs'
 import Details from './views/Details'
 
 import { Provider } from "mobx-react"
@@ -59,7 +59,7 @@ const App: React.FC = () => {
             <IonRouterOutlet>
               <Route path="/resources" component={Resources} exact={true} />
               <Route path="/symptoms" component={Symptoms} />
-              <Route path="/" render={() => <Redirect to="/resources" />} exact={true} />
+              <Route path="/login" component={Login}exact={true} />
             </IonRouterOutlet>
             <IonTabBar slot="bottom">
               <IonTabButton tab="Resources" href="/resources">
@@ -70,9 +70,9 @@ const App: React.FC = () => {
                 <IonIcon icon={apps} />
                 <IonLabel>Symptoms</IonLabel>
               </IonTabButton>
-              <IonTabButton tab="tab3" href="/tab3">
+              <IonTabButton tab="Login" href="/login">
                 <IonIcon icon={send} />
-                <IonLabel>Tab Three</IonLabel>
+                <IonLabel>Login</IonLabel>
               </IonTabButton>
             </IonTabBar>
           </IonTabs>
