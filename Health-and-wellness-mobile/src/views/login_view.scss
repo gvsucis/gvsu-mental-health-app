@@ -1,0 +1,21 @@
+@import '../theme/theme.scss';
+
+
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: $pad-lg;
+    width: 50%;
+}
+
+.labelButton {
+    margin-top: 20px;
+}
+
+.button {
+    margin-top: 20px;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+}
