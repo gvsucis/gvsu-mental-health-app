@@ -1,0 +1,45 @@
+@import '../../theme/theme.scss';
+
+.scroll-tile {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: $border-radius;
+    margin: $pad-lg;
+}
+
+.scroll-tile__button {
+    display: flex;
+    flex-direction: row;
+    margin: $pad-md $pad-lg;
+}
+
+.scroll-tile__button-label {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    border: $border-radius solid transparent;
+}
+
+.scroll-tile__description {
+    height: 200px;
+    margin: calc(2 * #{$pad-lg});
+    padding: $pad-lg;
+}
+
+.scroll-tile__icon-wrapper {
+    padding: 15px $pad-lg;
+}
+
+.scroll-tile__icon {
+    flex-grow: 0;
+    height: $scroll-icon;
+    width: $scroll-icon;
+    background: transparent;
+    line-height: 10px;
+}
+
+.scroll-tile__icon--open {
+    transform: rotate(180deg);
+}
