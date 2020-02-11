@@ -37,6 +37,4 @@ export default class LoginView extends React.Component{
             </>
         )
     }
-
-
 }
