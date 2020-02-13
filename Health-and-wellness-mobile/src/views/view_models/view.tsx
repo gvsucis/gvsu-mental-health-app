@@ -45,7 +45,7 @@ export default class View extends React.Component<ViewProps> {
                         <LoginView toggleVisible={this.toggleLoginModal} />
                     </Modal> : null
                 }
-                <div>
+                <div className="view-footer">
                     <EmergencyButton />
                 </div>
             </IonPage>
