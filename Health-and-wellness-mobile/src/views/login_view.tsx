@@ -23,17 +23,17 @@ export default class LoginView extends React.Component{
             
             <>
             <div>
-                <img className="image" src={require("../images/gv.jpg")} alt="Grand Valley Logo"/>
+                <img className="image" src={require("../assets/gv.jpg")} alt="Grand Valley Logo"/>
             </div>
             <IonItem className="labelButton">
                 <IonLabel position="stacked">Email</IonLabel>
-                <IonInput inputMode="email" type="email"></IonInput>
+                <IonInput inputMode="email" type="email" ></IonInput>
             </IonItem>
             <IonItem className="labelButton">
                 <IonLabel position="stacked">Password</IonLabel>
                 <IonInput inputMode="text" type="password"></IonInput>
             </IonItem>
-                <Button className="button">Login</Button>
+                <Button fillWidth={true}>Login</Button>
             </>
         )
     }

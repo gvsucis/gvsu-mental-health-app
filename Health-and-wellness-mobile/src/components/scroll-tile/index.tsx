@@ -1,5 +1,5 @@
 import React from "react";
-import { IonItem, IonCard, IonIcon, IonCardHeader, IonCardContent } from '@ionic/react'
+import { IonItem, IonIcon, } from '@ionic/react'
 import { arrowDown } from "ionicons/icons";
 import { classNames } from "../../utils/system";
 import { observer } from 'mobx-react'
