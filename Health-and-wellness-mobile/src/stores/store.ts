@@ -1,4 +1,4 @@
-import PreferencesStore from "./preferences_store";
+import PreferencesStore from "./preferences_store"
 
 export default class Store {
     public readonly preferences: PreferencesStore

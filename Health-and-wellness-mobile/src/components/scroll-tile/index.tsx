@@ -1,15 +1,17 @@
-import React from "react";
+import React from "react"
 import { IonItem, IonIcon, } from '@ionic/react'
-import { arrowDown } from "ionicons/icons";
-import { classNames } from "../../utils/system";
+import { arrowDown } from "ionicons/icons"
+import { classNames } from "../../utils/system"
 import { observer } from 'mobx-react'
 import { observable } from 'mobx'
 
 import './index.scss'
+import Modal from "../modal"
 
 export interface ScrollTileProps {
     label: string
-    enableDropdown: boolean
+    enableModal: boolean
+    fillWidth: boolean
     description: string
 }
 
@@ -19,40 +21,32 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
     @observable private open: boolean = false
 
     public static defaultProps = {
-        enableDropdown: false,
+        enableModal: false,
+        fillWidth: false,
         open: false,
         onOpen: () => { },
         description: 'This is some sample input for you to see how this component looks'
     }
 
     public render() {
-        const { enableDropdown, description, label } = this.props
-        const IconClass = classNames('scroll-tile__icon', [{ name: "scroll-tile__icon--open", include: this.open }])
-        console.log(IconClass)
+        const { label, fillWidth, enableModal } = this.props
+
+        const classes = classNames("scroll-tile", [{ name: "scroll-tile--fill", include: fillWidth }])
+
         return (
-            <div className="scroll-tile">
-                <div className="scroll-tile__button" onClick={this.handleClickArrow}>
-                    <IonItem className="scroll-tile__button-label" >
-                        {label}
-                    </IonItem>
-                    {enableDropdown ?
-                        <div className="scroll-tile__icon-wrapper">
-                            <IonIcon slot="end" color="medium" icon={arrowDown} className={IconClass} />
-                        </div> : null
-                    }
+            <div className={classes}>
+                <div className="scroll-tile__button" onClick={this.toggleModal}>
+                    <span>{label}</span>
                 </div>
-                {enableDropdown && this.open ?
-                    <div className="scroll-tile__description">
-                        {description}
-                    </div> : null
+                {enableModal ?
+                    <Modal showModal={this.open} onToggleModalVisible={this.toggleModal}/> : null
                 }
             </div>
         )
     }
 
-    private handleClickArrow = () => {
+    private toggleModal = () => {
         this.open = !this.open
-        console.log(this.open + this.props.label)
     }
 
 }

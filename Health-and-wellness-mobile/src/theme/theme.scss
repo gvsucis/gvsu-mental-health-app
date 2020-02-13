@@ -11,9 +11,11 @@ $scroll-icon: 16px;
 $primary: #0065A4;
 $primary-text: #fbfef9;
 $view: #fbfef9;
+$panel: #e7eceF;
 
 //radius measurements
-$border-radius: 2px;
+$border-radius: 8px;
+$border-radius-lg: 14px;
 
 @mixin font-regular($size: 11px, $lineHeight: 10px) {
     text-align: center;
@@ -29,4 +31,8 @@ $border-radius: 2px;
 @mixin font-underlined($size: 11px, $lineHeight: 10px) {
     @include font-regular($size, $lineHeight);
     text-decoration: font-underlined;
+}
+
+@mixin font-header($size: 20px, $lineHeight: 25px) {
+    @include font-regular($size, $lineHeight);
 }

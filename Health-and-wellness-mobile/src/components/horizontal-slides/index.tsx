@@ -1,8 +1,8 @@
-import React from "react";
-import { IonSlides, IonSlide } from '@ionic/react';
-import { classNames } from "../../utils/system";
-import ScrollTile from "../scroll-tile";
-import "./index.scss";
+import React from "react"
+import { IonSlides, IonSlide } from '@ionic/react'
+import { classNames } from "../../utils/system"
+import ScrollTile from "../scroll-tile"
+import "./index.scss"
 
 
 export interface SlideProps {
@@ -14,24 +14,24 @@ export interface SlideProps {
 export default class Slides extends React.Component<SlideProps> {
     public static defaultProps = {
         loop: true,
-        slidesPerView: 4
+        slidesPerView: 1
     }
 
     public render() {
-        const {slides, loop, slidesPerView} = this.props;
+        const {slides, loop, slidesPerView} = this.props
         let slidesOpts = {
             loop: loop,
             slidesPerView: slidesPerView,
-        };
+        }
         return (
             <IonSlides options={slidesOpts}>
             {
                 slides.map(slide => 
                     <IonSlide>
-                        <ScrollTile label={slide}/>
+                        <ScrollTile label={slide} fillWidth={true}/>
                     </IonSlide>)
             }
             </IonSlides>
-        );
+        )
     }
 }
