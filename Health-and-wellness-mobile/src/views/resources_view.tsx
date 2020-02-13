@@ -1,11 +1,16 @@
 
-import React from 'react';
+import React, {useState} from 'react';
 import View from './view_models/view';
-import { IonList } from '@ionic/react';
+import { IonList, IonInfiniteScrollContent } from '@ionic/react';
 import ScrollTile from '../components/scroll-tile';
+import InfiniteScroll from '../components/infinite-scroll';
+import Slides from '../components/horizontal-slides';
+import { observer } from 'mobx-react'
+import { observable } from 'mobx'
 
-
+@observer
 export default class ResourcesView extends React.Component {
+  @observable i: number[] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
   public render() {
     const body = (
@@ -23,9 +28,19 @@ export default class ResourcesView extends React.Component {
   }
 
   private renderBody() {
+    
+    let arr = ["Suicidal Tendencies", "Excessive Absence", "Violent Outburst", "Panic Attack"];
+    
     return (
-      <>
-        <ScrollTile label="Panic Attack" enableDropdown={true} />
+      <><IonList>
+        {
+          this.i.map((j)=>{
+            return <Slides slides={arr} />
+          })
+        }
+      </IonList>
+      <InfiniteScroll threshold={'100px'} infinite={this.onInfinite} />
+        
         {/* <ScrollTile label="Suicidal Tendencies" enableDropdown={true} />
         <ScrollTile label="Excessive Absence" enableDropdown={true} />
         <ScrollTile label="Violent Outbursts" enableDropdown={true} />
@@ -39,6 +54,11 @@ export default class ResourcesView extends React.Component {
         <ScrollTile label="Violent Outbursts" enableDropdown={true} /> */}
 
       </>)
-  }
+      
+      }
+      private onInfinite = (e: CustomEvent<void>) => {
+        this.i = [...this.i,0,0,0,0,0,0,0,0,0];
+        (e.target as HTMLIonInfiniteScrollElement).complete();
+      }
 }
 
