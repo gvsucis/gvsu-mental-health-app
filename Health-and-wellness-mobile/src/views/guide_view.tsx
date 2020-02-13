@@ -7,7 +7,7 @@ export default class GuideView extends React.Component {
         const body = (
             <>
             <div className="view__header">
-                I have a student who is feeling...
+                I have a student who is...
             </div>
             <ScrollTile label="Anxious" enableModal={true}/>
             <ScrollTile label="Depressed"/>

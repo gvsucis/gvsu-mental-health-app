@@ -24,11 +24,36 @@ export default class ResourcesView extends React.Component {
 
   private renderBody() {
 
-    let arr = ["Suicidal Tendencies", "Excessive Absence", "Violent Outburst", "Panic Attack"]
+    let arr = [
+      {
+        label: "Resource 1",
+        element: (
+          <div>
+            this is a short explanation
+        </div>)
+      }, {
+        label: "Resource 2",
+        element: (
+          <div>
+            this is a short explanation
+        </div>)
+      }, {
+        label: "Resource 3",
+        element: (
+          <div>
+            this is a short explanation
+        </div>)
+      }, {
+        label: "Resource 4",
+        element: (
+          <div>
+            this is a short explanation
+        </div>)
+      }]
 
     return (
       <><IonList>
-        <Slides slides={arr}/>
+        <Slides slides={arr} />
       </IonList>
         <InfiniteScroll threshold={'100px'} infinite={this.onInfinite} />
       </>)

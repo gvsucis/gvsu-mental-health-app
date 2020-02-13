@@ -4,9 +4,13 @@ import { classNames } from "../../utils/system"
 import ScrollTile from "../scroll-tile"
 import "./index.scss"
 
+export interface slideCards {
+    label: string
+    element: JSX.Element
+}
 
 export interface SlideProps {
-    slides: Array<string>,
+    slides: Array<slideCards>,
     loop: boolean,
     slidesPerView: number,
 }
@@ -18,19 +22,22 @@ export default class Slides extends React.Component<SlideProps> {
     }
 
     public render() {
-        const {slides, loop, slidesPerView} = this.props
+        const { slides, loop, slidesPerView } = this.props
         let slidesOpts = {
             loop: loop,
             slidesPerView: slidesPerView,
         }
         return (
             <IonSlides options={slidesOpts}>
-            {
-                slides.map(slide => 
-                    <IonSlide>
-                        <ScrollTile label={slide} fillWidth={true}/>
-                    </IonSlide>)
-            }
+                {
+                    slides.map((slide) => 
+                            <IonSlide>
+                                <ScrollTile label={slide.label} fillWidth={true}>
+                                    {slide.element}
+                                </ScrollTile>
+                            </IonSlide>
+                    )
+                }
             </IonSlides>
         )
     }

@@ -13,6 +13,7 @@ export interface ViewProps {
     title: string
     route: string
     body: React.ReactElement
+    homePage: boolean
     store: Store
 }
 
@@ -23,22 +24,23 @@ export default class View extends React.Component<ViewProps> {
     @observable private isLoggedIn: boolean = false
 
     public static defaultProps = {
-        store: null
+        store: null,
+        homePage: false
     }
 
     public render() {
-        const { title, body } = this.props
+        const { title, body, homePage } = this.props
         return (
             <IonPage>
                 <IonHeader >
                     <IonToolbar>
-                        <IonTitle>University counseling</IonTitle>
+                        <IonTitle>{title}</IonTitle>
                     </IonToolbar>
                 </IonHeader>
                 <IonContent className="view-body">
                     {body}
                 </IonContent>
-                { !this.isLoggedIn ?
+                { !this.isLoggedIn && homePage ?
                     <Modal showModal={!this.isLoggedIn} forceModal={true}>
                         <LoginView toggleVisible={this.toggleLoginModal} />
                     </Modal> : null
