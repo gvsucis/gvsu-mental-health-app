@@ -9,7 +9,6 @@ export type InputMode = "decimal" | "email" | "none" | "numeric" | "search" | "t
 export type InputValue = null | number | string | undefined
 export type InputColor = 'primary' | 'secondary'
 
-
 export interface InputProps {
     type: InputType
     color: InputColor
@@ -22,7 +21,6 @@ export interface InputProps {
 }
 
 export default class Input extends React.Component<InputProps> {
-
 
     public static defaultProps = {
         type: 'text',
@@ -43,6 +41,5 @@ export default class Input extends React.Component<InputProps> {
                 </IonInput>
             </div>
         )
-
     }
 }
