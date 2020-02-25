@@ -1,3 +1,12 @@
+@import '../../theme/theme.scss';
+
 .view-body {
     height: 100%;
+    padding: $pad-md 0;
+}
+
+.view-footer {
+    width: 100%;
+    padding: 0 $pad-lg;
+    overflow: none;
 }
