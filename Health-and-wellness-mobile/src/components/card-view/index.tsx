@@ -1,17 +1,16 @@
 import React from 'react'
-import { IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent } from '@ionic/react';
-import { type } from 'os';
+import { IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent } from '@ionic/react'
 
 
-export type ButtonType = "button" | "reset" | "submit";
+export type ButtonType = "button" | "reset" | "submit"
 
 export interface cardProps{
-    title: string;
-    subtitle: string;
-    button?: boolean;
-    type?: ButtonType;
-    href?: string;
-    target?: string;
+    title: string
+    subtitle: string
+    button?: boolean
+    type?: ButtonType
+    href?: string
+    target?: string
 }
 
 
@@ -26,7 +25,7 @@ export default class Card extends React.Component<cardProps> {
 
     public render() {
         
-        const {title, subtitle, button, href, target, type} = this.props;
+        const {title, subtitle, button, href, target, type} = this.props
 
         return (
             <IonCard button={button} href={href} target={target} type={type}>
@@ -38,6 +37,6 @@ export default class Card extends React.Component<cardProps> {
                     {this.props.children}
                 </IonCardContent>
             </IonCard>
-        );
+        )
     }
 }

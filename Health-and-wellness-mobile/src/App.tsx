@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect, Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import {
   IonApp,
   IonIcon,
@@ -10,9 +10,8 @@ import {
   IonTabs
 } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
-import { apps, flash, send } from 'ionicons/icons'
-import { Resources, Symptoms, Login } from './views/tabs'
-import Details from './views/Details'
+import { apps, flash } from 'ionicons/icons'
+import { Resources, Home, Guide, FAQ } from './views/tabs'
 
 import { Provider } from "mobx-react"
 import { create } from "mobx-persist"
@@ -26,7 +25,7 @@ import '@ionic/react/css/structure.css'
 import '@ionic/react/css/typography.css'
 
 /* Optional CSS utils that can be commented out */
-import '@ionic/react/css/padding.css';
+import '@ionic/react/css/padding.css'
 import '@ionic/react/css/float-elements.css'
 import '@ionic/react/css/text-alignment.css'
 import '@ionic/react/css/text-transformation.css'
@@ -41,15 +40,15 @@ import Store from './stores/store'
 import PreferencesStore from './stores/preferences_store'
 
 //create an instance of each store to add to the common store directory in the app
-const preferenecesStore = new PreferencesStore()
+const preferencesStore = new PreferencesStore()
 
 const App: React.FC = () => {
 
   //create a store to hold all store directories
-  const hydrate = create({});
-  const store = new Store(preferenecesStore);
+  const hydrate = create({})
+  const store = new Store(preferencesStore)
 
-  hydrate("moodStore", store);
+  hydrate("store", store)
 
   return (
     <Provider store={store} >
@@ -57,24 +56,30 @@ const App: React.FC = () => {
         <IonReactRouter>
           <IonTabs>
             <IonRouterOutlet>
+              <Route path="/home" component={Home} />
+              <Route path="/guide" component={Guide}/>
+              <Route path="/faq" component={FAQ} />
               <Route path="/resources" component={Resources} exact={true} />
-              <Route path="/symptoms" component={Symptoms} />
-              <Route path="/login" component={Login}exact={true} />
+              <Redirect exact from="/" to="/home" />
             </IonRouterOutlet>
-            <IonTabBar slot="bottom">
-              <IonTabButton tab="Resources" href="/resources">
-                <IonIcon icon={flash} />
-                <IonLabel>Resources</IonLabel>
-              </IonTabButton>
-              <IonTabButton tab="Symptoms" href="/symptoms">
-                <IonIcon icon={apps} />
-                <IonLabel>Symptoms</IonLabel>
-              </IonTabButton>
-              <IonTabButton tab="Login" href="/login">
-                <IonIcon icon={send} />
-                <IonLabel>Login</IonLabel>
-              </IonTabButton>
-            </IonTabBar>
+              <IonTabBar slot="bottom">
+                <IonTabButton tab="Home" href="/home">
+                  <IonIcon icon={apps} />
+                  <IonLabel>Home</IonLabel>
+                </IonTabButton>
+                <IonTabButton tab="Guide" href="/guide">
+                  <IonIcon icon={apps} />
+                  <IonLabel>Guide</IonLabel>
+                </IonTabButton>
+                <IonTabButton tab="Resources" href="/resources">
+                  <IonIcon icon={flash} />
+                  <IonLabel>Resources</IonLabel>
+                </IonTabButton>
+                <IonTabButton tab="FAQ" href="/faq">
+                  <IonIcon icon={apps} />
+                  <IonLabel>FAQ</IonLabel>
+                </IonTabButton>
+              </IonTabBar>
           </IonTabs>
         </IonReactRouter>
       </IonApp>
@@ -82,4 +87,4 @@ const App: React.FC = () => {
   )
 }
 
-export default App;
+export default App
