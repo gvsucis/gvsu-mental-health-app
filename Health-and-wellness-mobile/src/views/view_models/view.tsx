@@ -8,6 +8,7 @@ import Modal from '../../components/modal'
 import LoginView from '../login_view'
 
 import "./view.scss"
+import SearchBar from '../../components/search_bar'
 
 export interface ViewProps {
     title: string
@@ -33,14 +34,15 @@ export default class View extends React.Component<ViewProps> {
         return (
             <IonPage>
                 <IonHeader >
-                    <IonToolbar>
-                        <IonTitle>{title}</IonTitle>
+                    <IonToolbar >
+                        <IonTitle className="view-header">{title}</IonTitle>
+                        {/* <SearchBar /> */}
                     </IonToolbar>
                 </IonHeader>
                 <IonContent className="view-body">
                     {body}
                 </IonContent>
-                { !this.isLoggedIn && homePage ?
+                {!this.isLoggedIn && homePage ?
                     <Modal showModal={!this.isLoggedIn} forceModal={true}>
                         <LoginView toggleVisible={this.toggleLoginModal} />
                     </Modal> : null

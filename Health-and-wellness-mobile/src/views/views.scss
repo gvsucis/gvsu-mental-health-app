@@ -8,6 +8,30 @@
     padding: 0 calc(2 * #{$pad-lg});
 }
 
+.home-view__wrappers {
+    flex-grow: 1;
+    
+}
+
+.home-view {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-view__dock {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+    .scroll-tile {
+        width: 100px;
+        height: 80px;
+        margin: $pad-sm 25px;
+        
+    }
+}
+
 .login-view {
     height: 100%;
     width: 100%;
