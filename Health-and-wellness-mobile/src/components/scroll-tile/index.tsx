@@ -1,4 +1,4 @@
-import React from "react"
+import React, { ReactChild } from "react"
 import { IonItem, IonIcon, IonRouterLink, IonList, } from '@ionic/react'
 import { arrowDown } from "ionicons/icons"
 import { classNames } from "../../utils/system"
@@ -36,33 +36,6 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
 
         const classes = classNames("scroll-tile", [{ name: "scroll-tile--fill", include: fillWidth }])
 
-        let arr = [
-            {
-              label: "Resource 1",
-              element: (
-                <div>
-                  this is a short explanation
-              </div>)
-            }, {
-              label: "Resource 2",
-              element: (
-                <div>
-                  this is a short explanation
-              </div>)
-            }, {
-              label: "Resource 3",
-              element: (
-                <div>
-                  this is a short explanation
-              </div>)
-            }, {
-              label: "Resource 4",
-              element: (
-                <div>
-                  this is a short explanation
-              </div>)
-            }]
-
         return (
             <div className={classes}>
                 <IonRouterLink routerLink={link ? link : undefined}>
@@ -72,11 +45,7 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
                 </IonRouterLink>
                 {enableModal ?
                     <Modal showModal={this.open} onToggleModalVisible={this.handleClickScrollTile}>
-                        Anxiety is defined as..... but may be also be related to (synonyms)
-                        <IonList>
-                            <Slides slides={arr} />
-                        </IonList>
-                            <InfiniteScroll threshold={'100px'} infinite={this.onInfinite} />
+                        {this.props.children}
                     </Modal> : null
                 }
             </div>

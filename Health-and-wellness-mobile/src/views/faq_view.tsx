@@ -1,5 +1,6 @@
 import React from 'react';
 import View from './view_models/view';
+import Card from '../components/card-view'
 import { IonList } from '@ionic/react';
 import ScrollTile from '../components/scroll-tile';
 
@@ -16,7 +17,14 @@ export default class FAQView extends React.Component {
         const body = (
             <IonList lines = "none">
                 <div className="view-body">
-                    {this.renderBody()}
+                    {this.questions.map((i) => {
+                        return (
+                            <ScrollTile label={i[0]} enableModal={true}>
+                                <Card title={i[0]} subtitle={i[1]}>
+                                </Card>
+                            </ScrollTile>
+                        );
+                    })}
                 </div>
             </IonList>
             
@@ -24,18 +32,6 @@ export default class FAQView extends React.Component {
 
         return (
             <View title="FAQ" route = "/faq" body = {body} />
-        );
-    }
-
-    public renderBody() {
-        return (
-            <IonList>
-                {
-                    this.questions.map((i) => {
-                        return (<ScrollTile label={i[0]} description={i[1]} enableDropdown={true}/>)
-                    })
-                }
-            </IonList>
         )
     }
 }

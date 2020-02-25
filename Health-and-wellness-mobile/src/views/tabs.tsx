@@ -2,6 +2,7 @@ import React from "react"
 import ResourcesView from "./resources_view"
 import HomeView from "./home_view"
 import GuideView from "./guide_view"
+import FAQView from "./faq_view"
 
 export const Resources: React.FC = () => {
     return (
@@ -18,5 +19,11 @@ export const Home: React.FC = () => {
 export const Guide: React.FC = () => {
     return (
         <GuideView />
+    )
+}
+
+export const FAQ: React.FC = () => {
+    return (
+        <FAQView />
     )
 }
