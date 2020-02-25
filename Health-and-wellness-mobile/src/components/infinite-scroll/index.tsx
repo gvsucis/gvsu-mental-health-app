@@ -1,5 +1,5 @@
 import React from 'react'
-import { IonInfiniteScroll, IonInfiniteScrollContent } from '@ionic/react';
+import { IonInfiniteScroll, IonInfiniteScrollContent } from '@ionic/react'
 
 export interface InfScrollProps {
     threshold: string
@@ -8,12 +8,12 @@ export interface InfScrollProps {
 
 export default class InfiniteScroll extends React.Component<InfScrollProps> {
     public render() {
-        const {threshold, infinite} = this.props;
+        const {threshold, infinite} = this.props
         return (
             <IonInfiniteScroll threshold={threshold} onIonInfinite={infinite}>
                 <IonInfiniteScrollContent loadingText="Loading...">
                 </IonInfiniteScrollContent>
             </IonInfiniteScroll>
-        );
+        )
     }
 }

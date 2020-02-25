@@ -1,40 +1,44 @@
 import React from "react"
-import View from "./view_models/view"
-import { IonContent, IonLabel, IonInput, IonButton, IonItem } from "@ionic/react"
+import { IonContent } from "@ionic/react"
 import Button from "../../src/components/button"
-import "./login_view.scss"
+import Input from "../components/input"
+import Store from "../stores/store"
+import { inject } from "mobx-react"
 
-export default class LoginView extends React.Component{
+import "./views.scss"
+
+export interface LoginViewProps {
+    store: Store
+    toggleVisible: () => void
+}
+
+@inject('store')
+export default class LoginView extends React.Component<LoginViewProps> {
+
+    public static defaultProps = {
+        store: null
+    }
 
     public render() {
-        const body = (
-            <>
+        return (
+            <div className="login-view">
                 <IonContent className="content">
-                    <div className="view-body">
-                        {this.renderBody()}
+                    <div className="login-view__background">
+                        <div className="view__header" >
+                            GVSU Mental Health Resource Guide
+                        </div>
+                        <div className="login-view__login">
+                            <Input type='email' />
+                            <Input type='password' />
+                            <Button onClick={this.handleClickLogin} fillWidth={true}>Login</Button>
+                        </div>
                     </div>
                 </IonContent>
-            </>
-        )
-        return (<View title="Login" route="/login" body={body}/>)
-    }
-    private renderBody() {
-        return (
-            
-            <>
-            <div>
-                <img className="image" src={require("../images/gv.jpg")} alt="Grand Valley Logo"/>
             </div>
-            <IonItem className="labelButton">
-                <IonLabel position="stacked">Email</IonLabel>
-                <IonInput inputMode="email" type="email"></IonInput>
-            </IonItem>
-            <IonItem className="labelButton">
-                <IonLabel position="stacked">Password</IonLabel>
-                <IonInput inputMode="text" type="password"></IonInput>
-            </IonItem>
-                <Button className="button">Login</Button>
-            </>
         )
+    }
+
+    private handleClickLogin = () => {
+        this.props.toggleVisible()
     }
 }
