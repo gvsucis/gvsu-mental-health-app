@@ -1,0 +1,67 @@
+{
+    "guideTiles": [
+        {
+            "subcscript": "is feeling",
+            "label": "Anxious",
+            "description": "Anxiety is defined as..... but may be also be related to (synonyms)",
+            "resourcesRelevant": "",
+            "videoLink": "",
+            "warningSigns": "",
+            "whatToDo": ""
+        },
+        {
+            "subcscript": "may be",
+            "label": "Depressed",
+            "description": "",
+            "resourcesRelevant": "",
+            "videoLink": "",
+            "warningSigns": "",
+            "whatToDo": ""
+        },
+        {
+            "subcscript": "may be",
+            "label": "Suicidal",
+            "description": "",
+            "resourcesRelevant": "",
+            "videoLink": "",
+            "warningSigns": "",
+            "whatToDo": ""
+        },
+        {
+            "subcscript": "may",
+            "label": "Harm Others",
+            "description": "",
+            "resourcesRelevant": "",
+            "videoLink": "",
+            "warningSigns": "",
+            "whatToDo": ""
+        },
+        {
+            "subcscript": "has",
+            "label": "Unusual/Disruptive Behavior",
+            "description": "",
+            "resourcesRelevant": "",
+            "videoLink": "",
+            "warningSigns": "",
+            "whatToDo": ""
+        },
+        {
+            "subcscript": "is otherwise a",
+            "label": "Student of Concern",
+            "description": "",
+            "resourcesRelevant": "",
+            "videoLink": "",
+            "warningSigns": "",
+            "whatToDo": ""
+        },
+        {
+            "subcscript": "says they have a",
+            "label": "Disability",
+            "description": "",
+            "resourcesRelevant": "",
+            "videoLink": "",
+            "warningSigns": "",
+            "whatToDo": ""
+        }
+    ]
+}

@@ -38,15 +38,17 @@ import './theme/variables.scss'
 //stores
 import Store from './stores/store'
 import PreferencesStore from './stores/preferences_store'
+import DataStore from './stores/data_store'
 
 //create an instance of each store to add to the common store directory in the app
 const preferencesStore = new PreferencesStore()
+const dataStore = new DataStore()
 
 const App: React.FC = () => {
 
   //create a store to hold all store directories
   const hydrate = create({})
-  const store = new Store(preferencesStore)
+  const store = new Store(preferencesStore, dataStore)
 
   hydrate("store", store)
 

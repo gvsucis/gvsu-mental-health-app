@@ -19,6 +19,7 @@ $border-radius-lg: 14px;
 
 @mixin font-regular($size: 11px, $lineHeight: 10px) {
     text-align: center;
+    vertical-align: center;
     font-size: $size;
     line-height: $lineHeight;
 }

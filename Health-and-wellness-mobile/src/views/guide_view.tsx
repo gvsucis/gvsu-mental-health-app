@@ -1,24 +1,42 @@
 import React from "react"
+import { inject, observer } from "mobx-react"
 import View from "./view_models/view"
 import ScrollTile from "../components/scroll-tile"
+import Store from "../stores/store"
 
-export default class GuideView extends React.Component {
+export interface ViewProps {
+    store: Store
+}
+
+@inject('store')
+@observer
+export default class GuideView extends React.Component<ViewProps> {
+
+    public static defaultProps = {
+        store: null
+    }
+
     public render() {
         const body = (
             <>
-            <div className="view__header">
-                I have a student who is...
+                <div className="view__header">
+                    I have a student who....
             </div>
-            <ScrollTile label="Anxious" enableModal={true}/>
-            <ScrollTile label="Depressed"/>
-            <ScrollTile label="Suicidal"/>
-            <ScrollTile label="Acting bizarre"/>
-            <ScrollTile label="Having outbursts"/>
-
+                {this.renderGuideTiles()}
             </>
         )
         return (
-        <View title="Student Support Aid" body={body} route="/home"/>
+            <View title="Student Support Aid" body={body} route="/home" />
         )
+    }
+
+    private renderGuideTiles = () => {
+        const { store } = this.props
+        const tiles = store.data.guideTiles
+        return tiles.map((tile) => {
+            return (
+                <ScrollTile subscript={tile.subcscript} label={tile.label} enableModal={true}/>
+            )
+        })
     }
 }
