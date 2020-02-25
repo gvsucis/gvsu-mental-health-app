@@ -11,7 +11,7 @@ import {
 } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
 import { apps, flash } from 'ionicons/icons'
-import { Resources, Home, Guide } from './views/tabs'
+import { Resources, Home, Guide, FAQ } from './views/tabs'
 
 import { Provider } from "mobx-react"
 import { create } from "mobx-persist"
@@ -60,6 +60,7 @@ const App: React.FC = () => {
             <IonRouterOutlet>
               <Route path="/home" component={Home} />
               <Route path="/guide" component={Guide}/>
+              <Route path="/faq" component={FAQ} />
               <Route path="/resources" component={Resources} exact={true} />
               <Redirect exact from="/" to="/home" />
             </IonRouterOutlet>
@@ -75,6 +76,10 @@ const App: React.FC = () => {
                 <IonTabButton tab="Resources" href="/resources">
                   <IonIcon icon={flash} />
                   <IonLabel>Resources</IonLabel>
+                </IonTabButton>
+                <IonTabButton tab="FAQ" href="/faq">
+                  <IonIcon icon={apps} />
+                  <IonLabel>FAQ</IonLabel>
                 </IonTabButton>
               </IonTabBar>
           </IonTabs>
