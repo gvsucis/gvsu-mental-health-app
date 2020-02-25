@@ -36,7 +36,7 @@ export default class Input extends React.Component<InputProps> {
 
         return (
             <div className={inputClass}>
-                <IonInput type={type} color={color} required={required} value={value} inputmode={inputmode} disabled={disabled} autofocus={autofocus}>
+                <IonInput type={type} color={color} required={required} inputmode={inputmode} disabled={disabled} autofocus={autofocus}>
                     {this.props.children}
                 </IonInput>
             </div>
