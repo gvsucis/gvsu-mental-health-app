@@ -38,6 +38,7 @@ import './theme/variables.scss'
 //stores
 import Store from './stores/store'
 import PreferencesStore from './stores/preferences_store'
+import FAQView from './views/faq_view'
 
 //create an instance of each store to add to the common store directory in the app
 const preferencesStore = new PreferencesStore()
@@ -75,6 +76,7 @@ const App: React.FC = () => {
                   <IonLabel>Resources</IonLabel>
                 </IonTabButton>
               </IonTabBar>
+
           </IonTabs>
         </IonReactRouter>
       </IonApp>
