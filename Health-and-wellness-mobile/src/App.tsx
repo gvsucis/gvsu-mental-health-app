@@ -11,7 +11,7 @@ import {
 } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
 import { apps, flash } from 'ionicons/icons'
-import { Resources, Home, Guide } from './views/tabs'
+import { Resources, Home, Guide, FAQ } from './views/tabs'
 
 import { Provider } from "mobx-react"
 import { create } from "mobx-persist"
@@ -38,7 +38,6 @@ import './theme/variables.scss'
 //stores
 import Store from './stores/store'
 import PreferencesStore from './stores/preferences_store'
-import FAQView from './views/faq_view'
 
 //create an instance of each store to add to the common store directory in the app
 const preferencesStore = new PreferencesStore()
@@ -59,6 +58,7 @@ const App: React.FC = () => {
             <IonRouterOutlet>
               <Route path="/home" component={Home} />
               <Route path="/guide" component={Guide}/>
+              <Route path="/faq" component={FAQ} />
               <Route path="/resources" component={Resources} exact={true} />
               <Redirect exact from="/" to="/home" />
             </IonRouterOutlet>
@@ -75,8 +75,11 @@ const App: React.FC = () => {
                   <IonIcon icon={flash} />
                   <IonLabel>Resources</IonLabel>
                 </IonTabButton>
+                <IonTabButton tab="FAQ" href="/faq">
+                  <IonIcon icon={apps} />
+                  <IonLabel>FAQ</IonLabel>
+                </IonTabButton>
               </IonTabBar>
-
           </IonTabs>
         </IonReactRouter>
       </IonApp>
