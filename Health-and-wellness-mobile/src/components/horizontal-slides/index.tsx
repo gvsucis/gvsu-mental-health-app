@@ -3,6 +3,7 @@ import { IonSlides, IonSlide } from '@ionic/react'
 import { classNames } from "../../utils/system"
 import ScrollTile from "../scroll-tile"
 import "./index.scss"
+import Card from "../card-view"
 
 export interface slideCards {
     label: string
@@ -32,9 +33,9 @@ export default class Slides extends React.Component<SlideProps> {
                 {
                     slides.map((slide) => 
                             <IonSlide>
-                                <ScrollTile label={slide.label} fillWidth={true}>
+                                <Card title={slide.label} subtitle={""}>
                                     {slide.element}
-                                </ScrollTile>
+                                </Card>
                             </IonSlide>
                     )
                 }

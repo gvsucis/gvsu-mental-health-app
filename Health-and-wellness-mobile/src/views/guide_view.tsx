@@ -38,7 +38,8 @@ export default class GuideView extends React.Component {
                 I have a student who is...
             </div>
             <ScrollTile label="Anxious" enableModal={true}>
-                Anxiety is defined as..... but may be also be related to (synonyms)
+                <h1>Anxiety Information</h1>    
+                <div>Anxiety is defined as..... but may be also be related to (synonyms)</div>
                 <IonList>
                     <Slides slides={arr} />
                 </IonList>
