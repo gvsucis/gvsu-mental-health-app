@@ -15,8 +15,9 @@ export default class EmergencyButton extends React.Component {
                 I have an Emergency
           </Button>
           { this.modalVisible ?
-            <Modal showModal={true} onToggleModalVisible={this.handleToggleModalVisible}>
+            <Modal showModal={true} onToggleModalVisible={this.handleToggleModalVisible} title="Emergency">
             In case of Emergency...
+            
             </Modal> : null
           }
           </>
