@@ -37,6 +37,7 @@ export default class Button extends React.Component<ButtonProps> {
             [{ name: 'button-wrapper__fill-width', include: fillWidth },
             { name: className!, include: className !== null || className !== undefined }
             ])
+
         if (type === 'standard') {
             return (
                 <div className={buttonClass}>
@@ -47,6 +48,11 @@ export default class Button extends React.Component<ButtonProps> {
             )
         }
         else if (type === 'icon') {
+            return (
+            <IonButton onClick={onClick}>
+                <span>{this.props.children}</span>
+            </IonButton>
+            )
         }
     }
 }

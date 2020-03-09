@@ -4,7 +4,6 @@ import { inject, observer } from "mobx-react"
 import { action, observable } from "mobx"
 import Modal from "../modal"
 
-@inject('store')
 @observer
 export default class EmergencyButton extends React.Component {
 
