@@ -15,6 +15,7 @@ export interface ViewProps {
     route: string
     body: React.ReactElement
     homePage: boolean
+    enableEmergencyModal: boolean
     store: Store
 }
 
@@ -26,11 +27,12 @@ export default class View extends React.Component<ViewProps> {
 
     public static defaultProps = {
         store: null,
-        homePage: false
+        homePage: false,
+        enableEmergencyModal: true
     }
 
     public render() {
-        const { title, body, homePage } = this.props
+        const { title, body, homePage, enableEmergencyModal: enableEmergencyTab } = this.props
         return (
             <IonPage>
                 <IonHeader >
@@ -47,8 +49,13 @@ export default class View extends React.Component<ViewProps> {
                         <LoginView toggleVisible={this.toggleLoginModal} />
                     </Modal> : null
                 }
+                { enableEmergencyTab ?
+                    <div className="view-emergency">
+                        <EmergencyButton />
+                    </div> : null
+                }
                 <div className="view-footer">
-                    <EmergencyButton />
+                    <span>University Counseling <br/> Center Information</span>
                 </div>
             </IonPage>
         )

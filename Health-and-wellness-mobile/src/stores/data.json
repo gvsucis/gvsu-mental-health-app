@@ -1,67 +1,99 @@
 {
-    "guideTiles": [
-        {
-            "subcscript": "is feeling",
-            "label": "Anxious",
-            "description": "Anxiety is defined as..... but may be also be related to (synonyms)",
-            "resourcesRelevant": "",
-            "videoLink": "",
-            "warningSigns": "",
-            "whatToDo": ""
-        },
-        {
-            "subcscript": "may be",
-            "label": "Depressed",
-            "description": "",
-            "resourcesRelevant": "",
-            "videoLink": "",
-            "warningSigns": "",
-            "whatToDo": ""
-        },
-        {
-            "subcscript": "may be",
-            "label": "Suicidal",
-            "description": "",
-            "resourcesRelevant": "",
-            "videoLink": "",
-            "warningSigns": "",
-            "whatToDo": ""
-        },
-        {
-            "subcscript": "may",
-            "label": "Harm Others",
-            "description": "",
-            "resourcesRelevant": "",
-            "videoLink": "",
-            "warningSigns": "",
-            "whatToDo": ""
-        },
-        {
-            "subcscript": "has",
-            "label": "Unusual/Disruptive Behavior",
-            "description": "",
-            "resourcesRelevant": "",
-            "videoLink": "",
-            "warningSigns": "",
-            "whatToDo": ""
-        },
-        {
-            "subcscript": "is otherwise a",
-            "label": "Student of Concern",
-            "description": "",
-            "resourcesRelevant": "",
-            "videoLink": "",
-            "warningSigns": "",
-            "whatToDo": ""
-        },
-        {
-            "subcscript": "says they have a",
-            "label": "Disability",
-            "description": "",
-            "resourcesRelevant": "",
-            "videoLink": "",
-            "warningSigns": "",
-            "whatToDo": ""
-        }
-    ]
+    "home": {
+        "tiles": [
+            {
+                "label": "I have a student I am concerned about",
+                "link": "/guide"
+            },
+            {
+                "label": "FAQ",
+                "link": "/faq"
+            },
+            {
+                "label": "I have an emergency",
+                "link": ""
+            },
+            {
+                "label": "Classroom Techniques and Resources",
+                "link": "/techniques"
+            },
+            {
+                "label": "Campus Resources",
+                "link": "/resources"
+            }
+        ]
+    },
+    "guide": {
+        "tiles": [
+            {
+                "subscript": "is feeling",
+                "label": "Anxious",
+                "description": "Anxiety is defined as..... but may be also be related to (synonyms)",
+                "resourcesRelevant": [],
+                "videoLink": "",
+                "warningSigns": "",
+                "whatToDo": ""
+            },
+            {
+                "subscript": "may be",
+                "label": "Depressed",
+                "description": "",
+                "resourcesRelevant": [],
+                "videoLink": "",
+                "warningSigns": "",
+                "whatToDo": ""
+            },
+            {
+                "subscript": "may be",
+                "label": "Suicidal",
+                "description": "",
+                "resourcesRelevant": [],
+                "videoLink": "",
+                "warningSigns": "",
+                "whatToDo": ""
+            },
+            {
+                "subscript": "may",
+                "label": "Harm Others",
+                "description": "",
+                "resourcesRelevant": [],
+                "videoLink": "",
+                "warningSigns": "",
+                "whatToDo": ""
+            },
+            {
+                "subscript": "has",
+                "label": "Unusual/Disruptive Behavior",
+                "description": "",
+                "resourcesRelevant": [],
+                "videoLink": "",
+                "warningSigns": "",
+                "whatToDo": ""
+            },
+            {
+                "subscript": "is otherwise a",
+                "label": "Student of Concern",
+                "description": "",
+                "resourcesRelevant": [],
+                "videoLink": "",
+                "warningSigns": "",
+                "whatToDo": ""
+            },
+            {
+                "subscript": "says they have a",
+                "label": "Disability",
+                "description": "",
+                "resourcesRelevant": [],
+                "videoLink": "",
+                "warningSigns": "",
+                "whatToDo": ""
+            }
+        ]
+    },
+    "resource": {
+        "tiles": []
+    },
+    "faq": {
+        "tiles": []
+    }
 }
