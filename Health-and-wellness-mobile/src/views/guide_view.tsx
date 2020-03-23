@@ -62,7 +62,7 @@ export default class GuideView extends React.Component<ViewProps> {
         const tiles = store.data.guideTiles
         return tiles.map((tile) => {
             return (
-                <ScrollTile subscript={tile.subcscript} label={tile.label} enableModal={true}/>
+                <ScrollTile subscript={tile.subscript} label={tile.label} enableModal={true}/>
             )
         })
     }

@@ -1,64 +1,64 @@
 {
     "guideTiles": [
         {
-            "subcscript": "is feeling",
+            "subscript": "is feeling",
             "label": "Anxious",
             "description": "Anxiety is defined as..... but may be also be related to (synonyms)",
-            "resourcesRelevant": "",
+            "resourcesRelevant": [""],
             "videoLink": "",
             "warningSigns": "",
             "whatToDo": ""
         },
         {
-            "subcscript": "may be",
+            "subscript": "may be",
             "label": "Depressed",
             "description": "",
-            "resourcesRelevant": "",
+            "resourcesRelevant": [""],
             "videoLink": "",
             "warningSigns": "",
             "whatToDo": ""
         },
         {
-            "subcscript": "may be",
+            "subscript": "may be",
             "label": "Suicidal",
             "description": "",
-            "resourcesRelevant": "",
+            "resourcesRelevant": [""],
             "videoLink": "",
             "warningSigns": "",
             "whatToDo": ""
         },
         {
-            "subcscript": "may",
+            "subscript": "may",
             "label": "Harm Others",
             "description": "",
-            "resourcesRelevant": "",
+            "resourcesRelevant": [""],
             "videoLink": "",
             "warningSigns": "",
             "whatToDo": ""
         },
         {
-            "subcscript": "has",
+            "subscript": "has",
             "label": "Unusual/Disruptive Behavior",
             "description": "",
-            "resourcesRelevant": "",
+            "resourcesRelevant": [""],
             "videoLink": "",
             "warningSigns": "",
             "whatToDo": ""
         },
         {
-            "subcscript": "is otherwise a",
+            "subscript": "is otherwise a",
             "label": "Student of Concern",
             "description": "",
-            "resourcesRelevant": "",
+            "resourcesRelevant": [""],
             "videoLink": "",
             "warningSigns": "",
             "whatToDo": ""
         },
         {
-            "subcscript": "says they have a",
+            "subscript": "says they have a",
             "label": "Disability",
             "description": "",
-            "resourcesRelevant": "",
+            "resourcesRelevant": [""],
             "videoLink": "",
             "warningSigns": "",
             "whatToDo": ""

@@ -39,14 +39,21 @@ import './theme/variables.scss'
 import Store from './stores/store'
 import PreferencesStore from './stores/preferences_store'
 import DataStore from './stores/data_store'
+import { FilesystemEncoding, FilesystemDirectory } from '@capacitor/core'
+import {useFilesystem} from '@ionic/react-hooks/filesystem'
+
+
+
+
 
 //create an instance of each store to add to the common store directory in the app
 const preferencesStore = new PreferencesStore()
 const dataStore = new DataStore()
-
 const App: React.FC = () => {
-
+  console.log("Hello!!!")
   //create a store to hold all store directories
+  
+  dataStore.updateData()
   const hydrate = create({})
   const store = new Store(preferencesStore, dataStore)
 
