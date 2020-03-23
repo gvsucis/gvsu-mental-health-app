@@ -1,0 +1,27 @@
+@import '../../theme/theme.scss';
+
+.scroll-tile {
+    border: 1px solid $panel;
+    border-radius: $border-radius-lg;
+    margin: calc(3 * #{$pad-lg});
+}
+
+.scroll-tile--fill {
+    width: 100%;
+}
+
+.scroll-tile__button {
+    margin: $pad-md $pad-lg;
+    text-align: center;
+    @include font-header(16px);
+}
+
+.scroll-tile__subscript {
+    @include font-regular(12px);
+    text-align: initial;
+}
+
+.scroll-tile__header {
+    display: flex;
+    flex-direction: column;
+}

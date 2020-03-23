@@ -1,0 +1,21 @@
+ion-content ion-toolbar {
+  --background: translucent;
+}
+
+.flex-container {
+  display: flex;
+  height: 100%;
+}
+
+.split {
+  float: left;
+}
+
+.left {
+  flex-grow: 2;
+}
+
+.right {
+  flex-grow: 1;
+  height: 100%;
+}
