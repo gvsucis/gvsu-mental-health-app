@@ -1,27 +1,32 @@
-import React from 'react';
-import View from './view_models/view';
+import React from 'react'
+import View from './view_models/view'
 import Card from '../components/card-view'
-import { IonList } from '@ionic/react';
-import ScrollTile from '../components/scroll-tile';
+import { IonList } from '@ionic/react'
+import ScrollTile from '../components/scroll-tile'
+import Store from '../stores/store'
+import { inject } from 'mobx-react'
 
-export default class FAQView extends React.Component {
-    // we can make a fetch call from the store once that is made to get this
-    questions: [string, string][] = [["Will I be breaking confidentiality if I share my concerns about a student with someone else?", "Answer 1"],
-        ["I want to make sure the student I reffered is safe/got help. Is this possible?", "Answer 2"],
-        ["What if I'm worried about someone who is not a student (myself, a faculty or staff member, etc.)?", "Answer 3"],
-        ["What is a Care Report and when should I file one?", "Answer 4"],
-        ["What does UCC do?", "Answer 5"],
-        ["What is my role in student mental health", "Answer 6"]];
+export interface Props {
+    store: Store
+}
+
+@inject("store")
+export default class FAQView extends React.Component<Props> {
+
+    public static defaultProps = {
+        store: null
+    }
 
     public render() {
+
+        const tiles = this.props.store.data.faqTiles
         const body = (
             <IonList lines = "none">
                 <div className="view-body">
-                    {this.questions.map((i) => {
+                    {tiles.map((tile, idx) => {
                         return (
-                            <ScrollTile label={i[0]} enableModal={true}>
-                                <Card title={i[0]} subtitle={i[1]}>
-                                </Card>
+                            <ScrollTile label={tile.question} enableModal={true} >
+                                <Card title={tile.answer} subtitle={tile.question} />
                             </ScrollTile>
                         );
                     })}
