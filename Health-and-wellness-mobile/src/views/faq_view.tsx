@@ -23,7 +23,7 @@ export default class FAQView extends React.Component<Props> {
         const body = (
             <IonList lines = "none">
                 <div className="view-body">
-                    {tiles.map((tile, idx) => {
+                    {tiles.map((tile: { question: string; answer: string }, idx: any) => {
                         return (
                             <ScrollTile label={tile.question} enableModal={true} >
                                 <Card title={tile.answer} subtitle={tile.question} />

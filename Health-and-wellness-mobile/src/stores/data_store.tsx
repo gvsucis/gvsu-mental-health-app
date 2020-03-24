@@ -1,10 +1,10 @@
 import { computed, observable } from 'mobx'
-import {SystemData, getData} from '../utils/client'
-import { GuideTiles, HomeLinks } from './models/data_models'
-import * as LocalData from '../stores/data.json'
+import { getData } from '../utils/client'
+import { SystemData, GuideTiles, HomeLinks, ResourceTiles, Home, Guide, Resource} from './models/data_models'
+import { backupData } from '../App'
 
 export default class DataStore {
-    @observable data: SystemData = LocalData
+    @observable data: SystemData = backupData
     public updateData() {
         getData()
         .then((x) => {
@@ -12,7 +12,8 @@ export default class DataStore {
             console.log(this.data);
         })
         .catch((err) =>{
-            console.error(err);
+            console.error(err)
+            this.data = backupData
         })
     }
     
@@ -21,7 +22,7 @@ export default class DataStore {
         return this.guideView.tiles
     }//Home view elements
 @computed
-public get homeView() {
+public get homeView(): Home {
     return this.data.home
 }
 
@@ -32,19 +33,19 @@ public get homeTiles(): HomeLinks[] {
 
 //guide view elements
 @computed
-public get guideView() {
+public get guideView(): Guide {
     return this.data.guide
 }
 
 
 //resource view elements
 @computed
-public get resourceView() {
+public get resourceView(): Resource {
     return this.data.resource
 }
 
 @computed
-public get resourceTiles() {
+public get resourceTiles(): ResourceTiles[] {
     return this.resourceView.tiles
 }
 

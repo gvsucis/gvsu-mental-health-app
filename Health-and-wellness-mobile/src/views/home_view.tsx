@@ -1,6 +1,6 @@
 import React from "react"
 import View from "./view_models/view"
-import { inject } from "mobx-react"
+import { inject, observer } from "mobx-react"
 import ScrollTile from "../components/scroll-tile"
 import Store from "../stores/store"
 
@@ -11,6 +11,7 @@ export interface ViewProps {
 }
 
 @inject('store')
+@observer
 export default class HomeView extends React.Component<ViewProps> {
 
     public static defaultProps = {

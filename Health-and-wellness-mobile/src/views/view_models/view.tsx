@@ -44,11 +44,7 @@ export default class View extends React.Component<ViewProps> {
                 <IonContent className="view-body">
                     {body}
                 </IonContent>
-                {!this.isLoggedIn && homePage ?
-                    <Modal showModal={!this.isLoggedIn} forceModal={true}>
-                        <LoginView toggleVisible={this.toggleLoginModal} />
-                    </Modal> : null
-                }
+
                 { enableEmergencyModal ?
                     <div className="view-emergency">
                         <EmergencyButton />
