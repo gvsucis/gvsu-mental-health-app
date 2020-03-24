@@ -31,11 +31,12 @@ export default class Button extends React.Component<ButtonProps> {
     }
 
     public render() {
-        const { onClick, type, fillWidth, className } = this.props
+        const { onClick, type, fillWidth, className, fill } = this.props
 
         const buttonClass = classNames('button-wrapper',
             [{ name: 'button-wrapper__fill-width', include: fillWidth },
-            { name: className!, include: className !== null || className !== undefined }
+            { name: className!, include: className !== null || className !== undefined },
+            { name: 'button-wrapper__outline', include: fill === 'outline'}
             ])
 
         if (type === 'standard') {

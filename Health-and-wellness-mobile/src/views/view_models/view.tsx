@@ -38,8 +38,7 @@ export default class View extends React.Component<ViewProps> {
             <IonPage>
                 <IonHeader >
                     <IonToolbar >
-                        <IonTitle className="view-header">{title}</IonTitle>
-                        {/* <SearchBar /> */}
+                        <SearchBar pageTitle={title}/>
                     </IonToolbar>
                 </IonHeader>
                 <IonContent className="view-body">
