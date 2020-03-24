@@ -33,6 +33,7 @@ export default class View extends React.Component<ViewProps> {
 
     public render() {
         const { title, body, homePage, enableEmergencyModal, store } = this.props
+        console.log(store.preferences.hasLoggedin)
         return (
             <IonPage>
                 <IonHeader >
@@ -44,31 +45,25 @@ export default class View extends React.Component<ViewProps> {
                 <IonContent className="view-body">
                     {body}
                 </IonContent>
-                {!this.isLoggedIn && homePage ?
-                    <Modal showModal={!this.isLoggedIn} forceModal={true}>
+                {store.preferences.hasLoggedin === false ?
+                    <Modal showModal={!store.preferences.hasLoggedin} forceModal={true}>
                         <LoginView toggleVisible={this.toggleLoginModal} />
                     </Modal> : null
                 }
-                { enableEmergencyModal ?
+                {enableEmergencyModal ?
                     <div className="view-emergency">
                         <EmergencyButton />
                     </div> : null
                 }
                 <div className="view-footer">
-                    <span>University Counseling <br/> Center Information</span>
+                    <span>University Counseling <br /> Center Information</span>
                 </div>
-                {!store.preferences.hasLoggedin ?
-                    <Modal showModal={!store.preferences.hasLoggedin} forceModal={true}>
-                        <LoginView toggleVisible={this.toggleLoginModal} />
-                    </Modal> : null
-                }
             </IonPage>
         )
     }
 
     private toggleLoginModal = () => {
-        const {store} = this.props
+        const { store } = this.props
         store.preferences.toggleLoggedIn()
-        console.log("logged in state: ", store.preferences.hasLoggedin)
     }
 }
