@@ -15,6 +15,7 @@ export interface ViewProps {
     route: string
     body: React.ReactElement
     homePage: boolean
+    enableEmergencyModal: boolean
     store: Store
 }
 
@@ -26,11 +27,12 @@ export default class View extends React.Component<ViewProps> {
 
     public static defaultProps = {
         store: null,
-        homePage: false
+        homePage: false,
+        enableEmergencyModal: true
     }
 
     public render() {
-        const { title, body, store } = this.props
+        const { title, body, homePage, enableEmergencyModal, store } = this.props
         return (
             <IonPage>
                 <IonHeader >
@@ -42,8 +44,18 @@ export default class View extends React.Component<ViewProps> {
                 <IonContent className="view-body">
                     {body}
                 </IonContent>
+                {!this.isLoggedIn && homePage ?
+                    <Modal showModal={!this.isLoggedIn} forceModal={true}>
+                        <LoginView toggleVisible={this.toggleLoginModal} />
+                    </Modal> : null
+                }
+                { enableEmergencyModal ?
+                    <div className="view-emergency">
+                        <EmergencyButton />
+                    </div> : null
+                }
                 <div className="view-footer">
-                    <EmergencyButton />
+                    <span>University Counseling <br/> Center Information</span>
                 </div>
                 {!store.preferences.hasLoggedin ?
                     <Modal showModal={!store.preferences.hasLoggedin} forceModal={true}>
