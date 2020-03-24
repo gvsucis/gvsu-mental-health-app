@@ -91,9 +91,38 @@
         ]
     },
     "resource": {
-        "tiles": []
+        "tiles": [
+            {
+                "label": "",
+                "body": ""
+            }
+        ]
     },
     "faq": {
-        "tiles": []
+        "tiles": [
+            {
+                "question": "Will I be breaking confidentiality if I share my concerns about a student with someone else?",
+                "answer": ""
+            },
+            {
+                "question": "I want to make sure the student I reffered is safe/got help. Is this possible?",
+                "answer": ""
+            },
+            {
+                "question": "What if I'm worried about someone who is not a student (myself, a faculty or staff member, etc.)?",
+                "answer": ""
+            },
+            {
+                "question": "What does UCC do?",
+                "answer": ""
+            },
+            {
+                "question": "What is my role in student mental health",
+                "answer": ""
+            }
+        ]
+    },
+    "emergency": {
+        
     }
 }

@@ -19,14 +19,11 @@ export default class GuideView extends React.Component<ViewProps> {
     public render() {
         const body = (
             <>
-                <div className="view__header">
-                    I have a student who....
-            </div>
                 {this.renderGuideTiles()}
             </>
         )
         return (
-            <View title="Student Support Aid" body={body} route="/home" />
+            <View title="I have a student who...." body={body} route="/home" />
         )
     }
 

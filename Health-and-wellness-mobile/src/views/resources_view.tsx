@@ -4,8 +4,20 @@ import View from './view_models/view'
 import { IonList } from '@ionic/react'
 import InfiniteScroll from '../components/infinite-scroll'
 import Slides from '../components/horizontal-slides'
+import Store from '../stores/store'
+import { ResourceTiles } from '../stores/models/data_models'
+import { inject } from 'mobx-react'
 
-export default class ResourcesView extends React.Component {
+export interface Props {
+  store: Store  
+}
+
+@inject("store")
+export default class ResourcesView extends React.Component<Props> {
+
+  public static defaultProps = {
+    store: null
+  }
 
   public render() {
     const body = (
@@ -23,37 +35,11 @@ export default class ResourcesView extends React.Component {
   }
 
   private renderBody() {
-
-    let arr = [
-      {
-        label: "Resource 1",
-        element: (
-          <div>
-            this is a short explanation
-        </div>)
-      }, {
-        label: "Resource 2",
-        element: (
-          <div>
-            this is a short explanation
-        </div>)
-      }, {
-        label: "Resource 3",
-        element: (
-          <div>
-            this is a short explanation
-        </div>)
-      }, {
-        label: "Resource 4",
-        element: (
-          <div>
-            this is a short explanation
-        </div>)
-      }]
+    const tiles: ResourceTiles[] = this.props.store.data.resourceTiles
 
     return (
       <><IonList>
-        <Slides slides={arr} />
+        <Slides slides={tiles} />
       </IonList>
         <InfiniteScroll threshold={'100px'} infinite={this.onInfinite} />
       </>)

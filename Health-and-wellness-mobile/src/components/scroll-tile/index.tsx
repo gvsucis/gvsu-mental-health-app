@@ -8,6 +8,7 @@ import InfiniteScroll from "../infinite-scroll"
 import Slides from "../horizontal-slides"
 
 import './index.scss'
+import { ResourceTiles } from "../../stores/models/data_models"
 
 export interface ScrollTileProps {
   label: string
@@ -40,32 +41,7 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
       { name: "scroll-tile__home", include: homeView }
     ])
 
-    let arr = [
-      {
-        label: "Resource 1",
-        element: (
-          <div>
-            this is a short explanation
-          </div>)
-      }, {
-        label: "Resource 2",
-        element: (
-          <div>
-            this is a short explanation
-          </div>)
-      }, {
-        label: "Resource 3",
-        element: (
-          <div>
-            this is a short explanation
-          </div>)
-      }, {
-        label: "Resource 4",
-        element: (
-          <div>
-            this is a short explanation
-          </div>)
-      }]
+    const arr: ResourceTiles[] = []
 
     const subscriptClass = subscript ? 'scroll-tile__heading' : ''
     const titleClass = homeView ? 'scroll-tile__home--title' : ''
@@ -106,9 +82,5 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
     if (enableModal) {
       this.open = !this.open
     }
-    else {
-
-    }
   }
-
 }
