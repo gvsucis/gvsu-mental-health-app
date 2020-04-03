@@ -4,11 +4,13 @@ import Button from "../../src/components/button"
 import Input from "../components/input"
 import Store from "../stores/store"
 import { inject } from "mobx-react"
+import Firebase from '../components/firebase'
 
 import "./views.scss"
 
 export interface LoginViewProps {
     store: Store
+    fbase: Firebase
     toggleVisible: () => void
 }
 
@@ -28,8 +30,6 @@ export default class LoginView extends React.Component<LoginViewProps> {
                             GVSU Mental Health Resource Guide
                         </div>
                         <div className="login-view__login">
-                            <Input type='email' />
-                            <Input type='password' />
                             <Button onClick={this.handleClickLogin} fillWidth={true}>Login</Button>
                         </div>
                     </div>
@@ -38,7 +38,21 @@ export default class LoginView extends React.Component<LoginViewProps> {
         )
     }
 
-    private handleClickLogin = () => {
-        this.props.toggleVisible()
+    private handleClickLogin = async () => {
+        this.props.fbase.auth.onAuthStateChanged((user:any) =>{
+            console.log(user);
+            if(user) {
+                console.log("user in");
+                this.props.toggleVisible();
+            } else {
+                this.props.fbase.signIn().then((response) => {
+                    console.log("success");
+                    this.props.toggleVisible();
+                }).catch((err) => {
+                    console.log("bad");
+                    console.log(err);
+                });
+            }
+        });
     }
 }

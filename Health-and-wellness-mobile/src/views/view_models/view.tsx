@@ -9,6 +9,7 @@ import LoginView from '../login_view'
 import SearchBar from '../../components/search_bar'
 
 import "./view.scss"
+import Firebase, { FirebaseContext } from '../../components/firebase'
 
 export interface ViewProps {
     title: string
@@ -33,7 +34,7 @@ export default class View extends React.Component<ViewProps> {
 
     public render() {
         const { title, body, homePage, enableEmergencyModal, store } = this.props
-        console.log(store.preferences.hasLoggedin)
+        console.log(store.preferences.hasLoggedin)      
         return (
             <IonPage>
                 <IonHeader >
@@ -44,11 +45,14 @@ export default class View extends React.Component<ViewProps> {
                 <IonContent className="view-body">
                     {body}
                 </IonContent>
-                {store.preferences.hasLoggedin === false ?
+                <FirebaseContext.Consumer>
+                {firebase => 
+                store.preferences.hasLoggedin === false ?
                     <Modal showModal={!store.preferences.hasLoggedin} forceModal={true}>
-                        <LoginView toggleVisible={this.toggleLoginModal} />
+                            <LoginView fbase={firebase} toggleVisible={this.toggleLoginModal} />
                     </Modal> : null
                 }
+                </FirebaseContext.Consumer>
                 {enableEmergencyModal ?
                     <div className="view-emergency">
                         <EmergencyButton />
