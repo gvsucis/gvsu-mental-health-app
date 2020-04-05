@@ -1,27 +1,42 @@
 import React from "react"
 import View from "./view_models/view"
+import { inject, observer } from "mobx-react"
 import ScrollTile from "../components/scroll-tile"
+import Store from "../stores/store"
 
 import './views.scss'
 
-export default class HomeView extends React.Component {
+export interface ViewProps {
+    store: Store
+}
+
+@inject('store')
+@observer
+export default class HomeView extends React.Component<ViewProps> {
+
+    public static defaultProps = {
+        store: null
+    }
+
     public render() {
+        const tiles = this.props.store.data.homeTiles
         const body = (
             <div className="home-view">
                 <div className="home-view__wrappers">
-                    <ScrollTile label="I have a student that I am concerned about" link="/guide" />
+                    <ScrollTile label={tiles[0].label} link={tiles[0].link} homeView={true} />
+                    <ScrollTile label={tiles[1].label} link={tiles[1].link} homeView={true} />
+                    <ScrollTile label={tiles[2].label} link={tiles[2].link} homeView={true} />
                 </div>
                 <div className="home-view__wrappers ">
-                    <ScrollTile label="FAQ" link="/faq" />
                     <div className="home-view__dock">
-                        <ScrollTile label="Classroom Techniques" link="/techniques"/>
-                        <ScrollTile label="Resources" link="/resources"/>
+                        <ScrollTile label={tiles[3].label} link={tiles[3].link} homeView={true}/>
+                        <ScrollTile label={tiles[4].label} link={tiles[4].link} homeView={true}/>
                     </div>
                 </div>
             </div>
         )
         return (
-            <View title="Mental Health Guide" body={body} route="/home" homePage={true} />
+            <View title="Mental Health Guide" body={body} route="/home" homePage={true} enableEmergencyModal={false}/>
         )
     }
 }

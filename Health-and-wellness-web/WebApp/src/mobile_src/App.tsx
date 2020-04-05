@@ -42,16 +42,151 @@ import DataStore from './stores/data_store'
 
 //create an instance of each store to add to the common store directory in the app
 const preferencesStore = new PreferencesStore()
-const dataStore = new DataStore()
+export const dataStore = new DataStore()
 
+// a first release backup of all data
+export let backupData = {
+  "home": {
+  "tiles": [
+      {
+          "label": "I have a student I'm concerned about",
+          "link": "/guide"
+      },
+      {
+          "label": "FAQ",
+          "link": "/faq"
+      },
+      {
+          "label": "I have an emergency",
+          "link": ""
+      },
+      {
+          "label": "Classroom Techniques",
+          "link": "/techniques"
+      },
+      {
+          "label": "Campus Resources",
+          "link": "/resources"
+      }
+  ]
+},
+"guide": {
+  "tiles": [
+      {
+          "subscript": "is feeling",
+          "label": "Anxious",
+          "description": "Anxiety is defined as..... but may be also be related to (synonyms)",
+          "resourcesRelevant": [],
+          "videoLink": "",
+          "warningSigns": "",
+          "whatToDo": ""
+      },
+      {
+          "subscript": "may be",
+          "label": "Depressed",
+          "description": "",
+          "resourcesRelevant": [],
+          "videoLink": "",
+          "warningSigns": "",
+          "whatToDo": ""
+      },
+      {
+          "subscript": "may be",
+          "label": "Suicidal",
+          "description": "",
+          "resourcesRelevant": [],
+          "videoLink": "",
+          "warningSigns": "",
+          "whatToDo": ""
+      },
+      {
+          "subscript": "may",
+          "label": "Harm Others",
+          "description": "",
+          "resourcesRelevant": [],
+          "videoLink": "",
+          "warningSigns": "",
+          "whatToDo": ""
+      },
+      {
+          "subscript": "has",
+          "label": "Unusual/Disruptive Behavior",
+          "description": "",
+          "resourcesRelevant": [],
+          "videoLink": "",
+          "warningSigns": "",
+          "whatToDo": ""
+      },
+      {
+          "subscript": "is otherwise a",
+          "label": "Student of Concern",
+          "description": "",
+          "resourcesRelevant": [],
+          "videoLink": "",
+          "warningSigns": "",
+          "whatToDo": ""
+      },
+      {
+          "subscript": "says they have a",
+          "label": "Disability",
+          "description": "",
+          "resourcesRelevant": [],
+          "videoLink": "",
+          "warningSigns": "",
+          "whatToDo": ""
+      }
+  ]
+},
+"resource": {
+  "tiles": [
+      {
+          "label": "",
+          "body": ""
+      }
+  ]
+},
+"faq": {
+  "tiles": [
+      {
+          "question": "Will I be breaking confidentiality if I share my concerns about a student with someone else?",
+          "answer": ""
+      },
+      {
+          "question": "I want to make sure the student I reffered is safe/got help. Is this possible?",
+          "answer": ""
+      },
+      {
+          "question": "What if I'm worried about someone who is not a student (myself, a faculty or staff member, etc.)?",
+          "answer": ""
+      },
+      {
+          "question": "What does UCC do?",
+          "answer": ""
+      },
+      {
+          "question": "What is my role in student mental health",
+          "answer": ""
+      }
+  ]
+},
+"emergency": {
+  
+}
+}
 
 const App: React.FC = () => {
+  //create a store to hold all store directories
+
+  dataStore.updateData()
+  
+  
   const hydrate = create({})
   const store = new Store(preferencesStore, dataStore)
+
   hydrate("store", store)
-  
+
   return (
-    <Provider store={store}>
+    <Provider store={store} >
       <IonApp>
         <IonReactRouter>
           <IonTabs>
@@ -83,7 +218,7 @@ const App: React.FC = () => {
           </IonTabs>
         </IonReactRouter>
       </IonApp>
-      </Provider>
+    </Provider>
   )
 }
 

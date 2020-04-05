@@ -189,6 +189,9 @@ const App: React.FC = () => {
     backupData = JSON.parse(result.data)
     console.log(backupData)
   })
+  .catch((reason) => {
+    console.error(reason)
+  })
 setTimeout(() => {
     writeFile({
     path: "data.json",
