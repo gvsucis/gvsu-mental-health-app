@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, RouteProps } from 'react-router-dom';
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
@@ -31,22 +31,34 @@ import Store from './mobile_src/stores/store'
 import PreferencesStore from './mobile_src/stores/preferences_store'
 import DataStore from './mobile_src//stores/data_store'
 import App from './mobile_src/App';
+import { FirebaseContext } from './components/firebase';
+import SignInPage from './components/signin';
 
 //create an instance of each store to add to the common store directory in the app
 const preferencesStore = new PreferencesStore()
 const dataStore = new DataStore()
 
-const WebApp: React.FC = () => {
+
+const WebApp: React.FC<RouteProps> = () => {
   return (
+    <FirebaseContext.Consumer>
+      { firebase => 
     <IonApp>
+      {firebase.auth.currentUser == null ? 
+      <><SignInPage firebase={firebase}/></> :
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route path="/home" component={Home} exact={true} />
-        <Route path="/app" component={App} exact = {true} />
-        <Route exact path="/" render={() => <Redirect to="/home" />} />
+          <>
+            <Route path="/home" component={Home} exact={true} />
+            <Route path="/app" component={App} exact = {true} />
+            <Route exact path="/" render={() => <Redirect to="/home" />} />
+          </>
       </IonRouterOutlet>
     </IonReactRouter>
+}
   </IonApp>
+}
+  </FirebaseContext.Consumer>
   )};
 
 export default WebApp;
