@@ -43,6 +43,8 @@
     height: 100%;
     background-image: url("../assets/gv.jpg");
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     padding: calc(4 * #{$pad-lg}) calc(2 * #{$pad-lg});
     display: flex;
     flex-direction: column;

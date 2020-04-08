@@ -1,7 +1,7 @@
 
 import React from 'react'
 import View from './view_models/view'
-import { IonList } from '@ionic/react'
+import { IonList, IonHeader } from '@ionic/react'
 import InfiniteScroll from '../components/infinite-scroll'
 import Slides from '../components/horizontal-slides'
 import Store from '../stores/store'
@@ -22,6 +22,9 @@ export default class ResourcesView extends React.Component<Props> {
   public render() {
     const body = (
       <>
+      <IonHeader>
+        Do's
+      </IonHeader>
         <IonList lines="none">
           <div className="view-body">
             {this.renderBody()}

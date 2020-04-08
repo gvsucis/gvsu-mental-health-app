@@ -93,7 +93,19 @@
     "resource": {
         "tiles": [
             {
-                "label": "",
+                "label": "sample 1",
+                "body": ""
+            },
+            {
+                "label": "sample 2",
+                "body": ""
+            },
+              {
+                "label": "sample 3",
+                "body": ""
+            },
+            {
+                "label": "sample 4",
                 "body": ""
             }
         ]
