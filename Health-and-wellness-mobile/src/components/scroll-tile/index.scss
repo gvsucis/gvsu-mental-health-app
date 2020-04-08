@@ -12,8 +12,7 @@
 
 .scroll-tile__button {
     margin: $pad-md $pad-lg;
-    text-align: center;
-    @include font-header(16px);
+    @include font-header(16px); 
 }
 
 .scroll-tile__subscript {

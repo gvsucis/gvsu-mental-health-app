@@ -1,8 +1,9 @@
 import React from "react"
 import Button from "../button"
-import { inject, observer } from "mobx-react"
+import {observer } from "mobx-react"
 import { action, observable } from "mobx"
 import Modal from "../modal"
+import EmergencyModal from "../emergency_modal"
 
 @observer
 export default class EmergencyButton extends React.Component {
@@ -15,14 +16,13 @@ export default class EmergencyButton extends React.Component {
                 I have an Emergency
           </Button>
           { this.modalVisible ?
-            <Modal showModal={true} onToggleModalVisible={this.handleToggleModalVisible}>
-            In case of Emergency...
-            </Modal> : null
+           <EmergencyModal onToggleVisible={this.handleToggleModalVisible}/> : null
           }
           </>
         )
     }
 
+    @action
     private handleToggleModalVisible = () => {
         this.modalVisible = !this.modalVisible
     }

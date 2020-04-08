@@ -14,7 +14,6 @@ export interface ViewProps {
     title: string
     route: string
     body: React.ReactElement
-    homePage: boolean
     enableEmergencyModal: boolean
     store: Store
 }
@@ -27,13 +26,12 @@ export default class View extends React.Component<ViewProps> {
 
     public static defaultProps = {
         store: null,
-        homePage: false,
         enableEmergencyModal: true
     }
 
     public render() {
-        const { title, body, homePage, enableEmergencyModal, store } = this.props
-        console.log(store.preferences.hasLoggedin)
+        const { title, body, enableEmergencyModal, store } = this.props
+
         return (
             <IonPage>
                 <IonHeader >

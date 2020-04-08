@@ -34,6 +34,6 @@ $border-radius-lg: 14px;
     text-decoration: font-underlined;
 }
 
-@mixin font-header($size: 20px, $lineHeight: 25px) {
+@mixin font-header($size: 18px, $lineHeight: 25px) {
     @include font-regular($size, $lineHeight);
 }

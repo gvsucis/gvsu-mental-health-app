@@ -23,13 +23,13 @@
     display: flex;
     flex-direction: row;
     overflow: hidden;
-    padding: 0 5 * $pad-lg; 
+    padding: 0 7 * $pad-lg; 
 
     .scroll-tile {
         flex-grow: 1;
-        width: 100px;
+        width: 45vw;
         height: 80px;
-        margin: $pad-sm 25px;
+        margin: $pad-sm;
     }
 }
 

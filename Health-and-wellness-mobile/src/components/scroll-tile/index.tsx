@@ -1,4 +1,4 @@
-import React, { ReactChild } from "react"
+import React from "react"
 import { IonRouterLink, IonList, } from '@ionic/react'
 import { classNames } from "../../utils/system"
 import { observer } from 'mobx-react'
@@ -6,15 +6,17 @@ import { observable } from 'mobx'
 import Modal from "../modal"
 import InfiniteScroll from "../infinite-scroll"
 import Slides from "../horizontal-slides"
+import { ResourceTiles } from "../../stores/models/data_models"
 
 import './index.scss'
-import { ResourceTiles } from "../../stores/models/data_models"
 
 export interface ScrollTileProps {
   label: string
   link?: string
   subscript?: string
-  enableModal: boolean
+  onClick?: () => void
+  enableModal?: boolean
+  enableDropdown?: boolean
   fillWidth: boolean
   description: string
   homeView: boolean
@@ -23,7 +25,8 @@ export interface ScrollTileProps {
 @observer
 export default class ScrollTile extends React.Component<ScrollTileProps> {
 
-  @observable private open: boolean = false
+  @observable private modalOpen: boolean = false
+  @observable private dropdownOpen: boolean = false
 
   public static defaultProps = {
     enableModal: false,
@@ -50,18 +53,18 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
       <div className={classes}>
         <IonRouterLink routerLink={link ? link : undefined}>
           <div className="scroll-tile__button" onClick={this.handleClickScrollTile} >
-            <div className={subscriptClass}>
-              {subscript ?
+            {subscript ?
+              <div className={subscriptClass}>
                 <div className="scroll-tile__subscript">
                   {subscript}
-                </div> : null
-              }
-              <span className={titleClass}>{label}</span>
-            </div>
+                </div>
+              </div> : null
+            }
+            <div className={titleClass}>{label}</div>
           </div>
         </IonRouterLink>
         {enableModal ?
-          <Modal showModal={this.open} onToggleModalVisible={this.handleClickScrollTile}>
+          <Modal showModal={this.modalOpen} onToggleModalVisible={this.handleClickScrollTile}>
             {this.props.description}
             <IonList>
               <Slides slides={arr} />
@@ -78,9 +81,15 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
   }
 
   private handleClickScrollTile = () => {
-    const { enableModal } = this.props
-    if (enableModal) {
-      this.open = !this.open
+    const { onClick, enableModal, enableDropdown } = this.props
+    if (onClick) {
+      this.modalOpen = !this.modalOpen
+    }
+    else if (enableModal) {
+      this.modalOpen = !this.modalOpen
+    }
+    else if (enableDropdown) {
+
     }
   }
 }
