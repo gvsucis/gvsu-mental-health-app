@@ -58,8 +58,8 @@
                 "description": "Campus safety has moved into the foreground at academic institutions across the country.  Recent events and the constant streaming of tragedies from around globe have heightened fears for many.  While it is impossible to accurately predict who might act on concerning behaviors, research has found some commonalities among those are threatening or might otherwise cause harm to others.  It is important to note that alone, or even in combination, many of the warning signs below are not directly related to risk.  Use your judgement, reach out for help when needed, and err on the side of your safety and the safety of the campus community.",
                 "resourcesRelevant": [
                     "University Counseling Center",
-                    "Dean of Students Office",
-                    "Grand Valley Police Department"
+                    "Dean of Students",
+                    "GVPD non-emergency"
                 ],
                 "videoLink": "",
                 "warningSigns": [
@@ -168,31 +168,122 @@
         "tiles": [
             {
                 "department": "Dean of Students office",
-                "link": "",
-                "phone": "",
+                "link": "https://www.gvsu.edu/dos",
+                "phone": "616-331-3585",
+                "email": "dso@gvsu.edu",
+                "picture": ""
+            },
+            {
+                "department": "Student Ombuds",
+                "link": "https://www.gvsu.edu/dos",
+                "phone": "616-331-2491",
+                "email": "garrettt@gvsu.edu",
+                "picture": ""
+            },
+            {
+                "department": "Tutoring Center",
+                "link": "https://www.gvsu.edu/tc/",
+                "phone": "616-331-3451",
+                "email": "tutoring@gvsu.edu",
+                "picture": ""
+            },
+            {
+                "department": "DSR",
+                "link": "https://www.gvsu.edu/dsr/",
+                "phone": "616-331-2490",
+                "email": "dsrgvsu@gvsu.edu",
+                "picture": ""
+            },
+            {
+                "department": "GVSU HR Contact for ENCOMPASS",
+                "link": "https://www.gvsu.edu/hro/benefitswellness/meet-the-work-life-consultant-476.htm",
+                "phone": "616-331-2215",
+                "email": "salazael@gvsu.edu",
+                "picture": ""
+            },
+            {
+                "department": "ENCOMPASS",
+                "link": "https://www.mylifeexpert.com/login",
+                "phone": "1-800-788-8630",
                 "email": "",
                 "picture": ""
             },
             {
-                "department": "Grand Valley Police Department",
-                "link": "",
-                "phone": "",
+                "department": "Housing",
+                "link": "https://www.gvsu.edu/housing/",
+                "phone": "616-331-2120",
+                "email": "housing@gvsu.edu",
+                "picture": ""
+            },
+            {
+                "department": "GVPD non-emergency",
+                "link": "https://www.gvsu.edu/dps/",
+                "phone": "616-331-3255",
                 "email": "",
                 "picture": ""
             },
             {
-                "department": "University Counseling Center",
-                "link": "",
-                "phone": "",
+                "department": "Health Center",
+                "link": "https://www.gvsu.edu/campushealth/",
+                "phone": "616-252-6030",
                 "email": "",
                 "picture": ""
             },
             {
-                "department": "",
-                "link": "",
-                "phone": "",
+                "department": "Center for Women and Gender Equity",
+                "link": "https://www.gvsu.edu/cwge/",
+                "phone": "616-331-2748",
+                "email": "cwge@gvsu.edu",
+                "picture": ""
+            },
+            {
+                "department": "LGBT Center",
+                "link": "https://www.gvsu.edu/lgbtrc/",
+                "phone": "616-331-2530",
+                "email": "lgbtcenter@gvsu.edu",
+                "picture": ""
+            },
+            {
+                "department": "Financial Aid",
+                "link": "https://www.gvsu.edu/financialaid/",
+                "phone": "616-331-3234",
+                "email": "finaid@gvsu.edu",
+                "picture": ""
+            },
+            {
+                "department": "Disability Support Resources",
+                "link": "https://www.gvsu.edu/dsr/",
+                "phone": "616-331-2490",
+                "email": "dsrgvsu@gvsu.edu",
+                "picture": ""
+            },
+            {
+                "department": "Replenish",
+                "link": "https://www.gvsu.edu/replenish/",
+                "phone": "616-331-2748",
                 "email": "",
                 "picture": ""
+            },
+            {
+                "department": "Victim Advocate",
+                "link": "https://www.gvsu.edu/vro/what-is-a-victim-advocate-55.htm",
+                "phone": "616-331-2748",
+                "email": "",
+                "picture": ""
+            },
+            {
+                "department": "Registrars Office",
+                "link": "https://www.gvsu.edu/registrar/",
+                "phone": "616-331-3327",
+                "email": "regdept@gvsu.edu",
+                "picture": ""
+            },
+            {
+                "department": "ACES- Alcohol and Other Drugs Campus Education Services",
+                "link": "www.gvsu.edu/aces",
+                "phone": "616-331-2537",
+                "email": "regdept@gvsu.edu",
+                "picture": "aces@gvsu.edu"
             }
         ]
     },

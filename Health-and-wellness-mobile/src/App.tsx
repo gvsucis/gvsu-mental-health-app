@@ -10,7 +10,7 @@ import {
   IonTabs
 } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
-import { apps, flash } from 'ionicons/icons'
+import { apps } from 'ionicons/icons'
 import { Resources, Home, Guide, FAQ, Techniques } from './views/tabs'
 
 import { Provider } from "mobx-react"
