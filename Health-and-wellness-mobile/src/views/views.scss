@@ -63,3 +63,24 @@
 .views__bullets {
     margin: $pad-lg;
 }
+
+.guide-view__modal {
+    padding: $pad-modal;
+}
+
+.guide-view__warning-signs {
+    padding: $pad-md 0;
+}
+
+.guide-view__modal-header {
+    @include font-header();
+}
+
+.guide-view__modal-subheader {
+    @include font-sub-header();
+}
+
+.guide-view__modal-text {
+    text-align: start;
+    margin-bottom: $pad-lg;
+}

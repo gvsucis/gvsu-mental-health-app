@@ -38,21 +38,34 @@ export default class GuideView extends React.Component<ViewProps> {
         return tiles.map((tile, idx) => {
             return (
                 <ScrollTile subscript={tile.subscript} label={tile.label} enableModal={true} key={idx}>
-                    <div>
+                    <div className="guide-view__modal-header">
+                        Description
+                    </div>
+                    <div className="guide-view__modal">
                         {tile.description}
                     </div>
                     <div>
                         {this.renderVideo(tile)}
                     </div>
-                    <div>
+                    <div className="guide-view__modal-header">
+                        Warning Signs
+                    </div>
+                    <div className="guide-view__modal">
                         {this.renderWarningSigns(tile)}
+                    </div>
+                    <div className="guide-view__modal-header">
+                        Do's and Dont's
                     </div>
                     <div>
                         {this.renderDosDonts(tile)}
                     </div>
+                    <div className="guide-view__modal-header">
+                        Relevant Resources
+                    </div>
                     <div>
                         {this.renderResources(tile)}
                     </div>
+
                 </ScrollTile>
             )
         })
@@ -65,7 +78,7 @@ export default class GuideView extends React.Component<ViewProps> {
     private renderWarningSigns(tile: GuideTile) {
         return tile.warningSigns.map((sign, idx) => {
             return (
-                <div key={idx}>
+                <div className="guide-view__warning-signs" key={idx}>
                     - {sign}
                 </div>
             )
@@ -77,14 +90,14 @@ export default class GuideView extends React.Component<ViewProps> {
             const doBull = item.doBullets.map((d, num) => {
                 return (
                     <div key={num}>
-                        {d}
+                        - {d}
                     </div>
                 )
             })
             const dontBull = item.dontBullets.map((d, num) => {
                 return (
                     <div key={num}>
-                        {d}
+                        - {d}
                     </div>
                 )
             })
@@ -93,10 +106,22 @@ export default class GuideView extends React.Component<ViewProps> {
                     title: tile.label,
                     body: (
                         <div key={idx}>
-                            {item.do}
-                            {doBull}
-                            {item.dont}
-                            {dontBull}
+                            <div className="guide-view__modal-text">
+                                <div>
+                                    <span className="guide-view__modal-subheader">Do:</span> {item.do}
+                                </div>
+                                <div>
+                                    {doBull}
+                                </div>
+                            </div>
+                            <div className="guide-view__modal-text">
+                                <div>
+                                    <span className="guide-view__modal-subheader">Dont:</span> {item.dont}
+                                </div>
+                                <div>
+                                    {dontBull}
+                                </div>
+                            </div>
                         </div>
                     )
                 }
@@ -123,5 +148,5 @@ export default class GuideView extends React.Component<ViewProps> {
 
     private onInfinite = (e: CustomEvent<void>) => {
         (e.target as HTMLIonInfiniteScrollElement).complete()
-      }
+    }
 }
