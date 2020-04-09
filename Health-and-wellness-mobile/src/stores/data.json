@@ -100,7 +100,7 @@
                 "label": "sample 2",
                 "body": ""
             },
-              {
+            {
                 "label": "sample 3",
                 "body": ""
             },
@@ -113,28 +113,69 @@
     "faq": {
         "tiles": [
             {
-                "question": "Will I be breaking confidentiality if I share my concerns about a student with someone else?",
-                "answer": ""
+                "question": "If a student shares something in confidence, is it ok for me to tell someone else if I am concerned?",
+                "answer": "Many students turn to trusted faculty or staff when in distress or in need of support. And because they interact with students regularly, faculty or staff are often the first to observe concerning changes in students’ mood or behavior.  We know that it can be difficult to break confidence, which is why it is important to never promise a student confidentiality.  It is appropriate to consult with the University Counseling Center about concerns that arise, especially when those concerns involve student safety. Our clinical staff can provide you with information to help you address the situation on your own, or can instigate important next steps to ensure student well-being.  Ultimately, it is important to remember that information that students share with faculty and staff is not confidential, and that the UCC staff is available to assist if you are unsure of how to handle a student concern."
             },
             {
                 "question": "I want to make sure the student I reffered is safe/got help. Is this possible?",
-                "answer": ""
+                "answer": "Due to legal and ethical requirements, and the confidential nature of the client/counselor relationship, the University Counseling Center staff cannot share whether or not a student attended a session or received mental health services. Depending on your role and the nature of your relationship with the student, it can be helpful to check in with them after making a referral. Consider asking: \n“How have things been going since we last talked?” \n“Did you have a chance to talk to anyone yet?”\nIt may also be appropriate to share your concerns about a student with the Dean of Students CARE Team by filing a Care Report [Link: www.gvsu.edu/care]. The CARE Team is able to follow-up with students, whereas the University Counseling Center is generally unable to make contact with a student who has not initiated services."
             },
             {
                 "question": "What if I'm worried about someone who is not a student (myself, a faculty or staff member, etc.)?",
-                "answer": ""
+                "answer": "Although the University Counseling Center only provides treatment to currently enrolled students, there are many resources available to others who may be struggling with their mental health. For you and other members of the faculty/staff: \nIf there is an immediate threat to self or others, call 911 or GVPD (616) 331-3255\nThe Human Resources Office offers free mental health services to University employees through Encompass [link www.gvsu.edu/hro] Faculty and staff can access the University Counseling Center community provider database for assistance in identifying a clinician who meets their needs [link www.gvsu.edu/counsel/community]. For family members or loved ones:\nIf there is an immediate threat to self or others, call 911.\nUtilize the University Counseling Center community provider database [link www.gvsu.edu/counsel/community] for West Michigan mental health resources\nVisit Psychology Today [link www.psychologytoday.com] to search for clinicians across the country."
             },
             {
-                "question": "What does UCC do?",
-                "answer": ""
+                "question": "What is a Care Report and when should I file one?",
+                "answer": "While attending GVSU, students may experience a variety of concerns, including academic distress, financial insecurity, inability to meet basic needs, physical illness, mental health symptoms, bias incidents, housing instability, relationship difficulties, and disruptive or disturbing behavior, among others. The CARE Team (Coordination, Assistance, Response, and Education) is comprised of professional staff members who support all students through challenges they may experience during their time at GVSU. Please complete a CARE Report [Link: www.gvsu.edu/care] if you are concerned about a student or know a student who needs support."
             },
             {
-                "question": "What is my role in student mental health",
-                "answer": ""
+                "question": "What mental health resources/services does UCC offer?",
+                "answer": "The University Counseling Center offers a variety of services to suit students’ diverse mental health needs. Services are provided at no cost to currently registered GVSU students, and include: Short-term individual therapy\nUnlimited group therapy, including general therapy groups, symptom management groups, and support groups\nSubstance abuse prevention and treatment Consultation for concerned students, faculty, and staff Community referral [Link: https://www.gvsu.edu/counsel/community-index.htm]\nMental health prevention and education  [Link: https://www.gvsu.edu/counsel/outreach-141.htm] Online self-help tools [Link: https://www.gvsu.edu/counsel/self-help-directory-154.htm]"
+            },
+            {
+                "question": "How long does it take for a student to be seen at the University Counseling Center?",
+                "answer": "All first-time student appointments are scheduled within two business days. These screening appointments assess student concerns, identify risk, and connect students with appropriate services. After their initial appointment, students who elect to continue counseling through the University Counseling Center will be scheduled for an intake.  Intakes are generally scheduled no more than two weeks out, though those with special requests may wait longer.  If students need to be seen more quickly, a counselor will assist them in finding a provider in the community who may better meet their needs."
+            },
+            {
+                "question": "A student has submitted an assignment/sent me an email with concerning content, and I am reading it from my home/office after-hours:",
+                "answer": "If you receive concerning written communication from a student, consider the following:\nThank the student for reaching out and trusting you enough to share their thoughts/feelings\nReach out to the student via email or after class, letting them know that you care and are concerned for them\nOffer support, such as:\nIf appropriate, a meeting or check-in to discuss the student’s concerns\nReferral to the University Counseling Center for a same-day crisis appointment or screening appointment [insert contact information] during business hours\nReminder to contact 911 or go to a local emergency room if in crisis\nFile a Care Report with the Dean of Students Office [insert link here]. Your report will enable the Care Team to assess risk and take appropriate action.\nConsult with a member of the UCC staff for guidance and support by calling 616-331-3266.\nIf you are concerned at any time for the student’s safety or the safety of others, contact 911 immediately.  A police officer can perform a welfare check and connect the student with appropriate resources."
             }
         ]
     },
     "emergency": {
-        
+        "description-header": "A mental health concern becomes a mental health emergency when someone:",
+        "description-bullets": [
+            "Is at risk of harming themselves",
+            "Is at risk of harming someone else",
+            "Appears out-of-touch with reality or unable to make decisions on their own behalf",
+            "Has just experienced a trauma (directly after a sexual assault, physical assault, act of terror, etc.)"
+        ],
+        "description-footer": "In situations like these, your actions are crucial to the well-being of the student and the larger campus community. \n Students experiencing a mental health concern but not actively in crisis may be referred to the University Counseling Center for services. Please visit the “I Have a Student Who. . . .” page for additional information and resources.",
+        "concern-header": "If you are concerned that a student:",
+        "concern-bullets": [
+            "May not be safe",
+            "May harm someone else",
+            "Is behaving unusually or appears unable to make decisions on their own behalf",
+            "Has experienced a recent trauma"
+        ],
+        "businessHours": {
+            "title": "During business hours:",
+            "body": [
+                {
+                    "body": "If safe to do so, walk the student to the University Counseling Center for a crisis appointment with a counselor."
+                }
+            ]
+        },
+        "afterHours": {
+            "title": "After business hours:",
+            "body": [
+                {
+                    "body": "If there is any immediate risk to the student’s well-being, call 911 immediately"
+                },
+                {
+                    "body": "If the student lives on campus, call GVPD at 616-331-3266 to initiate a wellness check and/or connect the student with the on-call counselor"
+                } 
+            ]
+        }
     }
 }

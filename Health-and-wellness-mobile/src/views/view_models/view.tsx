@@ -22,8 +22,6 @@ export interface ViewProps {
 @observer
 export default class View extends React.Component<ViewProps> {
 
-    @observable private isLoggedIn: boolean = false
-
     public static defaultProps = {
         store: null,
         enableEmergencyModal: true

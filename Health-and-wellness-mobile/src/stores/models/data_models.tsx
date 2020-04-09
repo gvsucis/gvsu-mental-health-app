@@ -22,3 +22,12 @@ export interface ResourceTiles {
     label: string
     body: string
 }
+
+export interface EmergencyInfo {
+    title: string
+    body: EmergencyContactInfo[]
+}
+
+export interface EmergencyContactInfo {
+    body: string
+}

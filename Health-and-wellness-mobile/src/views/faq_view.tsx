@@ -21,7 +21,7 @@ export default class FAQView extends React.Component<Props> {
 
         const tiles = this.props.store.data.faqTiles
         const body = (
-            <IonList lines = "none">
+            <IonList lines="none">
                 <div className="view-body">
                     {tiles.map((tile) => {
                         return (
@@ -32,11 +32,11 @@ export default class FAQView extends React.Component<Props> {
                     })}
                 </div>
             </IonList>
-            
+
         );
 
         return (
-            <View title="FAQ" route = "/faq" body = {body} />
+            <View title="FAQ" route="/faq" body={body} />
         )
     }
 }

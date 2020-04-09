@@ -1,12 +1,12 @@
 import React from "react"
+import { observable, action } from "mobx"
+import Store from "../stores/store"
 import View from "./view_models/view"
 import { inject, observer } from "mobx-react"
 import ScrollTile from "../components/scroll-tile"
-import Store from "../stores/store"
+import EmergencyModal from "../components/emergency_modal"
 
 import './views.scss'
-import { observable } from "mobx"
-import EmergencyModal from "../components/emergency_modal"
 
 export interface ViewProps {
     store: Store
@@ -29,7 +29,7 @@ export default class HomeView extends React.Component<ViewProps> {
                 <div className="home-view__wrappers">
                     <ScrollTile label={tiles[0].label} link={tiles[0].link} homeView={true} />
                     <ScrollTile label={tiles[2].label} link={tiles[2].link} homeView={true}
-                        enableModal={true} onClick={this.toggleEmergencyModalOpen} />
+                        onClick={this.openEmergencyModal} />
                 </div>
                 <div className="home-view__wrappers ">
                     <ScrollTile label={tiles[1].label} link={tiles[1].link} homeView={true} />
@@ -48,7 +48,13 @@ export default class HomeView extends React.Component<ViewProps> {
         )
     }
 
-    private toggleEmergencyModalOpen() {
-        this.emergencyModalOpen = !this.emergencyModalOpen
+    @action
+    private openEmergencyModal = () => {
+        this.toggleEmergencyModalOpen(true)
+    }
+
+    @action
+    private toggleEmergencyModalOpen = (visible: boolean) => {
+            this.emergencyModalOpen = visible
     }
 }

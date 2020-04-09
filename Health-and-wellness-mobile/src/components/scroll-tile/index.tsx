@@ -50,21 +50,24 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
     const titleClass = homeView ? 'scroll-tile__home--title' : ''
 
     return (
-      <div className={classes}>
-        <IonRouterLink routerLink={link ? link : undefined}>
-          <div className="scroll-tile__button" onClick={this.handleClickScrollTile} >
-            {subscript ?
-              <div className={subscriptClass}>
-                <div className="scroll-tile__subscript">
-                  {subscript}
-                </div>
-              </div> : null
-            }
-            <div className={titleClass}>{label}</div>
-          </div>
-        </IonRouterLink>
-        {enableModal ?
-          <Modal showModal={this.modalOpen} onToggleModalVisible={this.handleClickScrollTile}>
+      <>
+        <div className={classes} onClick={this.handleOpenTile} >
+          <IonRouterLink routerLink={link ? link : undefined}>
+            <div className="scroll-tile__button" >
+              {subscript ?
+                <div className={subscriptClass}>
+                  <div className="scroll-tile__subscript">
+                    {subscript}
+                  </div>
+                </div> : null
+              }
+              <div className={titleClass}>{label}</div>
+            </div>
+          </IonRouterLink>
+        </div>
+
+        {this.modalOpen ?
+          <Modal showModal={true} onToggleModalVisible={this.handleClickScrollTile}>
             {this.props.description}
             <IonList>
               <Slides slides={arr} />
@@ -72,7 +75,7 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
             <InfiniteScroll threshold={'100px'} infinite={this.onInfinite} />
           </Modal> : null
         }
-      </div>
+      </>
     )
   }
 
@@ -80,10 +83,14 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
     (e.target as HTMLIonInfiniteScrollElement).complete()
   }
 
-  private handleClickScrollTile = () => {
+  private handleOpenTile = () => {
+    this.handleClickScrollTile(true)
+  }
+
+  private handleClickScrollTile = (visible: boolean) => {
     const { onClick, enableModal, enableDropdown } = this.props
     if (onClick) {
-      this.modalOpen = !this.modalOpen
+      onClick()
     }
     else if (enableModal) {
       this.modalOpen = !this.modalOpen
