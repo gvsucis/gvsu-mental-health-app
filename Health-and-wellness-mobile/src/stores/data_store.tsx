@@ -27,6 +27,12 @@ export default class DataStore {
         return this.guideView.tiles
     }
 
+    public guideResourceTiles(tile: GuideTile) {
+        return this.resourceTiles.filter((res) => (
+            tile.resourcesRelevant.some((item) => item === res.department)
+        ))
+    }
+
     //resource view elements
     @computed
     public get resourceView() {
@@ -75,7 +81,7 @@ export default class DataStore {
         return this.emergencyModal["description-bullets"]
     }
 
-    @computed 
+    @computed
     public get emergencyDescriptionFooter() {
         return this.emergencyModal["description-footer"]
     }

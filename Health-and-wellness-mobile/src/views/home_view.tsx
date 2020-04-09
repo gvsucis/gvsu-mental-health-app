@@ -3,7 +3,7 @@ import { observable, action } from "mobx"
 import Store from "../stores/store"
 import View from "./view_models/view"
 import { inject, observer } from "mobx-react"
-import ScrollTile from "../components/scroll-tile"
+import ScrollTile from "../components/scroll_tile"
 import EmergencyModal from "../components/emergency_modal"
 
 import './views.scss'

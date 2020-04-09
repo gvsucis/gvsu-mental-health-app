@@ -1,6 +1,5 @@
 import React from "react"
 import { IonSlides, IonSlide } from '@ionic/react'
-import ScrollTile from "../scroll-tile"
 import "./index.scss"
 import Card from "../card"
 
@@ -33,11 +32,9 @@ export default class Slides extends React.Component<SlideProps> {
                 {
                     slides.map((slide, idx) =>
                         <IonSlide key={idx}>
-                            <Card title="card" >
-                            </Card>
-                            {/* <ScrollTile label={slide.title || 'sample'} fillWidth={true}>
+                            <Card title={slide.title || "card"} >
                                 {slide.body}
-                            </ScrollTile> */}
+                            </Card>
                         </IonSlide>
                     )
                 }

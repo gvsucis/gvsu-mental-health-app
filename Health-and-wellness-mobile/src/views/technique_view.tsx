@@ -1,7 +1,7 @@
 import React from 'react'
 import View from './view_models/view'
 import { IonList } from '@ionic/react'
-import ScrollTile from '../components/scroll-tile'
+import ScrollTile from '../components/scroll_tile'
 import Store from '../stores/store'
 import { inject } from 'mobx-react'
 

@@ -1,11 +1,13 @@
 import React from "react"
 import { inject, observer } from "mobx-react"
 import View from "./view_models/view"
-import ScrollTile from "../components/scroll-tile"
+import ScrollTile from "../components/scroll_tile"
 import Store from "../stores/store"
 import { GuideTile } from "../stores/models/data_models"
 import { IonList } from "@ionic/react"
-import Slides, { Slide } from "../components/horizontal-slides"
+import Slides from "../components/horizontal-slides"
+import InfiniteScroll from "../components/infinite-scroll"
+import ResourceSlideDock from "../components/resource_slider_dock"
 
 export interface ViewProps {
     store: Store
@@ -47,6 +49,9 @@ export default class GuideView extends React.Component<ViewProps> {
                     </div>
                     <div>
                         {this.renderDosDonts(tile)}
+                    </div>
+                    <div>
+                        {this.renderResources(tile)}
                     </div>
                 </ScrollTile>
             )
@@ -102,8 +107,21 @@ export default class GuideView extends React.Component<ViewProps> {
             <div>
                 <IonList>
                     <Slides slides={slides} />
+                    <InfiniteScroll threshold={'100px'} infinite={this.onInfinite} />
                 </IonList>
             </div>
         )
     }
+
+    private renderResources(tile: GuideTile) {
+        const resources = this.props.store.data.guideResourceTiles(tile)
+        console.log("guide res", resources)
+        return (
+            <ResourceSlideDock resources={resources} />
+        )
+    }
+
+    private onInfinite = (e: CustomEvent<void>) => {
+        (e.target as HTMLIonInfiniteScrollElement).complete()
+      }
 }

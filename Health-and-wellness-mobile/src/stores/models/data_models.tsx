@@ -25,9 +25,12 @@ export interface Faq {
     answer: string
 }
 
-export interface ResourceTiles {
-    label: string
-    body: string
+export interface ResourceTile {
+    department: string
+    link: string
+    phone: string
+    email?: string
+    picture: string
 }
 
 export interface EmergencyInfo {

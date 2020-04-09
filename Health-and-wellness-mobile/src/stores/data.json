@@ -56,7 +56,11 @@
                 "subscript": "is / may",
                 "label": "Threatening/Harm Others",
                 "description": "Campus safety has moved into the foreground at academic institutions across the country.  Recent events and the constant streaming of tragedies from around globe have heightened fears for many.  While it is impossible to accurately predict who might act on concerning behaviors, research has found some commonalities among those are threatening or might otherwise cause harm to others.  It is important to note that alone, or even in combination, many of the warning signs below are not directly related to risk.  Use your judgement, reach out for help when needed, and err on the side of your safety and the safety of the campus community.",
-                "resourcesRelevant": [],
+                "resourcesRelevant": [
+                    "University Counseling Center",
+                    "Dean of Students Office",
+                    "Grand Valley Police Department"
+                ],
                 "videoLink": "",
                 "warningSigns": [
                     "Expresses feelings of anger, rage, or persecution toward a person, group, or society in general",
@@ -163,20 +167,32 @@
     "resource": {
         "tiles": [
             {
-                "label": "sample 1",
-                "body": ""
+                "department": "Dean of Students office",
+                "link": "",
+                "phone": "",
+                "email": "",
+                "picture": ""
             },
             {
-                "label": "sample 2",
-                "body": ""
+                "department": "Grand Valley Police Department",
+                "link": "",
+                "phone": "",
+                "email": "",
+                "picture": ""
             },
             {
-                "label": "sample 3",
-                "body": ""
+                "department": "University Counseling Center",
+                "link": "",
+                "phone": "",
+                "email": "",
+                "picture": ""
             },
             {
-                "label": "sample 4",
-                "body": ""
+                "department": "",
+                "link": "",
+                "phone": "",
+                "email": "",
+                "picture": ""
             }
         ]
     },
