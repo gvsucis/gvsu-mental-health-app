@@ -1,5 +1,5 @@
 import { computed } from 'mobx'
-import { GuideTiles, HomeLinks, EmergencyInfo } from './models/data_models'
+import { GuideTile, HomeLinks, EmergencyInfo } from './models/data_models'
 
 import * as SystemData from '../stores/data.json'
 
@@ -23,7 +23,7 @@ export default class DataStore {
     }
 
     @computed
-    public get guideTiles(): GuideTiles[] {
+    public get guideTiles(): GuideTile[] {
         return this.guideView.tiles
     }
 
@@ -88,5 +88,22 @@ export default class DataStore {
     @computed
     public get emergencyConcernBullets() {
         return this.emergencyModal["concern-bullets"]
+    }
+
+    //technique view elements
+
+    @computed
+    public get techniqueView() {
+        return SystemData.classRoomTechniques
+    }
+
+    @computed
+    public get techniqueHeader() {
+        return this.techniqueView.header
+    }
+
+    @computed
+    public get techniqueBody() {
+        return this.techniqueView.techniques
     }
 }

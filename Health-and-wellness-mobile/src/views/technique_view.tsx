@@ -1,6 +1,5 @@
 import React from 'react'
 import View from './view_models/view'
-import Card from '../components/card-view'
 import { IonList } from '@ionic/react'
 import ScrollTile from '../components/scroll-tile'
 import Store from '../stores/store'
@@ -19,24 +18,41 @@ export default class TechniqueView extends React.Component<Props> {
 
     public render() {
 
-        const tiles = this.props.store.data.faqTiles
+        const header = this.props.store.data.techniqueHeader
         const body = (
-            <IonList lines = "none">
-                <div className="view-body">
-                    {tiles.map((tile, idx) => {
-                        return (
-                            <ScrollTile label={tile.question} enableModal={true} key={idx}>
-                                <Card title={tile.answer} subtitle={tile.question} />
-                            </ScrollTile>
-                        );
-                    })}
+            <IonList lines="none">
+                <div>
+                    <div>
+                        {header}
+                    </div>
+                    {this.renderBody()}
                 </div>
             </IonList>
-            
         );
 
         return (
-            <View title="FAQ" route = "/faq" body = {body} />
+            <View title="In the Classroom" route="/technique" body={body} />
         )
+    }
+
+    private renderBody() {
+        const techniques = this.props.store.data.techniqueBody
+        return techniques.map((item, idx) => {
+            const bullets = item.bullets.map((bullet, num) => {
+                return (
+                    <div key={num} className="views__bullets">
+                        {bullet}
+                    </div>
+                )
+            })
+            return (
+                <ScrollTile label={item.header} enableModal={true} key={idx}>
+                    <div className="views__modal">
+                        {item.body}
+                        {bullets}
+                    </div>
+                </ScrollTile>
+            )
+        })
     }
 }

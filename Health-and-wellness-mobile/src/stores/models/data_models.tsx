@@ -1,11 +1,18 @@
-export interface GuideTiles {
+export interface GuideTile {
     subscript: string
     label: string
     description: string
     resourcesRelevant: string[]
     videoLink: string
-    warningSigns: string
-    whatToDo: string
+    warningSigns: string[]
+    dosDonts: DosDonts[]
+}
+
+export interface DosDonts {
+    do: string
+    doBullets: string[]
+    dont: string
+    dontBullets: string[]
 }
 
 export interface HomeLinks {
@@ -20,7 +27,7 @@ export interface Faq {
 
 export interface ResourceTiles {
     label: string
-    body: string
+    body: React.ReactElement
 }
 
 export interface EmergencyInfo {

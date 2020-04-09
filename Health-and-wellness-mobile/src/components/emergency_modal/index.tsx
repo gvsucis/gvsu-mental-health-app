@@ -61,7 +61,7 @@ export default class EmergencyModal extends React.Component<Props> {
         const body = bullets.map((item, idx) => {
             return (
                 <div key={idx}>
-                    {`- ${item}`}
+                    - {item}
                 </div>
             )
         })
@@ -89,7 +89,7 @@ export default class EmergencyModal extends React.Component<Props> {
         const body = bullets.map((item, idx) => {
             return (
                 <div key={idx}>
-                 `- ${item}`   
+                 - {item}   
                 </div>
                 
             )

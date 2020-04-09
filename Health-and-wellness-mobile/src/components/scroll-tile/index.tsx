@@ -4,8 +4,6 @@ import { classNames } from "../../utils/system"
 import { observer } from 'mobx-react'
 import { observable } from 'mobx'
 import Modal from "../modal"
-import InfiniteScroll from "../infinite-scroll"
-import Slides from "../horizontal-slides"
 import { ResourceTiles } from "../../stores/models/data_models"
 
 import './index.scss'
@@ -18,7 +16,6 @@ export interface ScrollTileProps {
   enableModal?: boolean
   enableDropdown?: boolean
   fillWidth: boolean
-  description: string
   homeView: boolean
 }
 
@@ -33,7 +30,6 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
     fillWidth: false,
     open: false,
     onOpen: () => { },
-    description: 'This is some sample input for you to see how this component looks',
     homeView: false
   }
 
@@ -72,20 +68,12 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
         </div>
 
         {this.modalOpen ?
-          <Modal showModal={true} onToggleModalVisible={this.handleClickScrollTile}>
-            {this.props.description}
-            <IonList>
-              <Slides slides={arr} />
-            </IonList>
-            <InfiniteScroll threshold={'100px'} infinite={this.onInfinite} />
+          <Modal showModal={true} onToggleModalVisible={this.handleClickScrollTile} header={label}>
+            {this.props.children}
           </Modal> : null
         }
       </>
     )
-  }
-
-  private onInfinite = (e: CustomEvent<void>) => {
-    (e.target as HTMLIonInfiniteScrollElement).complete()
   }
 
   private handleOpenTile = () => {

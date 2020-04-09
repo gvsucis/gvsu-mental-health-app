@@ -78,13 +78,13 @@ const App: React.FC = () => {
                   <IonIcon icon={apps} />
                   <IonLabel>Techniques</IonLabel>
                 </IonTabButton>
-                <IonTabButton tab="Resources" href="/resources">
-                  <IonIcon icon={flash} />
-                  <IonLabel>Resources</IonLabel>
-                </IonTabButton>
                 <IonTabButton tab="FAQ" href="/faq">
                   <IonIcon icon={apps} />
                   <IonLabel>FAQ</IonLabel>
+                </IonTabButton>
+                <IonTabButton tab="Resources" href="/resources">
+                  <IonIcon icon={apps} />
+                  <IonLabel>Resources</IonLabel>
                 </IonTabButton>
               </IonTabBar>
           </IonTabs>

@@ -31,8 +31,8 @@
                 "description": "Anxiety is defined as..... but may be also be related to (synonyms)",
                 "resourcesRelevant": [],
                 "videoLink": "",
-                "warningSigns": "",
-                "whatToDo": ""
+                "warningSigns": [],
+                "dosDonts": []
             },
             {
                 "subscript": "may be",
@@ -40,8 +40,8 @@
                 "description": "",
                 "resourcesRelevant": [],
                 "videoLink": "",
-                "warningSigns": "",
-                "whatToDo": ""
+                "warningSigns": [],
+                "dosDonts": []
             },
             {
                 "subscript": "may be",
@@ -49,17 +49,87 @@
                 "description": "",
                 "resourcesRelevant": [],
                 "videoLink": "",
-                "warningSigns": "",
-                "whatToDo": ""
+                "warningSigns": [],
+                "dosDonts": []
             },
             {
-                "subscript": "may",
-                "label": "Harm Others",
-                "description": "",
+                "subscript": "is / may",
+                "label": "Threatening/Harm Others",
+                "description": "Campus safety has moved into the foreground at academic institutions across the country.  Recent events and the constant streaming of tragedies from around globe have heightened fears for many.  While it is impossible to accurately predict who might act on concerning behaviors, research has found some commonalities among those are threatening or might otherwise cause harm to others.  It is important to note that alone, or even in combination, many of the warning signs below are not directly related to risk.  Use your judgement, reach out for help when needed, and err on the side of your safety and the safety of the campus community.",
                 "resourcesRelevant": [],
                 "videoLink": "",
-                "warningSigns": "",
-                "whatToDo": ""
+                "warningSigns": [
+                    "Expresses feelings of anger, rage, or persecution toward a person, group, or society in general",
+                    "Engages in concerning behaviors, such as acquiring weapons, breaking laws, or taking risks with their lives or the lives of others",
+                    "Threatens violence or shares thoughts of violence against others",
+                    "Is withdrawn or socially isolated",
+                    "Seems depressed, or their mood has otherwise changed significantly",
+                    "Yells at or otherwise attempts to intimidate others",
+                    "Have a history of violence against people or animals",
+                    "Have a history of conflict with authority"
+                ],
+                "dosDonts": [
+                    {
+                        "do":"If the person becomes threatening or does not de-escalate, immediately remove yourself from the situation and contact GVPD or 911.",
+                        "doBullets": [
+                            "If the person de-escalates, refer to the following DOs and DONTs."
+                        ],
+                        "dont": "Interrupt during peak anger",
+                        "dontBullets": [
+                            "Peak anger usually lasts 20-30 seconds"
+                        ]
+                    },
+                    {
+                        "do":"Allow the student to tell you what they are feeling, even if you disagree or are concerned by it",
+                        "doBullets": [
+                            "“I hear that you are feeling ________”",
+                            "“I’m sorry that you feel ________”",
+                            "Or, say nothing at all.  Allow the person to experience and share their feelings without fear of judgement."
+                        ],
+                        "dont": "Ignore or minimize how the person is feeling",
+                        "dontBullets": [
+                            "“Don’t say that. . . .you’ll get in trouble”",
+                            "“Oh, you don’t mean that”",
+                            "“Whatever you’re upset about is not that big of a deal”"
+                        ]
+                    },
+                    {
+                        "do":"Be firm and set limits",
+                        "doBullets": [
+                            "“I will be willing to speak with you as soon as you lower your voice”",
+                            "“If you continue to ________, I will have to ask you to leave the room”",
+                            "“I am feeling uncomfortable with ________ and am going to have to ask you not to do that again”",
+                            "“I am unable to do ________.  If you would like to discuss this further, you can contact ________"
+                        ],
+                        "dont": "Blame, ridicule, or use sarcasm",
+                        "dontBullets": [
+                            "“It’s your own fault this happened”",
+                            "Maybe if you had done ________, things would be different”",
+                            "“You’re crazy”"
+                        ]
+                    },
+                    {
+                        "do":"Focus on resolving the situation",
+                        "doBullets": [
+                            "“Is there something that I can do to be helpful?”",
+                            "“I can connect you with resources to help – the University Counseling Center, tutoring, Financial Aid, an advisor, Housing, Replenish, the Registrar’s Office, etc.",
+                            "“What usually works for you when you’re feeling this upset?”"
+                        ],
+                        "dont": "Argue",
+                        "dontBullets": [
+                            "Remain calm. Raising your voice or arguing back can further escalate an already difficult situation"
+                        ]
+                    },
+                    {
+                        "do":"Act",
+                        "doBullets": [
+                            "File a Care Report if there is no immediate danger and you would like a member of the Division of Student Affairs staff to check-in with the person.",
+                            "Remove yourself from the situation and contact GVPD or 911 immediately if you are concerned for you safety or the safety of others at any time."
+                        ],
+                        "dont": "Wait to get help",
+                        "dontBullets": []
+                    }
+                ]
             },
             {
                 "subscript": "has",
@@ -67,8 +137,8 @@
                 "description": "",
                 "resourcesRelevant": [],
                 "videoLink": "",
-                "warningSigns": "",
-                "whatToDo": ""
+                "warningSigns": [],
+                "dosDonts": []
             },
             {
                 "subscript": "is otherwise a",
@@ -76,8 +146,8 @@
                 "description": "",
                 "resourcesRelevant": [],
                 "videoLink": "",
-                "warningSigns": "",
-                "whatToDo": ""
+                "warningSigns": [],
+                "dosDonts": []
             },
             {
                 "subscript": "says they have a",
@@ -85,8 +155,8 @@
                 "description": "",
                 "resourcesRelevant": [],
                 "videoLink": "",
-                "warningSigns": "",
-                "whatToDo": ""
+                "warningSigns": [],
+                "dosDonts": []
             }
         ]
     },
@@ -174,8 +244,50 @@
                 },
                 {
                     "body": "If the student lives on campus, call GVPD at 616-331-3266 to initiate a wellness check and/or connect the student with the on-call counselor"
-                } 
+                }
             ]
         }
+    },
+    "classRoomTechniques": {
+        "header": "As a higher education professional, you know that some stress is inevitable. In addition to academic stressors, many students experience financial insecurity, family distress, relationship issues, social biases, and physical and mental health conditions, among others.  It’s important to remember that while some stress is to be expected, stress that builds up over time can lead to more serious mental health concerns. The good news is that you can help students, right from your classroom. Consider incorporating the following:",
+        "techniques": [
+            {
+                "header": "Mindfulness Minute",
+                "body": "Mindfulness has been proven to reduce stress. Starting your class with a short 2:00 minute video can help students decrease stress and prepare for learning.\nhttps://www.youtube.com/watch?v=cEqZthCaMpo&feature=emb_title In addition, you can link to longer videos on blackboard or in your syllabus and encourage students to utilize them.\nhttps://www.youtube.com/watch?v=sG7DBA-mgFY&feature=emb_title\nhttps://www.youtube.com/watch?v=QS2yDmWk0vs&feature=emb_title",
+                "bullets": []
+            },
+            {
+                "header": "Syllabus Disclaimer",
+                "body": "A brief statement in your syllabus can show students that you are supportive of their mental health, while also introducing them to services and reducing stigma around seeking treatment. Below is an example of a statement to include in your syllabus:\n“Mental health concerns, including overwhelming stress, excessive worry, difficulty participating in daily activities, and changes in mood, appetite, or sleep patterns, can interfere with your academic performance. It is important to know that Grand Valley State University values your health and wellness and provides services to support your mental health on campus. If you are struggling with your mental health or are concerned for another member of our campus community, I urge you to reach out to the University Counseling Center for resources and available services:  University Counseling Center | (616) 331-3266 |  gvsu.edu/counsel",
+                "bullets": []
+            },
+            {
+                "header": "Brain Breaks",
+                "body": "When presented with new material and complicated topics, people retain information best when focused and calm.  Consider using brain breaks and focused-attention practices to positively impact students’ emotional wellness and readiness to learn.",
+                "bullets": [
+                    "Open up a space on blackboard where students can share funny videos, memes, pictures, or jokes. Then utilize this material to lighten the mood, and refocus attention in your class.",
+                    "Allow time and space for standing up and stretching in the middle of class.",
+                    "Utilize a deep breathing exercise at the beginning or middle of class, or before a big test [link: https://www.youtube.com/watch?v=cEqZthCaMpo&t=1s]"
+                ]
+            },
+            {
+                "header": "Mental Health Reminders",
+                "body": "Supporting students’ emotional well-being is campus-wide responsibility. By openly talking about mental health, you will play an important role in creating a healthier and safer campus community. This can be as simple as using phrases like:",
+                "bullets": [
+                    "“Midterms can be stressful. As you prepare, be sure to care of your yourself.  Take breaks, eat well, and stay connected with people you care about. And remember, there are services on campus that can help if you need it.”",
+                    "“Let’s take a few moments to “check in” with ourselves. This is a chance for each of us to recognize how we’re feeling and acknowledge any worries or concerns that we have.  How are you feeling?  What usually helps when you’re stressed/anxious/overwhelmed?  And who are your supports? Remember there are mental health services available to you if you’re struggling to manage.”"
+                ]
+            },
+            {
+                "header": "Self Care",
+                "body": "If you have a particularly stressful or difficult lesson planned, encourage students to take part in self-care prior to attending class.",
+                "bullets": [
+                    "Exercise - Exercise is important to both physical and mental health, boosting mood and reducing stress and anxiety.  Not everyone can make it to the gym, but you can encourage student to be active in a way that works for them, such as using online workout videos or exploring the outdoors by foot, wheelchair, bike, or whichever way works best for them!  * Link to Rec and Wellness here?",
+                    "Sleep - Remind students that sleep is vital to their physical and mental health.  Encourage students to create (and stick to!) a sleep routine.  Sometimes all-nighters can do more harm than good when it comes to retaining information and performing important tasks.  *  Link to a quality sleep hygiene page here?",
+                    "Nutrition - Healthy eating can keep our minds working and alert. There are options on campus to help students eat right for self-care. Remind students to fuel-up with healthy foods before a big test or when they have a long day ahead.  Those facing food insecurity can use the on-campus food pantry, Replenish, as well!  * Link to Campus Dining and Replenish",
+                    "Boundaries - A lot of students struggle to say “no” to family, friends, and opportunities for fun in college. Learning to say no can be difficult, but it is important for students to protect their time and energy. Empower students to say no for self-care!"
+                ]
+            }
+        ]
     }
 }

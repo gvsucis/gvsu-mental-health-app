@@ -21,17 +21,14 @@ export default class FAQView extends React.Component<Props> {
         const tiles = this.props.store.data.faqTiles
         const body = (
             <IonList lines="none">
-                <div className="view-body">
-                    {tiles.map((tile, idx) => {
-                        return (
-                            <ScrollTile label={tile.question} enableDropdown={true} key={idx}>
-                                {tile.answer}
-                            </ScrollTile>
-                        );
-                    })}
-                </div>
+                {tiles.map((tile, idx) => {
+                    return (
+                        <ScrollTile label={tile.question} enableDropdown={true} key={idx} >
+                            {tile.answer}
+                        </ScrollTile>
+                    );
+                })}
             </IonList>
-
         );
 
         return (
