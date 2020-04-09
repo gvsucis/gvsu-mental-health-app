@@ -5,7 +5,7 @@ import ScrollTile from "../components/scroll-tile"
 import Store from "../stores/store"
 import { GuideTile } from "../stores/models/data_models"
 import { IonList } from "@ionic/react"
-import Slides from "../components/horizontal-slides"
+import Slides, { Slide } from "../components/horizontal-slides"
 
 export interface ViewProps {
     store: Store
@@ -68,34 +68,36 @@ export default class GuideView extends React.Component<ViewProps> {
     }
 
     private renderDosDonts(tile: GuideTile) {
-        const ops = tile.dosDonts.map((item) => {
-            const doBull = item.doBullets.map((d) => {
+        const slides = tile.dosDonts.map((item, idx) => {
+            const doBull = item.doBullets.map((d, num) => {
                 return (
-                    <div>
+                    <div key={num}>
                         {d}
                     </div>
                 )
             })
-            const dontBull = item.dontBullets.map((d) => {
+            const dontBull = item.dontBullets.map((d, num) => {
                 return (
-                    <div>
+                    <div key={num}>
                         {d}
                     </div>
                 )
             })
             return (
-                <div>
-                    {item.do}
-                    {doBull}
-                    {item.dont}
-                    {dontBull}
-                </div>
+                {
+                    title: tile.label,
+                    body: (
+                        <div key={idx}>
+                            {item.do}
+                            {doBull}
+                            {item.dont}
+                            {dontBull}
+                        </div>
+                    )
+                }
             )
         })
-        const slides = {
-            label: "slides",
-            body: ops
-        }
+
         return (
             <div>
                 <IonList>

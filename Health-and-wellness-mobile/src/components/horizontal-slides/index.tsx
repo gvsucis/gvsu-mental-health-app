@@ -1,11 +1,16 @@
 import React from "react"
 import { IonSlides, IonSlide } from '@ionic/react'
 import ScrollTile from "../scroll-tile"
-import { ResourceTiles } from "../../stores/models/data_models"
 import "./index.scss"
+import Card from "../card"
+
+export interface Slide {
+    title?: string
+    body: JSX.Element
+}
 
 export interface SlideProps {
-    slides: Array<ResourceTiles>,
+    slides: Slide[],
     loop: boolean,
     slidesPerView: number,
 }
@@ -22,16 +27,18 @@ export default class Slides extends React.Component<SlideProps> {
             loop: loop,
             slidesPerView: slidesPerView,
         }
-        
+
         return (
             <IonSlides options={slidesOpts}>
                 {
-                    slides.map((slide, idx) => 
-                            <IonSlide key={idx}>
-                                <ScrollTile label={slide.label} fillWidth={true}>
-                                    {slide.body}
-                                </ScrollTile>
-                            </IonSlide>
+                    slides.map((slide, idx) =>
+                        <IonSlide key={idx}>
+                            <Card title="card" >
+                            </Card>
+                            {/* <ScrollTile label={slide.title || 'sample'} fillWidth={true}>
+                                {slide.body}
+                            </ScrollTile> */}
+                        </IonSlide>
                     )
                 }
             </IonSlides>

@@ -4,7 +4,6 @@ import { classNames } from "../../utils/system"
 import { observer } from 'mobx-react'
 import { observable } from 'mobx'
 import Modal from "../modal"
-import { ResourceTiles } from "../../stores/models/data_models"
 
 import './index.scss'
 
@@ -40,8 +39,6 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
       { name: "scroll-tile__home", include: homeView }
     ])
 
-    const arr: ResourceTiles[] = []
-
     const subscriptClass = subscript ? 'scroll-tile__heading' : ''
     const titleClass = homeView ? 'scroll-tile__home--title' : ''
 
@@ -69,7 +66,9 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
 
         {this.modalOpen ?
           <Modal showModal={true} onToggleModalVisible={this.handleClickScrollTile} header={label}>
-            {this.props.children}
+            <div className="scroll-tile__modal">
+              {this.props.children}
+            </div>
           </Modal> : null
         }
       </>

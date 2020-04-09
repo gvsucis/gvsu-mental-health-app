@@ -27,7 +27,7 @@ export interface Faq {
 
 export interface ResourceTiles {
     label: string
-    body: React.ReactElement
+    body: string
 }
 
 export interface EmergencyInfo {

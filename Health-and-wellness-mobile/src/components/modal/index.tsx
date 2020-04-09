@@ -24,20 +24,19 @@ export default class Modal extends React.Component<ModalProps> {
     public render() {
         return (
             <IonModal isOpen={this.props.showModal}>
-                {!this.props.forceModal ?
-                    <IonHeader>
-                        <div className="modal-header">
-                            <IonTitle>
-                                {this.props.header}
-                            </IonTitle>
-                            <Button onClick={this.toggleModalVisible(false)}>
-                                <IonIcon icon={close} />
-                            </Button>
-                        </div>
-                    </IonHeader> : null
-                }
-                {this.props.children}
-
+                    {!this.props.forceModal ?
+                        <IonHeader>
+                            <div className="modal-header">
+                                <IonTitle>
+                                    {this.props.header}
+                                </IonTitle>
+                                <Button onClick={this.toggleModalVisible(false)}>
+                                    <IonIcon icon={close} />
+                                </Button>
+                            </div>
+                        </IonHeader> : null
+                    }
+                    {this.props.children}
             </IonModal>
         )
     }

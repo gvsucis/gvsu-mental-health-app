@@ -34,3 +34,7 @@
 .scroll-tile__home--title {
     @include font-header();
 }
+
+.scroll-tile__modal {
+    overflow: auto;
+}
