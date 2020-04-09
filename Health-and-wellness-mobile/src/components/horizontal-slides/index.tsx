@@ -1,6 +1,5 @@
 import React from "react"
 import { IonSlides, IonSlide } from '@ionic/react'
-import "./index.scss"
 import Card from "../card"
 
 export interface Slide {

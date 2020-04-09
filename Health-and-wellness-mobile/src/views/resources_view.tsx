@@ -20,9 +20,7 @@ export default class ResourcesView extends React.Component<Props> {
   public render() {
     const body = (
       <>
-        <IonList lines="none">
           {this.renderBody()}
-        </IonList>
       </>
     )
     return (
