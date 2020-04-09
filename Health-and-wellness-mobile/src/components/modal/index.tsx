@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { IonModal, IonContent, IonIcon, IonHeader, IonTitle } from '@ionic/react'
+import { IonModal, IonIcon, IonHeader, IonTitle } from '@ionic/react'
 import { close } from 'ionicons/icons'
 import Button from '../button'
 

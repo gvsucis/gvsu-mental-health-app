@@ -38,7 +38,7 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
   }
 
   public render() {
-    const { label, fillWidth, enableModal, link, subscript, homeView } = this.props
+    const { label, fillWidth, link, subscript, homeView } = this.props
     const classes = classNames('scroll-tile', [
       { name: "scroll-tile--fill", include: fillWidth },
       { name: "scroll-tile__home", include: homeView }
@@ -64,6 +64,11 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
               <div className={titleClass}>{label}</div>
             </div>
           </IonRouterLink>
+          {this.dropdownOpen ?
+            <div>
+              {this.props.children}
+            </div> : null
+          }
         </div>
 
         {this.modalOpen ?
@@ -96,7 +101,7 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
       this.modalOpen = !this.modalOpen
     }
     else if (enableDropdown) {
-
+      this.dropdownOpen = !this.dropdownOpen
     }
   }
 }

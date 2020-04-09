@@ -3,7 +3,6 @@ import { IonSlides, IonSlide } from '@ionic/react'
 import ScrollTile from "../scroll-tile"
 import { ResourceTiles } from "../../stores/models/data_models"
 import "./index.scss"
-import Card from "../card-view"
 
 export interface SlideProps {
     slides: Array<ResourceTiles>,
@@ -27,8 +26,8 @@ export default class Slides extends React.Component<SlideProps> {
         return (
             <IonSlides options={slidesOpts}>
                 {
-                    slides.map((slide) => 
-                            <IonSlide>
+                    slides.map((slide, idx) => 
+                            <IonSlide key={idx}>
                                 <ScrollTile label={slide.label} fillWidth={true}>
                                     {slide.body}
                                 </ScrollTile>

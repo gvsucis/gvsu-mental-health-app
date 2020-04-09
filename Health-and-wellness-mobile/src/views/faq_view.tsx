@@ -1,6 +1,5 @@
 import React from 'react'
 import View from './view_models/view'
-import Card from '../components/card-view'
 import { IonList } from '@ionic/react'
 import ScrollTile from '../components/scroll-tile'
 import Store from '../stores/store'
@@ -23,10 +22,10 @@ export default class FAQView extends React.Component<Props> {
         const body = (
             <IonList lines="none">
                 <div className="view-body">
-                    {tiles.map((tile) => {
+                    {tiles.map((tile, idx) => {
                         return (
-                            <ScrollTile label={tile.question} enableModal={true} >
-                                <Card title={tile.answer} subtitle={tile.question} />
+                            <ScrollTile label={tile.question} enableDropdown={true} key={idx}>
+                                {tile.answer}
                             </ScrollTile>
                         );
                     })}

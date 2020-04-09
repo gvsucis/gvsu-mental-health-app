@@ -1,6 +1,5 @@
 import * as React from 'react'
-import { IonToolbar, IonHeader, IonTitle, IonPage, IonContent } from '@ionic/react'
-import { observable } from 'mobx'
+import { IonToolbar, IonHeader, IonPage, IonContent } from '@ionic/react'
 import { inject, observer } from 'mobx-react'
 import Store from '../../stores/store'
 import EmergencyButton from '../../components/emergency-button'

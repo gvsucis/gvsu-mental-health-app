@@ -5,7 +5,6 @@ import Store from "../../stores/store"
 import { EmergencyInfo } from "../../stores/models/data_models"
 
 import "./index.scss"
-import { IonContent } from "@ionic/react"
 
 export interface Props {
     onToggleVisible: (visible: boolean) => void
@@ -59,9 +58,9 @@ export default class EmergencyModal extends React.Component<Props> {
         const bullets = data.emergencyDescriptionBullets
         const footer = data.emergencyDescriptionFooter
 
-        const body = bullets.map((item) => {
+        const body = bullets.map((item, idx) => {
             return (
-                <div>
+                <div key={idx}>
                     {`- ${item}`}
                 </div>
             )
@@ -87,9 +86,12 @@ export default class EmergencyModal extends React.Component<Props> {
         const header = data.emergencyConcernHeader
         const bullets = data.emergencyConcernBullets
 
-        const body = bullets.map((item) => {
+        const body = bullets.map((item, idx) => {
             return (
-                `- ${item}`
+                <div key={idx}>
+                 `- ${item}`   
+                </div>
+                
             )
         })
 
@@ -106,9 +108,9 @@ export default class EmergencyModal extends React.Component<Props> {
     }
 
     private renderSection(info: EmergencyInfo) {
-        const body = (info.body.map((item) => {
+        const body = (info.body.map((item, idx) => {
             return (
-                <div>
+                <div key={idx}>
                     {`- ${item.body}`}
                 </div>
             )

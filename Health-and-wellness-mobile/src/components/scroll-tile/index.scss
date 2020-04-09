@@ -3,7 +3,7 @@
 .scroll-tile {
     border: 1px solid $panel;
     border-radius: $border-radius-lg;
-    margin: calc(3 * #{$pad-lg}) calc(8 * #{$pad-lg});
+    margin: calc(3 * #{$pad-lg}) calc(6 * #{$pad-lg});
 }
 
 .scroll-tile--fill {
