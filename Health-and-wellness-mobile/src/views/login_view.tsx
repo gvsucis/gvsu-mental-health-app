@@ -40,16 +40,12 @@ export default class LoginView extends React.Component<LoginViewProps> {
 
     private handleClickLogin = async () => {
         this.props.fbase.auth.onAuthStateChanged((user:any) =>{
-            console.log(user);
             if(user) {
-                console.log("user in");
                 this.props.toggleVisible();
             } else {
                 this.props.fbase.signIn().then((response) => {
-                    console.log("success");
                     this.props.toggleVisible();
                 }).catch((err) => {
-                    console.log("bad");
                     console.log(err);
                 });
             }
