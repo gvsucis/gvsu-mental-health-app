@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@ionic-native/call-number": "^5.23.0",
+    "@ionic-native/core": "^5.23.0",
     "@ionic/react": "^4.11.8",
     "@ionic/react-router": "^4.11.8",
     "@testing-library/jest-dom": "^4.2.4",

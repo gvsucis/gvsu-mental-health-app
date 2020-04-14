@@ -14,6 +14,7 @@ export interface ResourceSlideDockProps {
 }
 
 export default class ResourceSlideDock extends React.Component<ResourceSlideDockProps> {
+
     public static defaultProps = {
         loop: true,
         slidesPerView: 1
@@ -63,9 +64,11 @@ export default class ResourceSlideDock extends React.Component<ResourceSlideDock
                     </div> : null
                 }
                 {tile.phone ?
-                    <div>
-                        <IonIcon icon={call} className="resource-tile__icon" />
-                        {tile.phone}
+                    <div >
+                        <a href={`tel:+${tile.phone}`}>
+                            <IonIcon icon={call} className="resource-tile__icon" />
+                            {tile.phone}
+                        </a>
                     </div> : null
                 }
                 {tile.email ?
