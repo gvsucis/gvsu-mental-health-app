@@ -26,6 +26,10 @@ export default class View extends React.Component<ViewProps> {
         enableEmergencyModal: true
     }
 
+    public componentDidUpdate() {
+        console.log("logged in: ", this.props.store.preferences.hasLoggedin)
+    }
+
     public render() {
         const { title, body, enableEmergencyModal, store } = this.props
         return (
