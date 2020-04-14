@@ -1,9 +1,8 @@
 import React from "react"
 import { IonContent } from "@ionic/react"
 import Button from "../../src/components/button"
-import Input from "../components/input"
 import Store from "../stores/store"
-import { inject } from "mobx-react"
+import { inject, observer } from "mobx-react"
 import Firebase from '../components/firebase'
 
 import "./views.scss"
@@ -15,6 +14,7 @@ export interface LoginViewProps {
 }
 
 @inject('store')
+@observer
 export default class LoginView extends React.Component<LoginViewProps> {
 
     public static defaultProps = {
@@ -41,14 +41,14 @@ export default class LoginView extends React.Component<LoginViewProps> {
     private handleClickLogin = async () => {
         this.props.fbase.auth.onAuthStateChanged((user:any) =>{
             if(user) {
-                this.props.toggleVisible();
+                this.props.toggleVisible()
             } else {
-                this.props.fbase.signIn().then((response) => {
-                    this.props.toggleVisible();
+                this.props.fbase.signIn().then((_) => {
+                    this.props.toggleVisible()
                 }).catch((err) => {
-                    console.log(err);
-                });
+                    console.log(err)
+                })
             }
-        });
+        })
     }
 }

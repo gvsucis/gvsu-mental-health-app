@@ -29,7 +29,7 @@ export default class DataStore {
 
     public guideResourceTiles(tile: GuideTile) {
         return this.resourceTiles.filter((res) => (
-            tile.resourcesRelevant.some((item) => item === res.department)
+            tile.resourcesRelevant.some((item: string) => item === res.department)
         ))
     }
 
