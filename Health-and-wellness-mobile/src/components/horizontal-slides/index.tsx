@@ -29,12 +29,16 @@ export default class Slides extends React.Component<SlideProps> {
         return (
             <IonSlides options={slidesOpts}>
                 {
-                    slides.map((slide, idx) =>
-                        <IonSlide key={idx}>
-                            <Card title={slide.title || "card"} >
-                                {slide.body}
-                            </Card>
-                        </IonSlide>
+                    slides.map((slide, idx) => {
+                        const title = slide.title ? slide.title : undefined
+                        return (
+                            <IonSlide key={idx}>
+                                <Card title={title} >
+                                    {slide.body}
+                                </Card>
+                            </IonSlide>
+                        )
+                    }
                     )
                 }
             </IonSlides>

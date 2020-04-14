@@ -77,6 +77,7 @@
 }
 
 .guide-view__modal-header {
+    margin-top: $pad-lg;
     @include font-header();
 }
 
@@ -87,6 +88,10 @@
 .guide-view__modal-text {
     text-align: start;
     margin-bottom: $pad-lg;
+}
+
+.guide-view__modal-bullets {
+    margin-left: 3 * $pad-lg;
 }
 
 //Faq View

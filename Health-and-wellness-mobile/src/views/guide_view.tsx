@@ -54,7 +54,7 @@ export default class GuideView extends React.Component<ViewProps> {
                         {this.renderWarningSigns(tile)}
                     </div>
                     <div className="guide-view__modal-header">
-                        Do's and Dont's
+                        {"Do's & Don'ts"}
                     </div>
                     <div>
                         {this.renderDosDonts(tile)}
@@ -89,21 +89,20 @@ export default class GuideView extends React.Component<ViewProps> {
         const slides = tile.dosDonts.map((item, idx) => {
             const doBull = item.doBullets.map((d, num) => {
                 return (
-                    <div key={num}>
+                    <div key={num} className="guide-view__modal-bullets">
                         - {d}
                     </div>
                 )
             })
             const dontBull = item.dontBullets.map((d, num) => {
                 return (
-                    <div key={num}>
+                    <div key={num} className="guide-view__modal-bullets">
                         - {d}
                     </div>
                 )
             })
             return (
                 {
-                    title: tile.label,
                     body: (
                         <div key={idx}>
                             <div className="guide-view__modal-text">

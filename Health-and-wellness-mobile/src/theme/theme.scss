@@ -38,6 +38,7 @@ $border-radius-lg: 14px;
 
 @mixin font-header($size: 18px, $lineHeight: 25px) {
     @include font-regular($size, $lineHeight);
+    color: $primary;
 }
 
 @mixin font-sub-header($size: 18px, $lineHeight: 25px) {
