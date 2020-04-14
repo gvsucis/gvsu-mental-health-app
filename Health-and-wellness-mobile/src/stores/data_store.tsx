@@ -1,5 +1,5 @@
 import { computed } from 'mobx'
-import { GuideTile, HomeLinks, EmergencyInfo } from './models/data_models'
+import { GuideTile, HomeLinks, EmergencyInfo, FaqTile } from './models/data_models'
 
 import * as SystemData from '../stores/data.json'
 
@@ -51,7 +51,7 @@ export default class DataStore {
     }
 
     @computed
-    public get faqTiles() {
+    public get faqTiles(): FaqTile[] {
         return this.faqView.tiles
     }
 

@@ -20,9 +20,10 @@ export interface HomeLinks {
     link: string
 }
 
-export interface Faq {
+export interface FaqTile {
     question: string
     answer: string
+    bullets?: string[]
 }
 
 export interface ResourceTile {

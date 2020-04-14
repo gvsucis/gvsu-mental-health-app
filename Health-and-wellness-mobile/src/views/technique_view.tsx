@@ -22,7 +22,7 @@ export default class TechniqueView extends React.Component<Props> {
         const body = (
             <IonList lines="none">
                 <div>
-                    <div>
+                    <div className="technique-view__header">
                         {header}
                     </div>
                     {this.renderBody()}
@@ -48,7 +48,9 @@ export default class TechniqueView extends React.Component<Props> {
             return (
                 <ScrollTile label={item.header} enableModal={true} key={idx}>
                     <div className="views__modal">
-                        {item.body}
+                        <div className="technique-view__modal">
+                            {item.body}
+                        </div>
                         {bullets}
                     </div>
                 </ScrollTile>

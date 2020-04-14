@@ -3,7 +3,6 @@ import React from 'react'
 import { inject } from 'mobx-react'
 import Store from '../stores/store'
 import View from './view_models/view'
-import { IonList } from '@ionic/react'
 import ResourceSlideDock from '../components/resource_slider_dock'
 
 export interface Props {

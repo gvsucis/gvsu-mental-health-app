@@ -1,5 +1,6 @@
 @import '../theme/theme.scss';
 
+//Universal Styling
 .view__header {
     flex-grow: 1;
     overflow-wrap: break-word;
@@ -8,6 +9,15 @@
     padding: 0 calc(2 * #{$pad-lg});
 }
 
+.views__modal {
+    height: 100%;
+}
+
+.views__bullets {
+    margin: $pad-lg;
+}
+
+//Home View
 .home-view__wrappers {
     flex-grow: 1;
     
@@ -33,6 +43,7 @@
     }
 }
 
+//Login View
 .login-view {
     height: 100%;
     width: 100%;
@@ -56,14 +67,7 @@
     opacity: unset;
 }
 
-.views__modal {
-    height: 100%;
-}
-
-.views__bullets {
-    margin: $pad-lg;
-}
-
+//Guide View
 .guide-view__modal {
     padding: $pad-modal;
 }
@@ -83,4 +87,27 @@
 .guide-view__modal-text {
     text-align: start;
     margin-bottom: $pad-lg;
+}
+
+//Faq View
+.faq-view__dropdown {
+    padding: 2 * $pad-lg;
+}
+
+.faq-view__dropdown-section {
+    margin-top: 2 * $pad-lg;
+}
+
+.faq-view__dropdown-section--tabbed {
+    margin-left: 2 * $pad-lg;
+}
+
+//Techniques View
+
+.technique-view__header {
+    margin: 3 * $pad-lg;
+}
+
+.technique-view__modal {
+    margin: 3 * $pad-lg;
 }
