@@ -23,7 +23,6 @@ export interface HomeLinks {
 export interface FaqTile {
     question: string
     answer: string
-    bullets?: string[]
 }
 
 export interface ResourceTile {

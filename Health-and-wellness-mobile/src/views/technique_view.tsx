@@ -4,6 +4,7 @@ import { IonList } from '@ionic/react'
 import ScrollTile from '../components/scroll_tile'
 import Store from '../stores/store'
 import { inject } from 'mobx-react'
+import TextBlock from '../components/text_block'
 
 export interface Props {
     store: Store
@@ -38,20 +39,13 @@ export default class TechniqueView extends React.Component<Props> {
     private renderBody() {
         const techniques = this.props.store.data.techniqueBody
         return techniques.map((item, idx) => {
-            const bullets = item.bullets.map((bullet, num) => {
-                return (
-                    <div key={num} className="views__bullets">
-                        {bullet}
-                    </div>
-                )
-            })
+        
             return (
                 <ScrollTile label={item.header} enableModal={true} key={idx}>
                     <div className="views__modal">
                         <div className="technique-view__modal">
-                            {item.body}
+                            <TextBlock input={item.body}/>
                         </div>
-                        {bullets}
                     </div>
                 </ScrollTile>
             )
