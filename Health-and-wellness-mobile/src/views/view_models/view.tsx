@@ -62,7 +62,7 @@ export default class View extends React.Component<ViewProps> {
 
     private toggleLoginModal = () => {
         const { store } = this.props
-        store.preferences.toggleLoggedIn()
+        store.preferences.loginUser()
         this.forceUpdate()
     }
 }

@@ -30,7 +30,7 @@ export default class LoginView extends React.Component<LoginViewProps> {
                             GVSU Mental Health Resource Guide
                         </div>
                         <div className="login-view__login">
-                            <Button onClick={this.handleClickLogin} fillWidth={true}>Login With GVSU</Button>
+                            <Button onClick={this.handleClickLogin} fillWidth={true}>Login</Button>
                         </div>
                     </div>
                 </IonContent>
@@ -38,17 +38,19 @@ export default class LoginView extends React.Component<LoginViewProps> {
         )
     }
 
-    private handleClickLogin = async () => {
-        this.props.fbase.auth.onAuthStateChanged((user:any) =>{
-            if(user) {
-                this.props.toggleVisible()
-            } else {
-                this.props.fbase.signIn().then((_) => {
+    private handleClickLogin = () => {
+        if (!this.props.store.preferences.hasLoggedin) {
+            this.props.fbase.auth.onAuthStateChanged((user: any) => {
+                if (user) {
                     this.props.toggleVisible()
-                }).catch((err) => {
-                    console.log(err)
-                })
-            }
-        })
+                } else {
+                    this.props.fbase.signIn().then((_) => {
+                        this.props.toggleVisible()
+                    }).catch((err) => {
+                        console.log(err)
+                    })
+                }
+            })
+        }
     }
 }

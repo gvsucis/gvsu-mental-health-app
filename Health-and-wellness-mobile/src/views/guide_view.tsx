@@ -140,7 +140,6 @@ export default class GuideView extends React.Component<ViewProps> {
 
     private renderResources(tile: GuideTile) {
         const resources = this.props.store.data.guideResourceTiles(tile)
-        console.log("guide res", resources)
         return (
             <ResourceSlideDock resources={resources} />
         )
