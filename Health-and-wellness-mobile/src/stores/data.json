@@ -291,11 +291,16 @@
         "tiles": [
             {
                 "question": "If a student shares something in confidence, is it ok for me to tell someone else if I am concerned?",
-                "answer": "Many students turn to trusted faculty or staff when in distress or in need of support. And because they interact with students regularly, faculty or staff are often the first to observe concerning changes in students’ mood or behavior.  We know that it can be difficult to break confidence, which is why it is important to never promise a student confidentiality.  It is appropriate to consult with the University Counseling Center about concerns that arise, especially when those concerns involve student safety. Our clinical staff can provide you with information to help you address the situation on your own, or can instigate important next steps to ensure student well-being.  Ultimately, it is important to remember that information that students share with faculty and staff is not confidential, and that the UCC staff is available to assist if you are unsure of how to handle a student concern."
+                "answer": "Because they interact with students regularly, faculty and staff are often the first to notice concerning changes in students’ mood or behavior. It is appropriate to consult with the University Counseling Center about student mental health concerns that arise, especially when                those concerns involve student safety. This is not a breach of student confidentiality. Our clinical staff can provide you with information to address the situation on your own, or can instigate important next steps to ensure student well-being.",
+                "bullets": []
             },
             {
                 "question": "I want to make sure the student I reffered is safe/got help. Is this possible?",
-                "answer": "Due to legal and ethical requirements, and the confidential nature of the client/counselor relationship, the University Counseling Center staff cannot share whether or not a student attended a session or received mental health services. Depending on your role and the nature of your relationship with the student, it can be helpful to check in with them after making a referral. Consider asking: \n“How have things been going since we last talked?” \n“Did you have a chance to talk to anyone yet?”\nIt may also be appropriate to share your concerns about a student with the Dean of Students CARE Team by filing a Care Report [Link: www.gvsu.edu/care]. The CARE Team is able to follow-up with students, whereas the University Counseling Center is generally unable to make contact with a student who has not initiated services."
+                "answer": "As licensed healthcare professionals, the University Counseling Center staff cannot legally share whether a student attended a session or received mental health services. If appropriate to your role and/or the nature of your relationship with the student, we encourage you to check in with them after making a referral. Consider asking:",
+                "bullets": [
+                    "How have things been going since we last talked?",
+                    "Did you have a chance to talk to anyone yet?"
+                ]
             },
             {
                 "question": "What if I'm worried about someone who is not a student (myself, a faculty or staff member, etc.)?",
