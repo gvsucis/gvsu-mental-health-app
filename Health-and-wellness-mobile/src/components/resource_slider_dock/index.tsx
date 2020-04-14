@@ -65,7 +65,7 @@ export default class ResourceSlideDock extends React.Component<ResourceSlideDock
                 }
                 {tile.phone ?
                     <div >
-                        <a href={`tel:+${tile.phone}`}>
+                        <a href={`tel:${tile.phone}`}>
                             <IonIcon icon={call} className="resource-tile__icon" />
                             {tile.phone}
                         </a>
