@@ -69,10 +69,12 @@ export default class ResourceSlideDock extends React.Component<ResourceSlideDock
                     </div> : null
                 }
                 {tile.email ?
-                    <div>
-                        <IonIcon icon={mail} className="resource-tile__icon" />
-                        {tile.email}
-                    </div> : null
+                    <a href={`mailto:${tile.email}`}>
+                        <div>
+                            <IonIcon icon={mail} className="resource-tile__icon" />
+                            {tile.email}
+                        </div>
+                    </a> : null
                 }
             </div>
         )
