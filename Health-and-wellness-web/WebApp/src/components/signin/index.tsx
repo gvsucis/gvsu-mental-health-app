@@ -3,6 +3,9 @@ import {RouteComponentProps} from 'react-router-dom'
 import { withRouter } from 'react-router-dom';
 import Firebase, { FirebaseContext } from '../firebase';
 import { IonButton, IonInput } from '@ionic/react';
+import Store from '../../mobile_src/stores/store';
+import { inject } from 'mobx-react';
+import './index.scss'
 
 
 
@@ -11,26 +14,30 @@ export interface SignInProps {
     password?: string,
     error?: Error
     firebase: Firebase
+    store: Store
+    toggleRedirect: () => void
 }
 
 interface SignInState {
     email: string,
     password: string,
     error: any
+    store: any
 }
 
 const INITIAL_STATE = {
   email: '',
   password: '',
   error: null,
+  store: null
 };
 
-
+@inject('store')
 export default class SignInForm extends React.Component<SignInProps, SignInState> {
   
     constructor(props: any) {
         super(props);
-        this.state = { ...INITIAL_STATE };
+        this.state = { ...INITIAL_STATE};
         this.onSubmit = this.onSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
   }
@@ -58,7 +65,7 @@ export default class SignInForm extends React.Component<SignInProps, SignInState
     const { email, password, error } = this.state;
     const isInvalid = password === '' || email === '';
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} className="form">
         <IonInput
           name="email"
           value={email}
@@ -73,7 +80,7 @@ export default class SignInForm extends React.Component<SignInProps, SignInState
           type="password"
           placeholder="Password"
         />
-        <IonButton type="submit">
+        <IonButton type="submit" onClick={this.props.toggleRedirect}>
           Sign In
         </IonButton>
         {error && <p>{error.message}</p>}
@@ -83,14 +90,13 @@ export default class SignInForm extends React.Component<SignInProps, SignInState
 }
 
 //const SignIn = withRouter(SignInForm);
+// const SignInPage = (firebase: Firebase) => {
+//     return (<div>
+//       <h1>SignIn</h1>
+//       <FirebaseContext.Consumer>
+//         {firebase => <SignInForm firebase={firebase}/>}
+//       </FirebaseContext.Consumer>
+//     </div>);
+//   };
 
-const SignInPage = (firebase: Firebase) => (
-  <div>
-    <h1>SignIn</h1>
-    <FirebaseContext.Consumer>
-    {firebase => <SignInForm firebase={firebase}/>}
-    </FirebaseContext.Consumer>
-  </div>
-);
-
-export {SignInPage};
+//export {SignInPage};

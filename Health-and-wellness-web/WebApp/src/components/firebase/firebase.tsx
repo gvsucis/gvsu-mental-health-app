@@ -18,7 +18,7 @@ const firebaseConfig = {
   
 
 
-export default class Firebase {
+  export default class Firebase {
     public auth: any;
     public constructor(){
         firebase.initializeApp(firebaseConfig);
