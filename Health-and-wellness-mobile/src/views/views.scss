@@ -50,6 +50,10 @@
     overflow: hidden;
 }
 
+.login-view__header {
+    color: $primary-text;
+}
+
 .login-view__background {
     height: 100%;
     background-image: url("../assets/gv.jpg");

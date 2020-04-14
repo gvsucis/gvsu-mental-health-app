@@ -26,7 +26,7 @@ export default class LoginView extends React.Component<LoginViewProps> {
             <div className="login-view">
                 <IonContent className="content">
                     <div className="login-view__background">
-                        <div className="view__header" >
+                        <div className="view__header login-view__header" >
                             GVSU Mental Health Resource Guide
                         </div>
                         <div className="login-view__login">
