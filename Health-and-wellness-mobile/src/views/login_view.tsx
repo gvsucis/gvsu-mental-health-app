@@ -30,7 +30,7 @@ export default class LoginView extends React.Component<LoginViewProps> {
                             GVSU Mental Health Resource Guide
                         </div>
                         <div className="login-view__login">
-                            <Button onClick={this.handleClickLogin} fillWidth={true}>Login</Button>
+                            <Button onClick={this.handleClickLogin} fillWidth={true}>Login With GVSU</Button>
                         </div>
                     </div>
                 </IonContent>

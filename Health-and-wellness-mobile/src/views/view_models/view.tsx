@@ -8,7 +8,7 @@ import LoginView from '../login_view'
 import SearchBar from '../../components/search_bar'
 
 import "./view.scss"
-import Firebase, { FirebaseContext } from '../../components/firebase'
+import { FirebaseContext } from '../../components/firebase'
 
 export interface ViewProps {
     title: string

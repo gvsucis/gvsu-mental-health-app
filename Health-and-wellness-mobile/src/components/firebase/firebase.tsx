@@ -1,27 +1,24 @@
 import * as firebase from "firebase/app"
 import "firebase/auth"
-import {User} from '@firebase/auth-types'
 require('dotenv').config();
 
 const firebaseConfig = {
-    apiKey: process.env.REACT_APP_API_KEY,
-    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-    databaseURL: process.env.REACT_APP_DATABASE_URL,
-    projectId: process.env.REACT_APP_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_MESSAGIN_SENDER_ID,
-    appId: process.env.REACT_APP_APP_ID,
-    measurementId: process.env.REACT_APP_MEASUREMENT_ID
-  }
-  
-
+    apiKey: 'AIzaSyB0kG4XlVGC5l2PGKSkbDDGm9gFkcMuaxo',
+    authDomain: 'testcapstone-8156c.firebaseapp.com',
+    databaseURL: 'https://testcapstone-8156c.firebaseio.com',
+    projectId: 'testcapstone-8156c',
+    storageBucket: 'testcapstone-8156c.appspot.com',
+    messagingSenderId: '492405959886',
+    appId: '3edbfdc565bdc53851f49f',
+    measurementId: 'G-28ESPY34RD'
+}
 
 export default class Firebase {
     public auth: any;
     public provider: firebase.auth.GoogleAuthProvider;
-    public constructor(){
+    public constructor() {
         firebase.initializeApp(firebaseConfig);
-        
+
         this.auth = firebase.auth();
         this.provider = new firebase.auth.GoogleAuthProvider();
         this.provider.setCustomParameters({
@@ -29,7 +26,7 @@ export default class Firebase {
         });
     }
 
-    public signIn = async (): Promise<firebase.auth.UserCredential> =>{
+    public signIn = async (): Promise<firebase.auth.UserCredential> => {
         return this.auth.signInWithPopup(this.provider);
     }
 
