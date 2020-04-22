@@ -28,7 +28,7 @@ export default class Input extends React.Component<InputProps> {
     }
 
     public render() {
-        const { type, color, required, value, inputmode, disabled, className, autofocus} = this.props;
+        const { type, color, required, inputmode, disabled, className, autofocus} = this.props;
         
         const inputClass = classNames('input-wrapper', 
         [{ name: className!, include: className !== null || className !== undefined}]

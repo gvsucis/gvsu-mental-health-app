@@ -6,7 +6,6 @@ export function getData() {
     axios.get(server)
     .then(response => {
         fs.writeFile('data.json', response, (err) => {
-            console.log("Updated file")
         });
     });
 }

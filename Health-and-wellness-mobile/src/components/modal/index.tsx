@@ -1,43 +1,52 @@
 
 import React from 'react'
-import { IonModal, IonContent, IonButton } from '@ionic/react'
-
-import './index.scss'
+import { IonModal, IonIcon, IonHeader, IonTitle } from '@ionic/react'
+import { close } from 'ionicons/icons'
 import Button from '../button'
 
+import './index.scss'
+
 export interface ModalProps {
+    header: string
     showModal: boolean
     forceModal: boolean
-    onToggleModalVisible: (visible: boolean) => void
+    onToggleModalVisible?: (visible: boolean) => void
 }
 
 export default class Modal extends React.Component<ModalProps> {
 
     public static defaultProps = {
+        header: "Sample",
         showModal: false,
         forceModal: false,
-        onToggleModalVisible: () => { }
     }
 
     public render() {
         return (
-            <IonContent>
-                <IonModal isOpen={this.props.showModal}>
-                    {this.props.children}
+            <IonModal isOpen={this.props.showModal}>
                     {!this.props.forceModal ?
-                        <Button onClick={this.toggleModalVisible(false)}>
-                            Close Modal
-                    </Button> : null
+                        <IonHeader>
+                            <div className="modal-header">
+                                <IonTitle>
+                                    {this.props.header}
+                                </IonTitle>
+                                <Button onClick={this.toggleModalVisible(false)}>
+                                    <IonIcon icon={close} />
+                                </Button>
+                            </div>
+                        </IonHeader> : null
                     }
-                </IonModal>
-            </IonContent>
+                    {this.props.children}
+            </IonModal>
         )
     }
 
     private toggleModalVisible = (visible: boolean) => {
         const { onToggleModalVisible } = this.props
         return (() => {
-            onToggleModalVisible(visible)
+            if (onToggleModalVisible) {
+                onToggleModalVisible(visible)
+            }
         })
     }
 

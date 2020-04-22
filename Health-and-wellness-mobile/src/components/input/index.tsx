@@ -1,7 +1,7 @@
 import React from "react"
+import { IonInput } from "@ionic/react"
 
 import './index.scss'
-import { IonInput } from "@ionic/react"
 
 export type InputType = 'password' | 'email'
 

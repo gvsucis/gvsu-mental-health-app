@@ -10,8 +10,8 @@ import {
   IonTabs
 } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
-import { apps, flash } from 'ionicons/icons'
-import { Resources, Home, Guide, FAQ } from './views/tabs'
+import { apps, home, aperture, help, square } from 'ionicons/icons'
+import { Resources, Home, Guide, FAQ, Techniques } from './views/tabs'
 
 import { Provider } from "mobx-react"
 import { create } from "mobx-persist"
@@ -24,13 +24,7 @@ import '@ionic/react/css/normalize.css'
 import '@ionic/react/css/structure.css'
 import '@ionic/react/css/typography.css'
 
-/* Optional CSS utils that can be commented out */
-import '@ionic/react/css/padding.css'
-import '@ionic/react/css/float-elements.css'
-import '@ionic/react/css/text-alignment.css'
-import '@ionic/react/css/text-transformation.css'
-import '@ionic/react/css/flex-utils.css'
-import '@ionic/react/css/display.css'
+
 
 /* Theme variables */
 import './theme/variables.scss'
@@ -62,24 +56,29 @@ const App: React.FC = () => {
               <Route path="/guide" component={Guide}/>
               <Route path="/faq" component={FAQ} />
               <Route path="/resources" component={Resources} exact={true} />
+              <Route path="/techniques" component={Techniques} />
               <Redirect exact from="/" to="/home" />
             </IonRouterOutlet>
               <IonTabBar slot="bottom">
                 <IonTabButton tab="Home" href="/home">
-                  <IonIcon icon={apps} />
+                  <IonIcon icon={home} />
                   <IonLabel>Home</IonLabel>
                 </IonTabButton>
                 <IonTabButton tab="Guide" href="/guide">
                   <IonIcon icon={apps} />
                   <IonLabel>Guide</IonLabel>
                 </IonTabButton>
-                <IonTabButton tab="Resources" href="/resources">
-                  <IonIcon icon={flash} />
-                  <IonLabel>Resources</IonLabel>
+                <IonTabButton tab="Techniques" href="/techniques">
+                  <IonIcon icon={aperture} />
+                  <IonLabel>Techniques</IonLabel>
                 </IonTabButton>
                 <IonTabButton tab="FAQ" href="/faq">
-                  <IonIcon icon={apps} />
+                  <IonIcon icon={help} />
                   <IonLabel>FAQ</IonLabel>
+                </IonTabButton>
+                <IonTabButton tab="Resources" href="/resources">
+                  <IonIcon icon={square} />
+                  <IonLabel>Resources</IonLabel>
                 </IonTabButton>
               </IonTabBar>
           </IonTabs>

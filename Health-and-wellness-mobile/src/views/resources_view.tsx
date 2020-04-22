@@ -1,15 +1,12 @@
 
 import React from 'react'
-import View from './view_models/view'
-import { IonList } from '@ionic/react'
-import InfiniteScroll from '../components/infinite-scroll'
-import Slides from '../components/horizontal-slides'
-import Store from '../stores/store'
-import { ResourceTiles } from '../stores/models/data_models'
 import { inject } from 'mobx-react'
+import Store from '../stores/store'
+import View from './view_models/view'
+import ResourceSlideDock from '../components/resource_slider_dock'
 
 export interface Props {
-  store: Store  
+  store: Store
 }
 
 @inject("store")
@@ -22,11 +19,7 @@ export default class ResourcesView extends React.Component<Props> {
   public render() {
     const body = (
       <>
-        <IonList lines="none">
-          <div className="view-body">
-            {this.renderBody()}
-          </div>
-        </IonList>
+        {this.renderBody()}
       </>
     )
     return (
@@ -35,18 +28,10 @@ export default class ResourcesView extends React.Component<Props> {
   }
 
   private renderBody() {
-    const tiles: ResourceTiles[] = this.props.store.data.resourceTiles
-
+    const data = this.props.store.data.resourceTiles
     return (
-      <><IonList>
-        <Slides slides={tiles} />
-      </IonList>
-        <InfiniteScroll threshold={'100px'} infinite={this.onInfinite} />
-      </>)
-
-  }
-  private onInfinite = (e: CustomEvent<void>) => {
-    (e.target as HTMLIonInfiniteScrollElement).complete()
-  }
+      <ResourceSlideDock resources={data} resourceView={true} />
+    )
+  }  
 }
 
