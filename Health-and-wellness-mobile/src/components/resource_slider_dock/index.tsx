@@ -1,16 +1,20 @@
 import React from "react"
-import { ResourceTile } from "../../stores/models/data_models"
+import { ResourceTile, GuideTileInfo } from "../../stores/models/data_models"
 import { IonList, IonImg, IonRouterLink, IonIcon } from "@ionic/react"
 import Slides from "../horizontal-slides"
 import InfiniteScroll from "../infinite-scroll"
 import gv from "../../assets/gv_placeholder_logo.jpg"
 import { call, link, mail } from 'ionicons/icons'
-
+import TextBlock from "../text_block"
+import ScrollTile from "../scroll_tile"
 
 import "./index.scss"
 
 export interface ResourceSlideDockProps {
     resources: ResourceTile[]
+    tile?: GuideTileInfo
+    resourceView?: boolean
+    onCloseModal?: () => void
 }
 
 export default class ResourceSlideDock extends React.Component<ResourceSlideDockProps> {
@@ -29,11 +33,23 @@ export default class ResourceSlideDock extends React.Component<ResourceSlideDock
                     <>
                         {this.renderImage(item)}
                         {this.renderContact(item)}
+                        {this.renderBody(item)}
                     </>
                 )
             }
             )
         })
+        if (!this.props.resourceView) {
+            slides.push({
+                title: "Other Resources",
+                body: (
+                    <>
+                        <IonImg className="resource-tile__image" src={gv} />
+                        <ScrollTile open={false} label="All Resources" link="/resources" onClick={this.handleClickAllResources} />
+                    </>
+                )
+            })
+        }
 
         return (
             <div>
@@ -60,7 +76,7 @@ export default class ResourceSlideDock extends React.Component<ResourceSlideDock
                         <IonIcon className="resource-tile__icon" icon={link} />
                         <IonRouterLink href={tile.link} >
                             Visit site
-                </IonRouterLink>
+                        </IonRouterLink>
                     </div> : null
                 }
                 {tile.phone ?
@@ -81,6 +97,25 @@ export default class ResourceSlideDock extends React.Component<ResourceSlideDock
                 }
             </div>
         )
+    }
+
+    private renderBody(item: ResourceTile) {
+        const { tile } = this.props
+        if (!tile) {
+            return
+        }
+        const resource = tile.resourcesRelevant.find((t) => t.name === item.department)
+        const input = resource ? resource.body : ""
+        return (
+            <TextBlock input={input} />
+        )
+    }
+
+    private handleClickAllResources = () => {
+        const { onCloseModal } = this.props
+        if (onCloseModal) {
+            onCloseModal()
+        }
     }
 
     private onInfinite = (e: CustomEvent<void>) => {

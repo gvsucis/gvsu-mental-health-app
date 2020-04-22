@@ -77,7 +77,8 @@
 }
 
 .guide-view__warning-signs {
-    padding: $pad-md 0;
+    padding-left: 3 * $pad-lg;
+    padding-top: $pad-sm;
 }
 
 .guide-view__modal-header {

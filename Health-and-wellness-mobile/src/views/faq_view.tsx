@@ -4,7 +4,7 @@ import View from './view_models/view'
 import { IonList } from '@ionic/react'
 import ScrollTile from '../components/scroll_tile'
 import Store from '../stores/store'
-import { FaqTile } from '../stores/models/data_models'
+import { FaqInfo } from '../stores/models/data_models'
 import TextBlock from '../components/text_block'
 
 import './views.scss'
@@ -13,8 +13,22 @@ export interface Props {
     store: Store
 }
 
+export interface FaqTile {
+    info: FaqInfo
+    open: boolean
+}
+
 @inject("store")
 export default class FAQView extends React.Component<Props> {
+
+    private tiles: FaqTile[] = this.props.store.data.faqTiles.map((item) => {
+        return (
+            {
+                info: item,
+                open: false
+            }
+        )
+    })
 
     public static defaultProps = {
         store: null
@@ -22,14 +36,13 @@ export default class FAQView extends React.Component<Props> {
 
     public render() {
 
-        const tiles: FaqTile[] = this.props.store.data.faqTiles
         const body = (
             <IonList lines="none">
-                {tiles.map((tile, idx) => {
+                {this.tiles.map((tile, idx) => {
                     return (
-                        <ScrollTile label={tile.question} enableDropdown={true} key={idx} >
+                        <ScrollTile open={tile.open} label={tile.info.question} enableDropdown={true} key={idx} >
                             <div className="faq-view__dropdown">
-                                <TextBlock input={tile.answer}/>
+                                <TextBlock input={tile.info.answer}/>
                             </div>
                         </ScrollTile>
                     );

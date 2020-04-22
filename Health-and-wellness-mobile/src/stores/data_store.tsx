@@ -1,5 +1,5 @@
 import { computed } from 'mobx'
-import { GuideTile, HomeLinks, EmergencyInfo, FaqTile } from './models/data_models'
+import { GuideTileInfo, HomeLinks, EmergencyInfo, FaqInfo, TechniqueInfo } from './models/data_models'
 
 import * as SystemData from '../stores/data.json'
 
@@ -23,13 +23,13 @@ export default class DataStore {
     }
 
     @computed
-    public get guideTiles(): GuideTile[] {
+    public get guideInfo(): GuideTileInfo[] {
         return this.guideView.tiles
     }
 
-    public guideResourceTiles(tile: GuideTile) {
+    public guideResourceTiles(tile: GuideTileInfo) {
         return this.resourceTiles.filter((res) => (
-            tile.resourcesRelevant.some((item: string) => item === res.department)
+            tile.resourcesRelevant.some((item) => item.name === res.department)
         ))
     }
 
@@ -51,7 +51,7 @@ export default class DataStore {
     }
 
     @computed
-    public get faqTiles(): FaqTile[] {
+    public get faqTiles(): FaqInfo[] {
         return this.faqView.tiles
     }
 
@@ -99,17 +99,7 @@ export default class DataStore {
     //technique view elements
 
     @computed
-    public get techniqueView() {
+    public get techniqueView(): TechniqueInfo {
         return SystemData.classRoomTechniques
-    }
-
-    @computed
-    public get techniqueHeader() {
-        return this.techniqueView.header
-    }
-
-    @computed
-    public get techniqueBody() {
-        return this.techniqueView.techniques
     }
 }

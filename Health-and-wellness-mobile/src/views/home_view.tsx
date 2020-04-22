@@ -27,15 +27,15 @@ export default class HomeView extends React.Component<ViewProps> {
         const body = (
             <div className="home-view">
                 <div className="home-view__wrappers">
-                    <ScrollTile label={tiles[0].label} link={tiles[0].link} homeView={true} />
-                    <ScrollTile label={tiles[2].label} link={tiles[2].link} homeView={true}
+                    <ScrollTile open={false} label={tiles[0].label} link={tiles[0].link} homeView={true} />
+                    <ScrollTile open={false} label={tiles[2].label} link={tiles[2].link} homeView={true}
                         onClick={this.openEmergencyModal} />
                 </div>
                 <div className="home-view__wrappers ">
-                    <ScrollTile label={tiles[1].label} link={tiles[1].link} homeView={true} />
+                    <ScrollTile open={false} label={tiles[1].label} link={tiles[1].link} homeView={true} />
                     <div className="home-view__dock">
-                        <ScrollTile label={tiles[3].label} link={tiles[3].link} homeView={true} />
-                        <ScrollTile label={tiles[4].label} link={tiles[4].link} homeView={true} />
+                        <ScrollTile open={false} label={tiles[3].label} link={tiles[3].link} homeView={true} />
+                        <ScrollTile open={false} label={tiles[4].label} link={tiles[4].link} homeView={true} />
                     </div>
                 </div>
                 {this.emergencyModalOpen ?

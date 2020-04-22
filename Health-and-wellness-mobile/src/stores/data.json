@@ -31,8 +31,21 @@
                 "description": "Anxiety is defined as..... but may be also be related to (synonyms)",
                 "resourcesRelevant": [],
                 "videoLink": "",
-                "warningSigns": [],
-                "dosDonts": []
+                "warningSigns": {
+                    "primaryHeader": "",
+                    "primarySigns": [
+                        ""
+                    ],
+                    "secondaryHeader": "",
+                    "secondarySigns": [
+                        ""
+                    ]
+                },
+                "dosDonts": [],
+                "body": {
+                    "header": "IF SOMEONE IS HAVING A PANIC ATTACK:",
+                    "body": "Stay calm\n- Getting anxious or upset yourself will only exacerbate the situation.\n Help the student regulate their breathing\n- Model regulated breathing by asking them to slowly breathe in and out with you\n-   Encourage them to breathe in for 4 seconds, hold for 4 seconds, breathe out for 4 seconds, hold     for 4 seconds and repeat.  This is called box breathing.\nEncourage them to use grounding techniques\n-    Have the student sit down in a chair with their feet on the floor.  Offer the student a glass of water, if able.  One of the following grounding techniques may also be helpful:\n-Ask them to describe an object in the room in great detail.  It might be an object that they hold or one that they can see.                     -    Gently encourage them identify 5 things that they can see, 4 things that they can feel, 3 things that they can hear, 2 things that they can smell, and 1 thing that they can taste as a way to recenter their attention.\nSay these reassuring things\n- “You can get through this”\n- “Just concentrate on your breathing”- “Stay in the present”\n- “This feeling will not last forever”\n- “You are safe”\nConnect with help\n-    If the student is in need of immediate assistance, connect with available emergency services using the “I Have an Emergency” button below.\n- If the student is not in immediate assistance, below are additional campus resources that may be helpful.\n"
+                }
             },
             {
                 "subscript": "may be",
@@ -40,7 +53,16 @@
                 "description": "",
                 "resourcesRelevant": [],
                 "videoLink": "",
-                "warningSigns": [],
+                "warningSigns": {
+                    "primaryHeader": "",
+                    "primarySigns": [
+                        ""
+                    ],
+                    "secondaryHeader": "",
+                    "secondarySigns": [
+                        ""
+                    ]
+                },
                 "dosDonts": []
             },
             {
@@ -49,7 +71,16 @@
                 "description": "",
                 "resourcesRelevant": [],
                 "videoLink": "",
-                "warningSigns": [],
+                "warningSigns": {
+                    "primaryHeader": "",
+                    "primarySigns": [
+                        ""
+                    ],
+                    "secondaryHeader": "",
+                    "secondarySigns": [
+                        ""
+                    ]
+                },
                 "dosDonts": []
             },
             {
@@ -57,24 +88,42 @@
                 "label": "Threatening/Harm Others",
                 "description": "Campus safety has moved into the foreground at academic institutions across the country.  Recent events and the constant streaming of tragedies from around globe have heightened fears for many.  While it is impossible to accurately predict who might act on concerning behaviors, research has found some commonalities among those are threatening or might otherwise cause harm to others.  It is important to note that alone, or even in combination, many of the warning signs below are not directly related to risk.  Use your judgement, reach out for help when needed, and err on the side of your safety and the safety of the campus community.",
                 "resourcesRelevant": [
-                    "University Counseling Center",
-                    "Dean of Students",
-                    "GVPD non-emergency"
+                    {
+                        "name": "University Counseling Center",
+                        "body": ""
+                    },
+                    {
+                        "name":  "Dean of Students",
+                        "body": ""
+                    },
+                    {
+                        "name": "GVPD non-emergency",
+                        "body": "The Grand Valley Police Department and other local law enforcement authorities are available to assist if you are feeling threatened or are concerned for your safety or the safety of the campus community.\n- GVPD\n- Pew Campus Security\n- 911"
+                    }
                 ],
                 "videoLink": "",
-                "warningSigns": [
-                    "Expresses feelings of anger, rage, or persecution toward a person, group, or society in general",
-                    "Engages in concerning behaviors, such as acquiring weapons, breaking laws, or taking risks with their lives or the lives of others",
-                    "Threatens violence or shares thoughts of violence against others",
-                    "Is withdrawn or socially isolated",
-                    "Seems depressed, or their mood has otherwise changed significantly",
-                    "Yells at or otherwise attempts to intimidate others",
-                    "Have a history of violence against people or animals",
-                    "Have a history of conflict with authority"
-                ],
+                "warningSigns": {
+                    "primaryHeader": "If someone is behaving in a threatening way or at risk of harming others, you might notice that the person:",
+                    "primarySigns": [
+                        "Expresses feelings of anger, rage, or persecution toward a person, group, or society in general",
+                        "Engages in concerning behaviors, such as acquiring weapons, breaking laws, or taking risks with their lives or the lives of others",
+                        "Threatens violence or shares thoughts of violence against others",
+                        "Is withdrawn or socially isolated",
+                        "Seems depressed, or their mood has otherwise changed significantly",
+                        "Yells at or otherwise attempts to intimidate others",
+                        "Have a history of violence against people or animals",
+                        "Have a history of conflict with authority"
+                    ],
+                    "secondaryHeader": "The person may also",
+                    "secondarySigns": [
+                        "Have a history of violence against people or animals",
+                        "Have a history of conflict with authority",
+                        "Abuse substances"
+                    ]
+                },
                 "dosDonts": [
                     {
-                        "do":"If the person becomes threatening or does not de-escalate, immediately remove yourself from the situation and contact GVPD or 911.",
+                        "do": "If the person becomes threatening or does not de-escalate, immediately remove yourself from the situation and contact GVPD or 911.",
                         "doBullets": [
                             "If the person de-escalates, refer to the following DOs and DONTs."
                         ],
@@ -84,7 +133,7 @@
                         ]
                     },
                     {
-                        "do":"Allow the student to tell you what they are feeling, even if you disagree or are concerned by it",
+                        "do": "Allow the student to tell you what they are feeling, even if you disagree or are concerned by it",
                         "doBullets": [
                             "“I hear that you are feeling ________”",
                             "“I’m sorry that you feel ________”",
@@ -98,7 +147,7 @@
                         ]
                     },
                     {
-                        "do":"Be firm and set limits",
+                        "do": "Be firm and set limits",
                         "doBullets": [
                             "“I will be willing to speak with you as soon as you lower your voice”",
                             "“If you continue to ________, I will have to ask you to leave the room”",
@@ -113,7 +162,7 @@
                         ]
                     },
                     {
-                        "do":"Focus on resolving the situation",
+                        "do": "Focus on resolving the situation",
                         "doBullets": [
                             "“Is there something that I can do to be helpful?”",
                             "“I can connect you with resources to help – the University Counseling Center, tutoring, Financial Aid, an advisor, Housing, Replenish, the Registrar’s Office, etc.",
@@ -125,7 +174,7 @@
                         ]
                     },
                     {
-                        "do":"Act",
+                        "do": "Act",
                         "doBullets": [
                             "File a Care Report if there is no immediate danger and you would like a member of the Division of Student Affairs staff to check-in with the person.",
                             "Remove yourself from the situation and contact GVPD or 911 immediately if you are concerned for you safety or the safety of others at any time."
@@ -141,7 +190,16 @@
                 "description": "",
                 "resourcesRelevant": [],
                 "videoLink": "",
-                "warningSigns": [],
+                "warningSigns": {
+                    "primaryHeader": "",
+                    "primarySigns": [
+                        ""
+                    ],
+                    "secondaryHeader": "",
+                    "secondarySigns": [
+                        ""
+                    ]
+                },
                 "dosDonts": []
             },
             {
@@ -150,7 +208,16 @@
                 "description": "",
                 "resourcesRelevant": [],
                 "videoLink": "",
-                "warningSigns": [],
+                "warningSigns": {
+                    "primaryHeader": "",
+                    "primarySigns": [
+                        ""
+                    ],
+                    "secondaryHeader": "",
+                    "secondarySigns": [
+                        ""
+                    ]
+                },
                 "dosDonts": []
             },
             {
@@ -159,7 +226,16 @@
                 "description": "",
                 "resourcesRelevant": [],
                 "videoLink": "",
-                "warningSigns": [],
+                "warningSigns": {
+                    "primaryHeader": "",
+                    "primarySigns": [
+                        ""
+                    ],
+                    "secondaryHeader": "",
+                    "secondarySigns": [
+                        ""
+                    ]
+                },
                 "dosDonts": []
             }
         ]

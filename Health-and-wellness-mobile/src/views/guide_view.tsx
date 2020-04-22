@@ -3,19 +3,33 @@ import { inject, observer } from "mobx-react"
 import View from "./view_models/view"
 import ScrollTile from "../components/scroll_tile"
 import Store from "../stores/store"
-import { GuideTile } from "../stores/models/data_models"
+import { GuideTileInfo } from "../stores/models/data_models"
 import { IonList } from "@ionic/react"
 import Slides from "../components/horizontal-slides"
 import InfiniteScroll from "../components/infinite-scroll"
 import ResourceSlideDock from "../components/resource_slider_dock"
+import TextBlock from "../components/text_block"
+import { observable, action } from "mobx"
 
 export interface ViewProps {
     store: Store
 }
 
+export interface GuideTile {
+    info: GuideTileInfo
+    open: boolean
+}
+
 @inject('store')
 @observer
 export default class GuideView extends React.Component<ViewProps> {
+
+    @observable private tiles: GuideTile[] = this.props.store.data.guideInfo.map((item) => {
+        return ({
+            info: item,
+            open: false
+        })
+    })
 
     public static defaultProps = {
         store: null
@@ -33,31 +47,30 @@ export default class GuideView extends React.Component<ViewProps> {
     }
 
     private renderGuideTiles() {
-        const { store } = this.props
-        const tiles = store.data.guideTiles
-        return tiles.map((tile, idx) => {
+        return this.tiles.map((tile, idx) => {
             return (
-                <ScrollTile subscript={tile.subscript} label={tile.label} enableModal={true} key={idx}>
+                <ScrollTile open={tile.open} subscript={tile.info.subscript} label={tile.info.label}
+                    enableModal={true} key={idx} onToggleOpen={this.handleToggleModal(tile)}>
                     <div className="guide-view__modal-header">
                         Description
                     </div>
                     <div className="guide-view__modal">
-                        {tile.description}
+                        {tile.info.description}
                     </div>
                     <div>
-                        {this.renderVideo(tile)}
+                        {this.renderVideo(tile.info)}
                     </div>
                     <div className="guide-view__modal-header">
                         Warning Signs
                     </div>
                     <div className="guide-view__modal">
-                        {this.renderWarningSigns(tile)}
+                        {this.renderWarningSigns(tile.info)}
                     </div>
                     <div className="guide-view__modal-header">
                         {"Do's & Don'ts"}
                     </div>
                     <div>
-                        {this.renderDosDonts(tile)}
+                        {this.renderDosDonts(tile.info)}
                     </div>
                     <div className="guide-view__modal-header">
                         Relevant Resources
@@ -65,27 +78,58 @@ export default class GuideView extends React.Component<ViewProps> {
                     <div>
                         {this.renderResources(tile)}
                     </div>
-
+                    <div>
+                        {this.renderBody(tile.info)}
+                    </div>
                 </ScrollTile>
             )
         })
     }
 
-    private renderVideo(tile: GuideTile) {
+    private renderVideo(tile: GuideTileInfo) {
         return ('')
     }
 
-    private renderWarningSigns(tile: GuideTile) {
-        return tile.warningSigns.map((sign, idx) => {
+    private renderWarningSigns(tile: GuideTileInfo) {
+        if (!tile.warningSigns) {
+            return
+        }
+        const primeSigns = tile.warningSigns.primarySigns.map((sign, idx) => {
             return (
                 <div className="guide-view__warning-signs" key={idx}>
                     - {sign}
                 </div>
             )
         })
+
+        const secondarySigns = tile.warningSigns.secondarySigns.map((sign, idx) => {
+            return (
+                <div className="guide-view__warning-signs" key={idx}>
+                    - {sign}
+                </div>
+            )
+        })
+
+        return (
+            <>
+                <div className="guide-view__modal-subheader">
+                    {tile.warningSigns.primaryHeader}
+                </div>
+                <div>
+                    {primeSigns}
+                </div>
+                <div className="guide-view__modal-subheader">
+                    {tile.warningSigns.secondaryHeader}
+                </div>
+                <div>
+                    {secondarySigns}
+                </div>
+            </>
+        )
+
     }
 
-    private renderDosDonts(tile: GuideTile) {
+    private renderDosDonts(tile: GuideTileInfo) {
         const slides = tile.dosDonts.map((item, idx) => {
             const doBull = item.doBullets.map((d, num) => {
                 return (
@@ -138,10 +182,41 @@ export default class GuideView extends React.Component<ViewProps> {
     }
 
     private renderResources(tile: GuideTile) {
-        const resources = this.props.store.data.guideResourceTiles(tile)
+        const resources = this.props.store.data.guideResourceTiles(tile.info)
         return (
-            <ResourceSlideDock resources={resources} />
+            <ResourceSlideDock resources={resources} tile={tile.info} onCloseModal={this.handleCloseModal(tile)} />
         )
+    }
+
+    private renderBody(tile: GuideTileInfo) {
+        if (!tile.body) {
+            return
+        }
+        return (
+            <>
+                <div>
+                    {tile.body!.header}
+                </div>
+                <TextBlock input={tile.body!.body} />
+            </>
+        )
+    }
+
+    @action
+    private handleToggleOpen(tile: GuideTile, open: boolean) {
+        tile.open = open
+    }
+
+    private handleToggleModal = (tile: GuideTile) => {
+        return action((open: boolean) => {
+            tile.open = open
+        })
+    }
+
+    private handleCloseModal = (tile: GuideTile) => {
+        return () => {
+            this.handleToggleOpen(tile, false)
+        }
     }
 
     private onInfinite = (e: CustomEvent<void>) => {

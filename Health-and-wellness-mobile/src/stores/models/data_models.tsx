@@ -1,10 +1,28 @@
-export interface GuideTile {
+export interface WarningSigns {
+    primaryHeader: string
+    primarySigns: string[]
+    secondaryHeader: string
+    secondarySigns: string[]
+}
+
+export interface GuideBody {
+    header: string
+    body: string
+}
+
+export interface GuideResource {
+    name: string
+    body: string
+}
+
+export interface GuideTileInfo {
     subscript: string
     label: string
     description: string
-    resourcesRelevant: string[]
+    resourcesRelevant: GuideResource[]
     videoLink: string
-    warningSigns: string[]
+    warningSigns: WarningSigns
+    body?: GuideBody
     dosDonts: DosDonts[]
 }
 
@@ -20,7 +38,7 @@ export interface HomeLinks {
     link: string
 }
 
-export interface FaqTile {
+export interface FaqInfo {
     question: string
     answer: string
 }
@@ -31,6 +49,16 @@ export interface ResourceTile {
     phone: string
     email?: string
     picture: string
+}
+
+export interface TechniqueBody {
+    header: string
+    body: string
+}
+
+export interface TechniqueInfo {
+    header: string
+    techniques: TechniqueBody[]
 }
 
 export interface EmergencyInfo {

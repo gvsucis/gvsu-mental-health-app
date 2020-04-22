@@ -38,16 +38,13 @@ export default class View extends React.Component<ViewProps> {
                 <IonContent className="view-body">
                     {body}
                 </IonContent>
-                {
-                    !store.preferences.hasLoggedin ?
                         <FirebaseContext.Consumer>
                             {firebase =>
                                 <Modal showModal={!store.preferences.hasLoggedin} forceModal={true}>
                                     <LoginView fbase={firebase} toggleVisible={this.toggleLoginModal} />
                                 </Modal>
                             }
-                        </FirebaseContext.Consumer> : null
-                }
+                        </FirebaseContext.Consumer> 
                 {enableEmergencyModal ?
                     <div className="view-emergency">
                         <EmergencyButton />

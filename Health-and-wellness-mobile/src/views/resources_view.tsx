@@ -19,7 +19,7 @@ export default class ResourcesView extends React.Component<Props> {
   public render() {
     const body = (
       <>
-          {this.renderBody()}
+        {this.renderBody()}
       </>
     )
     return (
@@ -31,7 +31,7 @@ export default class ResourcesView extends React.Component<Props> {
     const data = this.props.store.data
 
     return (
-      <ResourceSlideDock resources={data.resourceTiles} />
+      <ResourceSlideDock resources={data.resourceTiles} resourceView={true} />
     )
   }
 }
