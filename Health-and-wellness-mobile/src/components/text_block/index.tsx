@@ -31,6 +31,8 @@ export default class TextBlock extends React.Component<TextBlockProps> {
             let linkDest = null
             let vidLink = null
             let video = null
+            let number = null
+            let destNum = null
 
             if (sec[0] === '-') {
                 tabbed = true
@@ -38,9 +40,15 @@ export default class TextBlock extends React.Component<TextBlockProps> {
 
             if (sec.includes("[link")) {
                 linkDest = sec.substr(sec.indexOf('[') + 5, sec.indexOf(']') - (sec.indexOf('[') + 5))
+                let linkText = linkDest.substr(13)
+                if (linkDest.includes('placeholder: ')) {
+                    console.log(linkDest)
+                    linkText = linkDest.substr(linkDest.indexOf('placeholder: ') + 13)
+                    linkDest = linkDest.substr(0, linkDest.indexOf('placeholder: ') - 2)
+                }
                 link = (
                     <a href={linkDest}>
-                        {linkDest.substr(13)}
+                        {linkText}
                     </a>
                 )
             }
@@ -48,17 +56,42 @@ export default class TextBlock extends React.Component<TextBlockProps> {
             if (sec.includes("[video")) {
                 vidLink = sec.substr(sec.indexOf('[') + 6, sec.indexOf(']') - (sec.indexOf('[') + 6))
                 video = (
-                    <VideoPlayer video={vidLink}/>
+                    <VideoPlayer video={vidLink} />
                 )
             }
-            let output = link && linkDest ? sec.substr(0, sec.length - (linkDest.length + 6)) : video && vidLink ? sec.substr(0, sec.length - (vidLink.length + 7)) : sec
+
+            if (sec.includes("[phone")) {
+                destNum = sec.substr(sec.indexOf('[') + 6, sec.indexOf(']') - (sec.indexOf('[') + 6))
+                number = (
+                    <a href={`tel:${destNum}`}>
+                        {destNum}
+                    </a>
+                )
+            }
+
+            let preLink = ""
+            let postLink = ""
+
+            if (link && linkDest || destNum && number) {
+                preLink = sec.substr(0, sec.indexOf('['))
+                postLink = sec.substr(sec.indexOf(']') + 1)
+            }
+            else if (video && vidLink) {
+                postLink = sec.substr(0, sec.length - (vidLink.length + 7))
+            }
+            else {
+                postLink = sec
+            }
+
             const outputClasses = classNames("faq-view__dropdown-section", [
                 { name: "faq-view__dropdown-section--tabbed", include: tabbed }
             ])
             return (
                 <div className={outputClasses} key={idx}>
-                    {output}
+                    {preLink}
                     {link}
+                    {number}
+                    {postLink}
                     {video}
                 </div>
             )

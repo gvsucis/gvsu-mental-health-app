@@ -28,11 +28,10 @@ export default class ResourcesView extends React.Component<Props> {
   }
 
   private renderBody() {
-    const data = this.props.store.data
-
+    const data = this.props.store.data.resourceTiles
     return (
-      <ResourceSlideDock resources={data.resourceTiles} resourceView={true} />
+      <ResourceSlideDock resources={data} resourceView={true} />
     )
-  }
+  }  
 }
 

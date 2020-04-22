@@ -46,9 +46,9 @@ export default class SearchBar extends React.Component<SearchBarProps> {
                     !this.searchOpen ?
                         <div className="search-bar">
                             <IonTitle>{pageTitle}</IonTitle>
-                            <Button type="icon" fill="clear" onClick={this.handleClickSearch} >
+                            {/* <Button type="icon" fill="clear" onClick={this.handleClickSearch} >
                                 <IonIcon icon={search} />
-                            </Button>
+                            </Button> */}
                         </div> :
                         <div>
                             <IonSearchbar onClick={this.handleClickSearch} value={this.searchValue} onIonBlur={this.handleClickSearch} ref={this.searchRef} />

@@ -27,6 +27,11 @@ export default class DataStore {
         return this.guideView.tiles
     }
 
+    @computed
+    public get ofConcernTile() {
+        return this.guideView.otherwiseOfConcern
+    }
+
     public guideResourceTiles(tile: GuideTileInfo) {
         return this.resourceTiles.filter((res) => (
             tile.resourcesRelevant.some((item) => item.name === res.department)
@@ -41,8 +46,11 @@ export default class DataStore {
 
     @computed
     public get resourceTiles() {
-        return this.resourceView.tiles
-    }
+        const tiles = this.resourceView.tiles
+        return tiles.sort((a, b) => {
+            return (a.department < b.department ? -1 : a.department > b.department ? 1 : 0)
+        })
+}
 
     //faq view elements
     @computed

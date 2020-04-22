@@ -10,6 +10,7 @@ import InfiniteScroll from "../components/infinite-scroll"
 import ResourceSlideDock from "../components/resource_slider_dock"
 import TextBlock from "../components/text_block"
 import { observable, action } from "mobx"
+import VideoPlayer from "../components/video_player"
 
 export interface ViewProps {
     store: Store
@@ -31,6 +32,8 @@ export default class GuideView extends React.Component<ViewProps> {
         })
     })
 
+    @observable private ofConcernOpen: boolean = false
+
     public static defaultProps = {
         store: null
     }
@@ -39,6 +42,7 @@ export default class GuideView extends React.Component<ViewProps> {
         const body = (
             <>
                 {this.renderGuideTiles()}
+                {this.renderOfConcernTile()}
             </>
         )
         return (
@@ -57,7 +61,7 @@ export default class GuideView extends React.Component<ViewProps> {
                     <div className="guide-view__modal">
                         {tile.info.description}
                     </div>
-                    <div>
+                    <div className="guide-view__modal">
                         {this.renderVideo(tile.info)}
                     </div>
                     <div className="guide-view__modal-header">
@@ -78,7 +82,7 @@ export default class GuideView extends React.Component<ViewProps> {
                     <div>
                         {this.renderResources(tile)}
                     </div>
-                    <div>
+                    <div className="guide-view__modal">
                         {this.renderBody(tile.info)}
                     </div>
                 </ScrollTile>
@@ -86,8 +90,33 @@ export default class GuideView extends React.Component<ViewProps> {
         })
     }
 
+    private renderOfConcernTile() {
+        const tile = this.props.store.data.ofConcernTile
+        const buttons = tile.tiles.map((item, idx) => {
+            return (
+                <ScrollTile open={false} label={item.header} enableDropdown={true} key={idx} >
+                    <div className="faq-view__dropdown">
+                        <TextBlock input={item.body} />
+                    </div>
+                </ScrollTile>
+            )
+        })
+        return (
+            <ScrollTile open={this.ofConcernOpen} subscript={tile.subscript} label={tile.header}
+                enableModal={true} onToggleOpen={this.handleToggleConcernTile}>
+                {buttons}
+            </ScrollTile>
+        )
+    }
+
     private renderVideo(tile: GuideTileInfo) {
-        return ('')
+        if (!tile.videoLink) {
+            return
+        }
+
+        return (
+            <VideoPlayer video={tile.videoLink} />
+        )
     }
 
     private renderWarningSigns(tile: GuideTileInfo) {
@@ -200,6 +229,11 @@ export default class GuideView extends React.Component<ViewProps> {
                 <TextBlock input={tile.body!.body} />
             </>
         )
+    }
+
+    @action
+    private handleToggleConcernTile = (open: boolean) => {
+        this.ofConcernOpen = open
     }
 
     @action
