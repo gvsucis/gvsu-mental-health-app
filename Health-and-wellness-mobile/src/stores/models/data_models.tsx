@@ -63,9 +63,5 @@ export interface TechniqueInfo {
 
 export interface EmergencyInfo {
     title: string
-    body: EmergencyContactInfo[]
-}
-
-export interface EmergencyContactInfo {
     body: string
 }

@@ -5,6 +5,7 @@ import Store from "../../stores/store"
 import { EmergencyInfo } from "../../stores/models/data_models"
 
 import "./index.scss"
+import TextBlock from "../text_block"
 
 export interface Props {
     onToggleVisible: (visible: boolean) => void
@@ -58,24 +59,16 @@ export default class EmergencyModal extends React.Component<Props> {
         const bullets = data.emergencyDescriptionBullets
         const footer = data.emergencyDescriptionFooter
 
-        const body = bullets.map((item, idx) => {
-            return (
-                <div key={idx}>
-                    - {item}
-                </div>
-            )
-        })
-
         return (
             <>
                 <div className="emergency-modal__description">
-                    {header}
+                    <TextBlock input={header} />
                 </div>
                 <div className="emergency-modal__description">
-                    {body}
+                    <TextBlock input={bullets} />
                 </div>
                 <div className="emergency-modal__description">
-                    {footer}
+                    <TextBlock input={footer} />
                 </div>
             </>
         )
@@ -86,35 +79,19 @@ export default class EmergencyModal extends React.Component<Props> {
         const header = data.emergencyConcernHeader
         const bullets = data.emergencyConcernBullets
 
-        const body = bullets.map((item, idx) => {
-            return (
-                <div key={idx}>
-                 - {item}   
-                </div>
-                
-            )
-        })
-
         return (
             <div className="emergency-modal__section">
                 <div className="emergency-modal__header">
                     <span>{header}</span>
                 </div>
                 <div>
-                    {body}
+                    <TextBlock input={bullets} />
                 </div>
             </div>
         )
     }
 
     private renderSection(info: EmergencyInfo) {
-        const body = (info.body.map((item, idx) => {
-            return (
-                <div key={idx}>
-                    {`- ${item.body}`}
-                </div>
-            )
-        }))
         return (
             <div className="emergency-modal__section">
                 <div className="emergency-modal__header">
@@ -122,7 +99,7 @@ export default class EmergencyModal extends React.Component<Props> {
                 </div>
                 <span>You can: </span>
                 <div>
-                    {body}
+                    <TextBlock input={info.body}/>
                 </div>
             </div>
         )
