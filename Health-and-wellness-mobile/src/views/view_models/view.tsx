@@ -1,11 +1,10 @@
 import * as React from 'react'
-import { IonToolbar, IonHeader, IonPage, IonContent } from '@ionic/react'
+import { IonToolbar, IonHeader, IonPage, IonContent, IonTitle } from '@ionic/react'
 import { inject } from 'mobx-react'
 import Store from '../../stores/store'
 import EmergencyButton from '../../components/emergency_button'
 import Modal from '../../components/modal'
 import LoginView from '../login_view'
-import SearchBar from '../../components/search_bar'
 import { FirebaseContext } from '../../components/firebase'
 
 import "./view.scss"
@@ -32,19 +31,19 @@ export default class View extends React.Component<ViewProps> {
             <IonPage>
                 <IonHeader >
                     <IonToolbar >
-                        <SearchBar pageTitle={title} />
+                        <IonTitle className="view-title">{title}</IonTitle>
                     </IonToolbar>
                 </IonHeader>
                 <IonContent className="view-body">
                     {body}
                 </IonContent>
-                        <FirebaseContext.Consumer>
-                            {firebase =>
-                                <Modal showModal={!store.preferences.hasLoggedin} forceModal={true}>
-                                    <LoginView fbase={firebase} toggleVisible={this.toggleLoginModal} />
-                                </Modal>
-                            }
-                        </FirebaseContext.Consumer> 
+                <FirebaseContext.Consumer>
+                    {firebase =>
+                        <Modal showModal={!store.preferences.hasLoggedin} forceModal={true}>
+                            <LoginView fbase={firebase} toggleVisible={this.toggleLoginModal} />
+                        </Modal>
+                    }
+                </FirebaseContext.Consumer>
                 {enableEmergencyModal ?
                     <div className="view-emergency">
                         <EmergencyButton />

@@ -4,6 +4,7 @@
     border: 1px solid $panel;
     border-radius: $border-radius-lg;
     margin: calc(3 * #{$pad-lg}) calc(6 * #{$pad-lg});
+    background-color: $primary;
 }
 
 .scroll-tile--fill {
@@ -18,6 +19,10 @@
 .scroll-tile__subscript {
     @include font-regular(12px);
     text-align: initial;
+}
+
+.scroll-tile__dropdown {
+    background-color: $secondary;
 }
 
 .scroll-tile__header {

@@ -2,7 +2,6 @@ import React from "react"
 import { IonRouterLink } from '@ionic/react'
 import { classNames } from "../../utils/system"
 import { observer } from 'mobx-react'
-import { observable, action } from 'mobx'
 import Modal from "../modal"
 
 import './index.scss'
@@ -22,8 +21,6 @@ export interface ScrollTileProps {
 
 @observer
 export default class ScrollTile extends React.Component<ScrollTileProps> {
-
-  @observable private dropdownOpen: boolean = false
 
   public static defaultProps = {
     enableModal: false,
@@ -57,14 +54,14 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
               <div className={titleClass}>{label}</div>
             </div>
           </IonRouterLink>
-          {this.dropdownOpen ?
-            <div>
+          {this.props.open && this.props.enableDropdown ?
+            <div className="scroll-tile__dropdown">
               {this.props.children}
             </div> : null
           }
         </div>
 
-        {this.props.open ?
+        {this.props.open && this.props.enableModal ?
           <Modal showModal={true} onToggleModalVisible={this.handleClickScrollTile} header={label}>
             <div className="scroll-tile__modal">
               {this.props.children}
@@ -79,17 +76,13 @@ export default class ScrollTile extends React.Component<ScrollTileProps> {
     this.handleClickScrollTile(true)
   }
 
-  @action
   private handleClickScrollTile = (visible: boolean) => {
-    const { onClick, enableModal, enableDropdown, onToggleOpen } = this.props
+    const { onClick, enableModal, onToggleOpen } = this.props
     if (onClick) {
       onClick()
     }
-    else if (enableModal && onToggleOpen) {
+    if (enableModal && onToggleOpen) {
       onToggleOpen(visible)
-    }
-    else if (enableDropdown) {
-      this.dropdownOpen = !this.dropdownOpen
     }
   }
 }

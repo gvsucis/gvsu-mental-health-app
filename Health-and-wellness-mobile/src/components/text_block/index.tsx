@@ -2,6 +2,8 @@ import React from 'react'
 import { classNames } from '../../utils/system'
 import VideoPlayer from '../video_player'
 
+import './index.scss'
+
 export interface TextBlockProps {
     input: string
 }
@@ -42,7 +44,6 @@ export default class TextBlock extends React.Component<TextBlockProps> {
                 linkDest = sec.substr(sec.indexOf('[') + 5, sec.indexOf(']') - (sec.indexOf('[') + 5))
                 let linkText = linkDest.substr(13)
                 if (linkDest.includes('placeholder: ')) {
-                    console.log(linkDest)
                     linkText = linkDest.substr(linkDest.indexOf('placeholder: ') + 13)
                     linkDest = linkDest.substr(0, linkDest.indexOf('placeholder: ') - 2)
                 }
@@ -83,8 +84,8 @@ export default class TextBlock extends React.Component<TextBlockProps> {
                 postLink = sec
             }
 
-            const outputClasses = classNames("faq-view__dropdown-section", [
-                { name: "faq-view__dropdown-section--tabbed", include: tabbed }
+            const outputClasses = classNames("text-block", [
+                { name: "text-block__tabbed", include: tabbed }
             ])
             return (
                 <div className={outputClasses} key={idx}>

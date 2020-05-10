@@ -1,5 +1,5 @@
 import React from 'react'
-import { IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent } from '@ionic/react'
+import { IonCard, IonCardHeader, IonCardTitle, IonCardContent } from '@ionic/react'
 
 import './index.scss'
 

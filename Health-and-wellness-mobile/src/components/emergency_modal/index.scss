@@ -15,6 +15,7 @@
 .emergency-modal__header {
     margin: $pad-lg 0;
     @include font-sub-header();
+    color: unset;
 }
 
 .emergency-modal__description {

@@ -5,7 +5,7 @@ import { classNames } from '../../utils/system'
 import './index.scss' //scss import
 
 export type ButtonType = 'icon' | 'standard' | 'tabs'
-export type ButtonColor = 'primary' | 'secondary'
+export type ButtonColor = 'primary' | 'secondary' | 'danger'
 export type ButtonFill = 'solid' | 'outline' | 'clear'
 
 export interface ButtonProps {
@@ -30,7 +30,7 @@ export default class Button extends React.Component<ButtonProps> {
     }
 
     public render() {
-        const { onClick, type, fillWidth, className, fill } = this.props
+        const { onClick, type, fillWidth, className, fill, color } = this.props
 
         const buttonClass = classNames('button-wrapper',
             [{ name: 'button-wrapper__fill-width', include: fillWidth },
@@ -43,7 +43,7 @@ export default class Button extends React.Component<ButtonProps> {
         if (type === 'standard') {
             return (
                 <div className={buttonClass}>
-                    <IonButton onClick={onClick} fill={fillVal}>
+                    <IonButton onClick={onClick} color={color} fill={fillVal}>
                         <span>{this.props.children}</span>
                     </IonButton>
                 </div >

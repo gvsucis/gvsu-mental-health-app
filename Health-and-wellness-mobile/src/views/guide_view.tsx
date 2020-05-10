@@ -19,6 +19,7 @@ export interface ViewProps {
 export interface GuideTile {
     info: GuideTileInfo
     open: boolean
+    bodyOpen: boolean
 }
 
 @inject('store')
@@ -28,7 +29,8 @@ export default class GuideView extends React.Component<ViewProps> {
     @observable private tiles: GuideTile[] = this.props.store.data.guideInfo.map((item) => {
         return ({
             info: item,
-            open: false
+            open: false,
+            bodyOpen: false
         })
     })
 
@@ -70,6 +72,9 @@ export default class GuideView extends React.Component<ViewProps> {
                     <div className="guide-view__modal">
                         {this.renderWarningSigns(tile.info)}
                     </div>
+                    {tile.info.body ?
+                        this.renderBody(tile) : null
+                    }
                     <div className="guide-view__modal-header">
                         {"Do's & Don'ts"}
                     </div>
@@ -81,9 +86,6 @@ export default class GuideView extends React.Component<ViewProps> {
                     </div>
                     <div>
                         {this.renderResources(tile)}
-                    </div>
-                    <div className="guide-view__modal">
-                        {this.renderBody(tile.info)}
                     </div>
                 </ScrollTile>
             )
@@ -155,7 +157,20 @@ export default class GuideView extends React.Component<ViewProps> {
                 </div>
             </>
         )
+    }
 
+    private renderBody(tile: GuideTile) {
+        if (!tile.info.body) {
+            return
+        }
+
+        return (
+            <ScrollTile open={tile.bodyOpen} label={tile.info.body!.header} onClick={this.handleToggleBodyOpen(tile)} enableDropdown={true} >
+                <div className="faq-view__dropdown">
+                    <TextBlock input={tile.info.body!.body} />
+                </div>
+            </ScrollTile>
+        )
     }
 
     private renderDosDonts(tile: GuideTileInfo) {
@@ -180,7 +195,8 @@ export default class GuideView extends React.Component<ViewProps> {
                         <div key={idx}>
                             <div className="guide-view__modal-text">
                                 <div>
-                                    <span className="guide-view__modal-subheader">Do:</span> {item.do}
+                                    <div className="guide-view__modal-subheader">Do:</div>
+                                    {item.do}
                                 </div>
                                 <div>
                                     {doBull}
@@ -188,7 +204,8 @@ export default class GuideView extends React.Component<ViewProps> {
                             </div>
                             <div className="guide-view__modal-text">
                                 <div>
-                                    <span className="guide-view__modal-subheader">Dont:</span> {item.dont}
+                                    <div className="guide-view__modal-subheader">Dont:</div>
+                                    {item.dont}
                                 </div>
                                 <div>
                                     {dontBull}
@@ -217,20 +234,6 @@ export default class GuideView extends React.Component<ViewProps> {
         )
     }
 
-    private renderBody(tile: GuideTileInfo) {
-        if (!tile.body) {
-            return
-        }
-        return (
-            <>
-                <div>
-                    {tile.body!.header}
-                </div>
-                <TextBlock input={tile.body!.body} />
-            </>
-        )
-    }
-
     @action
     private handleToggleConcernTile = (open: boolean) => {
         this.ofConcernOpen = open
@@ -239,6 +242,13 @@ export default class GuideView extends React.Component<ViewProps> {
     @action
     private handleToggleOpen(tile: GuideTile, open: boolean) {
         tile.open = open
+    }
+
+    @action
+    private handleToggleBodyOpen = (tile: GuideTile) => {
+        return () => {
+            tile.bodyOpen = !tile.bodyOpen
+        }
     }
 
     private handleToggleModal = (tile: GuideTile) => {

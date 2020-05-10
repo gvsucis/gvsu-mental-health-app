@@ -1,5 +1,6 @@
 import React from 'react'
-import { inject } from 'mobx-react'
+import { action, observable } from 'mobx'
+import { inject, observer } from 'mobx-react'
 import View from './view_models/view'
 import { IonList } from '@ionic/react'
 import ScrollTile from '../components/scroll_tile'
@@ -18,10 +19,15 @@ export interface FaqTile {
     open: boolean
 }
 
+@observer
 @inject("store")
 export default class FAQView extends React.Component<Props> {
 
-    private tiles: FaqTile[] = this.props.store.data.faqTiles.map((item) => {
+    public componentDidUpdate() {
+        console.log("updated")
+    }
+
+    @observable private tiles: FaqTile[] = this.props.store.data.faqTiles.map((item) => {
         return (
             {
                 info: item,
@@ -36,13 +42,13 @@ export default class FAQView extends React.Component<Props> {
 
     public render() {
 
-        const body = (
+        let body = (
             <IonList lines="none">
                 {this.tiles.map((tile, idx) => {
                     return (
-                        <ScrollTile open={tile.open} label={tile.info.question} enableDropdown={true} key={idx} >
+                        <ScrollTile open={tile.open} label={tile.info.question} enableDropdown={true} key={idx} onClick={this.toggleTileVisible(tile)}>
                             <div className="faq-view__dropdown">
-                                <TextBlock input={tile.info.answer}/>
+                                <TextBlock input={tile.info.answer} />
                             </div>
                         </ScrollTile>
                     );
@@ -55,4 +61,19 @@ export default class FAQView extends React.Component<Props> {
         )
     }
 
+    @action
+    private toggleTileVisible = (tile: FaqTile) => {
+        return () => {
+            if (!tile.open) {
+                this.tiles.forEach((t) => {
+                    t.open = false
+                })
+                tile.open = true
+            }
+            else {
+                tile.open = false
+            }
+            this.forceUpdate()
+        }
+    }
 }

@@ -12,6 +12,8 @@ $scroll-icon: 16px;
 //theme-colors
 $primary: #0065A4;
 $primary-text: #fbfef9;
+$secondary: #dff5fb;
+$secondary-text: #fbfef9;
 $view: #fbfef9;
 $panel: #e7eceF;
 
@@ -24,6 +26,7 @@ $border-radius-lg: 14px;
     vertical-align: center;
     font-size: $size;
     line-height: $lineHeight;
+    color: $primary-text;
 }
 
 @mixin font-bold($size: 11px, $lineHeight: 10px) {
@@ -38,7 +41,7 @@ $border-radius-lg: 14px;
 
 @mixin font-header($size: 18px, $lineHeight: 25px) {
     @include font-regular($size, $lineHeight);
-    color: $primary;
+    color: $primary-text;
 }
 
 @mixin font-sub-header($size: 18px, $lineHeight: 25px) {

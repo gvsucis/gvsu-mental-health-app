@@ -3,9 +3,9 @@ import { inject, observer } from "mobx-react"
 import Modal from "../modal"
 import Store from "../../stores/store"
 import { EmergencyInfo } from "../../stores/models/data_models"
+import TextBlock from "../text_block"
 
 import "./index.scss"
-import TextBlock from "../text_block"
 
 export interface Props {
     onToggleVisible: (visible: boolean) => void

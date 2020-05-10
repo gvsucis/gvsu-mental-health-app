@@ -83,11 +83,17 @@
 
 .guide-view__modal-header {
     margin-top: $pad-lg;
-    @include font-header();
+    @include font-sub-header();
+    color: black;
+    text-align: center;
 }
 
 .guide-view__modal-subheader {
+    background-color: $primary;
     @include font-sub-header();
+    border-radius: $border-radius;
+    padding: $pad-lg;
+    text-align: center;
 }
 
 .guide-view__modal-text {
@@ -102,10 +108,6 @@
 //Faq View
 .faq-view__dropdown {
     padding: 2 * $pad-lg;
-}
-
-.faq-view__dropdown-section {
-    margin-top: 2 * $pad-lg;
 }
 
 .faq-view__dropdown-section--tabbed {
