@@ -34,6 +34,13 @@ export default class GuideView extends React.Component<ViewProps> {
         })
     })
 
+    @observable private ofConcernTiles = this.props.store.data.ofConcernTile.tiles.map((tile) => {
+        return {
+            info: tile,
+            open: false
+        }
+    })
+
     @observable private ofConcernOpen: boolean = false
 
     public static defaultProps = {
@@ -61,8 +68,8 @@ export default class GuideView extends React.Component<ViewProps> {
                         Description
                     </div>
                     <div className="guide-view__modal">
-                        {tile.info.description}
-                    </div>
+                        <TextBlock input={tile.info.description} />
+                    </div >
                     <div className="guide-view__modal">
                         {this.renderVideo(tile.info)}
                     </div>
@@ -94,11 +101,11 @@ export default class GuideView extends React.Component<ViewProps> {
 
     private renderOfConcernTile() {
         const tile = this.props.store.data.ofConcernTile
-        const buttons = tile.tiles.map((item, idx) => {
+        const buttons = this.ofConcernTiles.map((item, idx) => {
             return (
-                <ScrollTile open={false} label={item.header} enableDropdown={true} key={idx} >
+                <ScrollTile open={item.open} label={item.info.header} enableDropdown={true} key={idx} onClick={this.handleToggleInnerConcern(item)} >
                     <div className="faq-view__dropdown">
-                        <TextBlock input={item.body} />
+                        <TextBlock input={item.info.body} />
                     </div>
                 </ScrollTile>
             )
@@ -143,18 +150,27 @@ export default class GuideView extends React.Component<ViewProps> {
 
         return (
             <>
-                <div className="guide-view__modal-subheader">
-                    {tile.warningSigns.primaryHeader}
-                </div>
-                <div>
-                    {primeSigns}
-                </div>
-                <div className="guide-view__modal-subheader">
-                    {tile.warningSigns.secondaryHeader}
-                </div>
-                <div>
-                    {secondarySigns}
-                </div>
+                {primeSigns.length > 0 ?
+                    <>
+                        <div className="guide-view__modal-subheader">
+                            {tile.warningSigns.primaryHeader}
+                        </div>
+                        <div>
+                            {primeSigns}
+                        </div>
+                    </> : null
+                }
+
+                {secondarySigns.length > 0 ?
+                    <>
+                        <div className="guide-view__modal-subheader">
+                            {tile.warningSigns.secondaryHeader}
+                        </div>
+                        <div>
+                            {secondarySigns}
+                        </div>
+                    </> : null
+                }
             </>
         )
     }
@@ -195,7 +211,7 @@ export default class GuideView extends React.Component<ViewProps> {
                         <div key={idx}>
                             <div className="guide-view__modal-text">
                                 <div>
-                                    <div className="guide-view__modal-subheader">Do:</div>
+                                    <div className="guide-view__modal-subheader">Do</div>
                                     {item.do}
                                 </div>
                                 <div>
@@ -204,7 +220,7 @@ export default class GuideView extends React.Component<ViewProps> {
                             </div>
                             <div className="guide-view__modal-text">
                                 <div>
-                                    <div className="guide-view__modal-subheader">Dont:</div>
+                                    <div className="guide-view__modal-subheader">Dont</div>
                                     {item.dont}
                                 </div>
                                 <div>
@@ -237,6 +253,21 @@ export default class GuideView extends React.Component<ViewProps> {
     @action
     private handleToggleConcernTile = (open: boolean) => {
         this.ofConcernOpen = open
+    }
+
+    @action
+    private handleToggleInnerConcern = (tile: any) => {
+        return () => {
+            if (tile.open) {
+                tile.open = false
+            }
+            else {
+                this.ofConcernTiles.forEach((t) => {
+                    t.open = false
+                })
+                tile.open = true
+            }
+        }
     }
 
     @action

@@ -1,6 +1,11 @@
 import React from 'react'
 import { classNames } from '../../utils/system'
 import VideoPlayer from '../video_player'
+import { IonImg } from '@ionic/react'
+import anxiety from '../../assets/Anxiety.png'
+import depression from '../../assets/Depression.png'
+import suicide from '../../assets/Suicide.png'
+import psychosis from '../../assets/psychosis.png'
 
 import './index.scss'
 
@@ -9,6 +14,7 @@ export interface TextBlockProps {
 }
 
 export default class TextBlock extends React.Component<TextBlockProps> {
+
     public render() {
         const sections = []
         const curr = this.props.input
@@ -35,9 +41,19 @@ export default class TextBlock extends React.Component<TextBlockProps> {
             let video = null
             let number = null
             let destNum = null
+            let picture = null
 
             if (sec[0] === '-') {
                 tabbed = true
+            }
+
+            if (sec.includes("[picture")) {
+                const picLink = sec.substr(sec.indexOf('[') + 8, sec.indexOf(']') - (sec.indexOf('[') + 8))
+                const pic = this.selectPicture(picLink)
+                console.log(pic)
+                picture = (
+                    <IonImg className="resource-tile__image" src={pic} />
+                )
             }
 
             if (sec.includes("[link")) {
@@ -73,7 +89,7 @@ export default class TextBlock extends React.Component<TextBlockProps> {
             let preLink = ""
             let postLink = ""
 
-            if (link && linkDest || destNum && number) {
+            if (link && linkDest || destNum && number || picture) {
                 preLink = sec.substr(0, sec.indexOf('['))
                 postLink = sec.substr(sec.indexOf(']') + 1)
             }
@@ -89,6 +105,7 @@ export default class TextBlock extends React.Component<TextBlockProps> {
             ])
             return (
                 <div className={outputClasses} key={idx}>
+                    {picture}
                     {preLink}
                     {link}
                     {number}
@@ -98,5 +115,15 @@ export default class TextBlock extends React.Component<TextBlockProps> {
             )
         }
         )
+    }
+
+    private selectPicture(input: string) {
+        console.log("input: ", input)
+        switch (input.trim()) {
+            case "anxiety": return anxiety
+            case "depression": return depression
+            case "suicide": return suicide
+            case "psychosis": return psychosis
+        }
     }
 }
