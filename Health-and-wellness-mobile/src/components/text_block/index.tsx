@@ -42,6 +42,7 @@ export default class TextBlock extends React.Component<TextBlockProps> {
             let number = null
             let destNum = null
             let picture = null
+            let header = null
 
             if (sec[0] === '-') {
                 tabbed = true
@@ -86,6 +87,14 @@ export default class TextBlock extends React.Component<TextBlockProps> {
                 )
             }
 
+            if (sec.includes("[header")) {
+                header = (
+                    <div className="text-block__bold">
+                        {sec.substr(7, sec.indexOf(']') - (sec.indexOf('[') + 7))}
+                    </div>
+                )
+            }
+
             let preLink = ""
             let postLink = ""
 
@@ -96,6 +105,9 @@ export default class TextBlock extends React.Component<TextBlockProps> {
             else if (video && vidLink) {
                 postLink = sec.substr(0, sec.length - (vidLink.length + 7))
             }
+            else if (header) {
+                postLink = ""
+            }
             else {
                 postLink = sec
             }
@@ -103,10 +115,18 @@ export default class TextBlock extends React.Component<TextBlockProps> {
             const outputClasses = classNames("text-block", [
                 { name: "text-block__tabbed", include: tabbed }
             ])
+
+            if (sec === "[br]") {
+                return (
+                    <div className="text-block__break" />
+                )
+            }
+            
             return (
                 <div className={outputClasses} key={idx}>
                     {picture}
                     {preLink}
+                    {header}
                     {link}
                     {number}
                     {postLink}

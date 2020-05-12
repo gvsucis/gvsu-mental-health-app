@@ -84,6 +84,7 @@
 .guide-view__modal-header {
     margin-top: $pad-lg;
     @include font-sub-header();
+    font-size: 24px;
     color: black;
     text-align: center;
 }
