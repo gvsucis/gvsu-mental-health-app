@@ -236,7 +236,7 @@ export default class GuideView extends React.Component<ViewProps> {
         return (
             <div>
                 <IonList>
-                    <Slides slides={slides} />
+                    <Slides slides={slides} stretchCards={true}/>
                     <InfiniteScroll threshold={'100px'} infinite={this.onInfinite} />
                 </IonList>
             </div>
@@ -246,7 +246,7 @@ export default class GuideView extends React.Component<ViewProps> {
     private renderResources(tile: GuideTile) {
         const resources = this.props.store.data.guideResourceTiles(tile.info)
         return (
-            <ResourceSlideDock resources={resources} tile={tile.info} onCloseModal={this.handleCloseModal(tile)} />
+            <ResourceSlideDock resources={resources} tile={tile.info} onCloseModal={this.handleCloseModal(tile)} stretchCards={true}/>
         )
     }
 

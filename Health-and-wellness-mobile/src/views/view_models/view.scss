@@ -1,7 +1,8 @@
-@import '../../theme/theme.scss';
+@import "../../theme/theme.scss";
 
 .view-title {
-    margin: 0 3 * $pad-lg;
+    align-content: center;
+    justify-content: center;
 }
 
 .view-body {

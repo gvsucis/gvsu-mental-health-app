@@ -29,7 +29,7 @@ export default class View extends React.Component<ViewProps> {
         const { title, body, enableEmergencyModal, store } = this.props
         return (
             <IonPage>
-                <IonHeader >
+                <IonHeader>
                     <IonToolbar >
                         <IonTitle className="view-title">{title}</IonTitle>
                     </IonToolbar>

@@ -8,9 +8,10 @@ export interface Slide {
 }
 
 export interface SlideProps {
-    slides: Slide[],
-    loop: boolean,
-    slidesPerView: number,
+    slides: Slide[]
+    loop: boolean
+    slidesPerView: number
+    stretchCards?: boolean
 }
 
 export default class Slides extends React.Component<SlideProps> {
@@ -31,9 +32,10 @@ export default class Slides extends React.Component<SlideProps> {
                 {
                     slides.map((slide, idx) => {
                         const title = slide.title ? slide.title : undefined
+                        const stretch = this.props.stretchCards
                         return (
                             <IonSlide key={idx}>
-                                <Card title={title} >
+                                <Card title={title} stretch={stretch}>
                                     {slide.body}
                                 </Card>
                             </IonSlide>

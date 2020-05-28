@@ -15,6 +15,7 @@ export interface ResourceSlideDockProps {
     tile?: GuideTileInfo
     resourceView?: boolean
     onCloseModal?: () => void
+    stretchCards?: boolean
 }
 
 export default class ResourceSlideDock extends React.Component<ResourceSlideDockProps> {
@@ -54,7 +55,7 @@ export default class ResourceSlideDock extends React.Component<ResourceSlideDock
         return (
             <div>
                 <IonList>
-                    <Slides slides={slides} />
+                    <Slides slides={slides} stretchCards={this.props.stretchCards}/>
                 </IonList>
                 <InfiniteScroll threshold={'100px'} infinite={this.onInfinite} />
             </div>
