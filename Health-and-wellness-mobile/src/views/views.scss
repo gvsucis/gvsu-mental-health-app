@@ -80,6 +80,7 @@
 
 .guide-view__warning-signs {
     padding-top: 2* $pad-sm;
+    @include font-regular();
     color: black;
     text-align: justify;
 }
@@ -97,19 +98,17 @@
     @include font-sub-header();
     border-radius: $border-radius;
     padding: $pad-lg;
+    margin-bottom: 1em;
+    margin-top: $pad-lg;;
     text-align: center;
 }
 
 .guide-view__modal-text {
     text-align: start;
+    @include font-regular();
+    color: black;
+    text-align: left;
     margin-bottom: $pad-lg;
-}
-
-.guide-view__modal-bullets {
-  // keep
-  @include font-description(13px);
-  color: inherit;
-  text-align: start;
 }
 
 //Faq View
