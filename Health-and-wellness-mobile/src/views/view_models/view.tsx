@@ -44,11 +44,9 @@ export default class View extends React.Component<ViewProps> {
                         </Modal>
                     }
                 </FirebaseContext.Consumer> */}
-                {enableEmergencyModal ?
                     <div className="view-emergency">
                         <EmergencyButton />
-                    </div> : null
-                }
+                    </div>
                 <div className="view-footer">
                     <span>University Counseling <br /> Center Information</span>
                 </div>
