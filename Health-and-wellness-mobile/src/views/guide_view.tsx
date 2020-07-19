@@ -64,9 +64,6 @@ export default class GuideView extends React.Component<ViewProps> {
             return (
                 <ScrollTile open={tile.open} subscript={tile.info.subscript} label={tile.info.label}
                     enableModal={true} key={idx} onToggleOpen={this.handleToggleModal(tile)}>
-                    <div className="guide-view__modal-header">
-                        Description
-                    </div>
                     <div className="guide-view__modal">
                         <TextBlock input={tile.info.description} />
                     </div >

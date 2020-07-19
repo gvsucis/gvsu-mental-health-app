@@ -74,6 +74,8 @@
 //Guide View
 .guide-view__modal {
     padding: $pad-modal;
+    @include font-regular();
+    font-weight: 100;
 }
 
 .guide-view__warning-signs {

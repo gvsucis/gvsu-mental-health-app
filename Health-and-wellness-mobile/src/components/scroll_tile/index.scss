@@ -13,12 +13,13 @@
 
 .scroll-tile__button {
     margin: $pad-md $pad-lg;
-    @include font-header(16px); 
+    @include font-header(16px);
 }
 
 .scroll-tile__subscript {
     @include font-regular(12px);
-    text-align: initial;
+    text-transform: uppercase;
+    font-weight: 200;
 }
 
 .scroll-tile__dropdown {
@@ -38,6 +39,11 @@
 
 .scroll-tile__home--title {
     @include font-header();
+}
+
+.scroll-tile--feel-title {
+  @include font-header();
+  font-weight: 800;
 }
 
 .scroll-tile__modal {
