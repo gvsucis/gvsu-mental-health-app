@@ -1,5 +1,7 @@
 @import '../../theme/theme.scss';
 
 .video-player {
-    margin: $pad-md;
+    margin: auto;
+    display: block;
+    width: 80vw;
 }
