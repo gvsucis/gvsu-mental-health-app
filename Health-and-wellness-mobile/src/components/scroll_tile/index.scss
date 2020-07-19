@@ -1,9 +1,11 @@
 @import '../../theme/theme.scss';
 
 .scroll-tile {
-  margin-left: 1.5em;
-  margin-right: 1.5em;
-  flex-flow: column;
+    border: 1px solid $panel;
+    border-radius: $border-radius-lg;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    background-color: $primary;
 }
 
 .scroll-tile--fill {
