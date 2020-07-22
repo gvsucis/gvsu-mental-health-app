@@ -5,7 +5,10 @@
     border-radius: $border-radius-lg;
     margin-left: 1.5em;
     margin-right: 1.5em;
+    margin-top: 0.5em;
     background-color: $primary;
+    padding-top: 0.4em;
+    padding-bottom: 0.2em;
 }
 
 .scroll-tile--fill {
@@ -32,7 +35,6 @@
 }
 
 .scroll-tile__home {
-    min-height: 60px;
     vertical-align: center;
     padding: 10px 0;
 }
