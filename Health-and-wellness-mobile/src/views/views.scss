@@ -37,7 +37,6 @@
     .scroll-tile {
         flex-grow: 1;
         width: 45vw;
-        height: 80px;
     }
     .scroll-tile:first-child{
       margin-right: 0.5em;
@@ -124,7 +123,8 @@
 //Techniques View
 
 .technique-view__header {
-    margin: 3 * $pad-lg;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .technique-view__modal {

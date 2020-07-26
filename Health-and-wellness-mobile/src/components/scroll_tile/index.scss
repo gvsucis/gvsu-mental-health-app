@@ -5,8 +5,7 @@
     border-radius: $border-radius-lg;
     margin-top: 0.5em;
     background-color: $primary;
-    padding-top: 1.0em;
-    padding-bottom: 0.5em;
+    padding: 0.7em;
     text-transform: uppercase;
 }
 
@@ -33,10 +32,6 @@
     flex-direction: column;
 }
 
-.scroll-tile__home {
-    vertical-align: center;
-    padding: 10px 0;
-}
 
 .scroll-tile__home--title {
     @include font-header();
