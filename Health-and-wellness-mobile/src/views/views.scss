@@ -146,7 +146,11 @@
 }
 //Faq View
 .faq-view__dropdown {
-    padding: 2 * $pad-lg;
+  padding: 1em;
+  text-transform: initial;
+}
+.faq-view__dropdown>.text-block {
+  padding: 0;
 }
 
 .faq-view__dropdown-section--tabbed {
