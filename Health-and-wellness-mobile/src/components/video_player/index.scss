@@ -1,7 +1,11 @@
 @import '../../theme/theme.scss';
 
 .video-player {
-    margin: auto;
-    display: block;
-    width: 80vw;
+  margin: 0.5em auto;
+  display: block;
+  width: 80vw;
+}
+
+.technique-view__modal > .text-block {
+  padding: 0.5em;
 }
