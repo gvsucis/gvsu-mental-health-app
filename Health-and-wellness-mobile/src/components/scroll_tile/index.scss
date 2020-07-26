@@ -3,12 +3,11 @@
 .scroll-tile {
     border: 1px solid $panel;
     border-radius: $border-radius-lg;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
     margin-top: 0.5em;
     background-color: $primary;
-    padding-top: 0.4em;
-    padding-bottom: 0.2em;
+    padding-top: 1.0em;
+    padding-bottom: 0.5em;
+    text-transform: uppercase;
 }
 
 .scroll-tile--fill {
