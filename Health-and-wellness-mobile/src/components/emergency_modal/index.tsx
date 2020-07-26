@@ -97,7 +97,9 @@ export default class EmergencyModal extends React.Component<Props> {
                 <div className="emergency-modal__header">
                     <span>{info.title}</span>
                 </div>
-                <span>You can: </span>
+                { info.shouldShowCan===false ? null :
+                    (<span>You can: </span>)
+                }
                 <div>
                     <TextBlock input={info.body}/>
                 </div>

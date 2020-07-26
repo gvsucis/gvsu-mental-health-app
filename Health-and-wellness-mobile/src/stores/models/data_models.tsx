@@ -64,4 +64,5 @@ export interface TechniqueInfo {
 export interface EmergencyInfo {
     title: string
     body: string
+    shouldShowCan?: boolean
 }

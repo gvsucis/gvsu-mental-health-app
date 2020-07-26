@@ -663,7 +663,8 @@
     },
     "afterHours": {
       "title": "After business hours:",
-      "body": "- If the student lives off-campus or there is an immediate risk to the student’s safety, call 911 immediately.\n- If the student lives on campus, call GVPD at [phone 616-331-3255] to initiate a wellness check and/or connect the student with the on-call counselor"
+      "body": "- If the student lives off-campus or there is an immediate risk to the student’s safety, call 911 immediately.\n- If the student lives on campus, call GVPD at [phone 616-331-3255] to initiate a wellness check and/or connect the student with the on-call counselor",
+      "shouldShowCan": false
     }
   },
   "classRoomTechniques": {
