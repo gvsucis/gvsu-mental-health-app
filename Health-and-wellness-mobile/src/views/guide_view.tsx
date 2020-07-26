@@ -206,17 +206,16 @@ export default class GuideView extends React.Component<ViewProps> {
           </li>
         );
       });
-      return {
-        body: (
+      return (
           <div key={idx}>
-            <div className="guide-view__modal-text">
+            <div className="guide-view__modal-text guide-view__do">
               <div>
                 <div className="guide-view__modal-subheader">Do</div>
                 {item.do}
               </div>
               <ul>{doBull}</ul>
             </div>
-            <div className="guide-view__modal-text">
+            <div className="guide-view__modal-text guide-view__dont">
               <div>
                 <div className="guide-view__modal-subheader">Dont</div>
                 {item.dont}
@@ -224,16 +223,12 @@ export default class GuideView extends React.Component<ViewProps> {
               <ul>{dontBull}</ul>
             </div>
           </div>
-        ),
-      };
+        );
     });
 
     return (
       <div>
-        <IonList>
-          <Slides slides={slides} stretchCards={true} />
-          <InfiniteScroll threshold={'100px'} infinite={this.onInfinite} />
-        </IonList>
+        {slides}
       </div>
     );
   }

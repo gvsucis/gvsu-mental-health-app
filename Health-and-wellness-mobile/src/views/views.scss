@@ -73,7 +73,6 @@
 
 //Guide View
 .guide-view__modal {
-    padding: 1.5em;
     @include font-regular();
     font-weight: 100;
 }
@@ -83,6 +82,7 @@
     @include font-regular();
     color: black;
     text-align: justify;
+    padding-right: 1em;
 }
 
 .guide-view__modal-header {
@@ -111,6 +111,39 @@
     margin-bottom: $pad-lg;
 }
 
+.guide-view__dont .guide-view__modal-subheader,
+.guide-view__do .guide-view__modal-subheader{
+  background-color: inherit;
+  text-align: start;
+  margin: 0;
+  font-weight: 800;
+  font-size: 2.5em;
+  color: black;
+  padding: 0;
+  padding-bottom: 0.1em;
+}
+
+.guide-view__do {
+  background-color: #C9E1F4;
+  padding: 1em;
+  margin-bottom:0;
+  font-weight: 100;
+}
+
+.guide-view__dont {
+  background-color: #8DBFE3;
+  padding: 1em;
+  margin-bottom: 1em;
+  font-weight: 100;
+}
+.guide-view__dont>ul {
+  margin: 0;
+  padding-left: 3em;
+}
+.guide-view__do>ul {
+  margin: 0;
+  padding-left: 3em;
+}
 //Faq View
 .faq-view__dropdown {
     padding: 2 * $pad-lg;
