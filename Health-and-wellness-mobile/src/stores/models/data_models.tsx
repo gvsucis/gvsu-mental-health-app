@@ -29,6 +29,7 @@ export interface GuideTileInfo {
 export interface DosDonts {
     do: string
     doBullets: string[]
+    doLast?: string
     dont: string
     dontBullets: string[]
 }

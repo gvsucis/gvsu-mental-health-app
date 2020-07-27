@@ -49,6 +49,10 @@
           {
             "name": "Tutoring Center",
             "body": "If a student is anxious about their academic performance or progress, resources are available.  Advisors offer a wealth of support and are knowledgeable about academic policies and procedures.  There are also a number of offices across campus that can help with anything from choosing a major, to preparing for a big interview, to withdrawing from a class."
+          },
+          {
+            "name": "Academic/Career Resources",
+            "body": "If a student is anxious about their academic performance or progress, resources are available.  Advisors offer a wealth of support and are knowledgeable about academic policies and procedures.  There are also a number of offices across campus that can help with anything from choosing a major, to preparing for a big interview, to withdrawing from a class."
           }
         ],
         "videoLink": "https://www.youtube.com/watch?v=vtUdHOx494E",
@@ -139,7 +143,12 @@
           {
             "name": "Tutoring Center",
             "body": "If depression is affecting a student’s academic performance or progress, resources are available.  Advisors offer a wealth of support and are knowledgeable about academic policies and procedures.  There are also a number of offices across campus that can help with anything from choosing a major, to preparing for a big interview, to withdrawing from a class."
+          },
+          {
+            "name": "Academic/Career Resources",
+            "body": "If a student is anxious about their academic performance or progress, resources are available.  Advisors offer a wealth of support and are knowledgeable about academic policies and procedures.  There are also a number of offices across campus that can help with anything from choosing a major, to preparing for a big interview, to withdrawing from a class."
           }
+
         ],
         "videoLink": "https://www.youtube.com/watch?v=Xrtoq3mTYHk",
         "warningSigns": {
@@ -239,9 +248,9 @@
             "doBullets": [
               "Are you thinking of killing yourself?",
               "Has it gotten so bad that you’ve considered suicide?",
-              "I’ve noticed _________.  Sometimes when that happens, people wish that they were dead.  Have you been feeling that way?",
-              "If you are unable or too uncomfortable to ask someone if they are feeling suicidal, find someone else who can.  A student’s life may depend on it."
+              "I’ve noticed _________.  Sometimes when that happens, people wish that they were dead.  Have you been feeling that way?"
             ],
+            "doLast": "If you are unable or too uncomfortable to ask someone if they are feeling suicidal, find someone else who can.  A student’s life may depend on it.",
             "dont": "Ignore warning signs of suicide or assume that someone else will intervene.",
             "dontBullets": []
           },
@@ -615,6 +624,13 @@
         "link": "https://www.gvsu.edu/aod",
         "phone": "616-331-2537",
         "email": "aod@gvsu.edu",
+        "picture": ""
+      },
+      {
+        "department": "Academic/Career Resources",
+        "link": "",
+        "phone": "",
+        "email": "",
         "picture": ""
       }
     ]
