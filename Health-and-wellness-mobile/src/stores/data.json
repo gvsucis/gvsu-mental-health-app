@@ -32,7 +32,7 @@
         "resourcesRelevant": [
           {
             "name": "University Counseling Center",
-            "body": "The University Counseling Center offers free mental health services to currently enrolled students.  All students are seen within 48 hours for an initial screening, and crisis appointments are available same-day.  To see frequently asked questions about mental health services on campus, visit the FAQ button."
+            "body": "The University Counseling Center offers free mental health services to currently enrolled students.  All students are seen within 48 hours for an initial screening, and crisis appointments are available same-day.  To see frequently asked questions about mental health services on campus, visit the [link /faq, placeholder: FAQ button]."
           },
           {
             "name": "Dean of Students",
@@ -122,7 +122,7 @@
         "resourcesRelevant": [
           {
             "name": "University Counseling Center",
-            "body": "The University Counseling Center offers free mental health services to currently enrolled students.  All students are seen within 48 hours for an initial screening, and crisis appointments are available same-day.  To see frequently asked questions about mental health services on campus, visit the FAQ button.  "
+            "body": "The University Counseling Center offers free mental health services to currently enrolled students.  All students are seen within 48 hours for an initial screening, and crisis appointments are available same-day.  To see frequently asked questions about mental health services on campus, visit the [link /faq, placeholder: FAQ button].  "
           },
           {
             "name": "Dean of Students",
@@ -204,7 +204,7 @@
             "do": "Ask the person if they are suicidal if you are concerned for their safety",
             "doBullets": [
             ],
-            "doLast": "[link http://google.com, placeholder: hola]",
+            "doLast": "[link /guide, placeholder: Please follow the suicidal guidelines]",
             "dont": "Ignore warning signs of suicide",
             "dontBullets": [
             ]
@@ -214,11 +214,12 @@
       {
         "subscript": "may be",
         "label": "Suicidal",
+        "secundaryBody": "QPR Suicide Prevention Gatekeeper Trainings are held throughout the year and are open to students, faculty, and staff.  Visit the University Counseling Center [link https://www.gvsu.edu/counsel/module-events-calendar.htm?siteModuleId=8BEB22D5-E16B-7BDE-C0A104132E7438D5 placeholder: outreach calendar] for scheduled dates and times.\nTo request a QPR Suicide Prevention Gatekeeper Training for your department or a student, faculty, or staff group, visit the University Counseling Center [link https://www.gvsu.edu/counsel/outreach-141.htm, placeholder: outreach request site].",
         "description": "[picture suicide]\nIn the United States, someone attempts suicide every 27 seconds.  While suicide is the 10th leading cause of death nationally, it is the 2nd leading cause of death among college students – and rates are on the rise.  Suicide may be difficult to talk about, but the warning signs should never be ignored.  Whereas most are not trained to treat those who are experiencing suicidality, anyone can help save a life.",
         "resourcesRelevant": [
           {
             "name": "University Counseling Center",
-            "body": "The University Counseling Center offers free mental health services to currently enrolled students.  All students are seen within 48 hours for an initial screening, and crisis appointments are available same-day.  To see frequently asked questions about mental health services on campus, visit FAQ button."
+            "body": "The University Counseling Center offers free mental health services to currently enrolled students.  All students are seen within 48 hours for an initial screening, and crisis appointments are available same-day.  To see frequently asked questions about mental health services on campus, visit [link /faq, placeholder: FAQ button]."
           },
           {
             "name": "Dean of Students",
@@ -226,7 +227,7 @@
           },
           {
             "name": "National Resources",
-            "body": "Additional resources are available for those experiencing suicidal thoughts.  It might be helpful to post these somewhere in your office or share them with students of concern, but providing these resources should not take the place of seeking help directly when confronted with a suicidal student.\nCrisisText:  Text 741741\nNational Suicide Hotline:  1-800-273-8255\nTrevor Lifeline (LGBTQIA+ suicide prevention / support):  Call 1-866-488-7386\n Trans Lifeline:  Text \"Trevor\" to 1-202-304-1200 / Call 1-877-565-8860\nVeterans Crisis Line: Text 838255 / Call 1-800-273-8255\n911"
+            "body": "Additional resources are available for those experiencing suicidal thoughts.  It might be helpful to post these somewhere in your office or share them with students of concern, but providing these resources should not take the place of seeking help directly when confronted with a suicidal student.\nCrisisText:  Text [phone 741741]\nNational Suicide Hotline: [phone 1-800-273-8255]\nTrevor Lifeline (LGBTQIA+ suicide prevention / support):  Call [phone 1-866-488-7386]\n Trans Lifeline:  Text \"Trevor\" to [phone 1-202-304-1200] \n Call [phone 1-877-565-8860]\nVeterans Crisis Line: Text [phone 838255] \n Call [phone 1-800-273-8255]\n[phone 911]"
           }
         ],
         "videoLink": "https://www.youtube.com/watch?v=AecNqFk8glo",
@@ -301,7 +302,7 @@
         "resourcesRelevant": [
           {
             "name": "University Counseling Center",
-            "body": "The University Counseling Center offers free mental health services to currently enrolled students.  All students are seen within 48 hours for an initial screening, and crisis appointments are available same-day.  To see frequently asked questions about mental health services on campus, visit the FAQ button."
+            "body": "The University Counseling Center offers free mental health services to currently enrolled students.  All students are seen within 48 hours for an initial screening, and crisis appointments are available same-day.  To see frequently asked questions about mental health services on campus, visit the [link /faq, placeholder: FAQ button]."
           },
           {
             "name": "Dean of Students",
@@ -398,7 +399,7 @@
         "resourcesRelevant": [
           {
             "name": "University Counseling Center",
-            "body": "The University Counseling Center offers free mental health services to currently enrolled students.  All students are seen within 48 hours for an initial screening, and crisis appointments are available same-day.  To see frequently asked questions about mental health services on campus, visit the FAQ button."
+            "body": "The University Counseling Center offers free mental health services to currently enrolled students.  All students are seen within 48 hours for an initial screening, and crisis appointments are available same-day.  To see frequently asked questions about mental health services on campus, visit the [link /faq, placeholder: FAQ button]."
           },
           {
             "name": "Dean of Students",

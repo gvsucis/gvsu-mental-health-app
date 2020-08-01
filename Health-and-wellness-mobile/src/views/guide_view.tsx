@@ -4,9 +4,6 @@ import View from './view_models/view';
 import ScrollTile from '../components/scroll_tile';
 import Store from '../stores/store';
 import { GuideTileInfo } from '../stores/models/data_models';
-import { IonList } from '@ionic/react';
-import Slides from '../components/horizontal-slides';
-import InfiniteScroll from '../components/infinite-scroll';
 import ResourceSlideDock from '../components/resource_slider_dock';
 import TextBlock from '../components/text_block';
 import { observable, action } from 'mobx';
@@ -77,6 +74,11 @@ export default class GuideView extends React.Component<ViewProps> {
             <TextBlock input={tile.info.description} />
           </div>
           <div className="guide-view__modal">{this.renderVideo(tile.info)}</div>
+          {tile.info.secundaryBody ? (
+            <div className="guide-view__modal">
+              <TextBlock input={tile.info.secundaryBody} />
+            </div>
+          ) : null}
           <div className="guide-view__modal-header">Warning Signs</div>
           <div className="guide-view__modal">
             {this.renderWarningSigns(tile.info)}

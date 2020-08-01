@@ -23,6 +23,7 @@ export interface GuideTileInfo {
     videoLink: string
     warningSigns: WarningSigns
     body?: GuideBody
+    secundaryBody?: string
     dosDonts: DosDonts[]
 }
 
