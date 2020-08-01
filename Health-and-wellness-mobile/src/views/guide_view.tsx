@@ -11,6 +11,7 @@ import ResourceSlideDock from '../components/resource_slider_dock';
 import TextBlock from '../components/text_block';
 import { observable, action } from 'mobx';
 import VideoPlayer from '../components/video_player';
+import EmergencyButton from '../components/emergency_button';
 
 export interface ViewProps {
   store: Store;
@@ -85,6 +86,14 @@ export default class GuideView extends React.Component<ViewProps> {
           <div>{this.renderDosDonts(tile.info)}</div>
           <div className="guide-view__modal-header">Relevant Resources</div>
           <div>{this.renderResources(tile)}</div>
+          <div className="view-emergency">
+            <EmergencyButton />
+          </div>
+          <div className="view-footer">
+            <span>
+              University Counseling <br /> Center Information
+            </span>
+          </div>
         </ScrollTile>
       );
     });
@@ -202,36 +211,34 @@ export default class GuideView extends React.Component<ViewProps> {
       const dontBull = item.dontBullets.map((d, num) => {
         return (
           <li key={num} className="guide-view__modal-bullets">
-             {d}
+            {d}
           </li>
         );
       });
       return (
-          <div key={idx}>
-            <div className="guide-view__modal-text guide-view__do">
-              <div>
-                <div className="guide-view__modal-subheader">Do</div>
-                {item.do}
-              </div>
-              <ul>{doBull}</ul>
-              {item.doLast !== undefined ? (<TextBlock input={item.doLast} />) : null}
+        <div key={idx}>
+          <div className="guide-view__modal-text guide-view__do">
+            <div>
+              <div className="guide-view__modal-subheader">Do</div>
+              {item.do}
             </div>
-            <div className="guide-view__modal-text guide-view__dont">
-              <div>
-                <div className="guide-view__modal-subheader">Dont</div>
-                {item.dont}
-              </div>
-              <ul>{dontBull}</ul>
-            </div>
+            <ul>{doBull}</ul>
+            {item.doLast !== undefined ? (
+              <TextBlock input={item.doLast} />
+            ) : null}
           </div>
-        );
+          <div className="guide-view__modal-text guide-view__dont">
+            <div>
+              <div className="guide-view__modal-subheader">Dont</div>
+              {item.dont}
+            </div>
+            <ul>{dontBull}</ul>
+          </div>
+        </div>
+      );
     });
 
-    return (
-      <div>
-        {slides}
-      </div>
-    );
+    return <div>{slides}</div>;
   }
 
   private renderResources(tile: GuideTile) {
