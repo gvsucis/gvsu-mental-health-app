@@ -31,7 +31,7 @@ export default class Modal extends React.Component<ModalProps> {
                                     {this.props.header}
                                 </IonTitle>
                                 <Button onClick={this.toggleModalVisible(false)}>
-                                    <IonIcon icon={close} />
+                                    <IonIcon icon={close} size={"large"}/>
                                 </Button>
                             </div>
                         </IonHeader> : null

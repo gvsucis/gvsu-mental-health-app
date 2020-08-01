@@ -79,10 +79,9 @@ export default class TextBlock extends React.Component<TextBlockProps> {
       }
 
       if (sec.includes('[phone')) {
-        destNum = sec.substr(
-          sec.indexOf('[') + 6,
-          sec.indexOf(']') - (sec.indexOf('[') + 6),
-        );
+        let secStart = sec.indexOf('[phone') + 7;
+        let secEnd = sec.indexOf(']', secStart);
+        destNum = sec.substr(secStart, secEnd - secStart);
         number = <a href={`tel:${destNum}`}>{destNum}</a>;
       }
 

@@ -214,7 +214,7 @@ export default class GuideView extends React.Component<ViewProps> {
                 {item.do}
               </div>
               <ul>{doBull}</ul>
-              {item.doLast !== undefined ? item.doLast : null}
+              {item.doLast !== undefined ? (<TextBlock input={item.doLast} />) : null}
             </div>
             <div className="guide-view__modal-text guide-view__dont">
               <div>
