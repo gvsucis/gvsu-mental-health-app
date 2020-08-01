@@ -9,6 +9,8 @@ import TextBlock from '../components/text_block';
 import { observable, action } from 'mobx';
 import VideoPlayer from '../components/video_player';
 import EmergencyButton from '../components/emergency_button';
+import { IonIcon } from '@ionic/react';
+import { arrowBack, arrowDown } from 'ionicons/icons';
 
 export interface ViewProps {
   store: Store;
@@ -18,6 +20,9 @@ export interface GuideTile {
   info: GuideTileInfo;
   open: boolean;
   bodyOpen: boolean;
+  warningSignsOpen: boolean;
+  dosAndDontsOpen: boolean;
+  resourcesRelevantOpen: boolean;
 }
 
 @inject('store')
@@ -29,6 +34,9 @@ export default class GuideView extends React.Component<ViewProps> {
         info: item,
         open: false,
         bodyOpen: false,
+        warningSignsOpen: false,
+        dosAndDontsOpen: false,
+        resourcesRelevantOpen: false,
       };
     },
   );
@@ -79,15 +87,72 @@ export default class GuideView extends React.Component<ViewProps> {
               <TextBlock input={tile.info.secundaryBody} />
             </div>
           ) : null}
-          <div className="guide-view__modal-header">Warning Signs</div>
-          <div className="guide-view__modal">
-            {this.renderWarningSigns(tile.info)}
-          </div>
           {tile.info.body ? this.renderBody(tile) : null}
-          <div className="guide-view__modal-header">{"Do's & Don'ts"}</div>
-          <div>{this.renderDosDonts(tile.info)}</div>
-          <div className="guide-view__modal-header">Relevant Resources</div>
-          <div>{this.renderResources(tile)}</div>
+          <div>
+            <div
+              className="guide-view__modal-header"
+              onClick={this.handleToggleWarningSignsOpen(tile)}
+            >
+              Warning Signs
+              {tile.warningSignsOpen ? (
+                <IonIcon
+                  className="guide-view__modal-caret "
+                  icon={arrowDown}
+                />
+              ) : (
+                <IonIcon
+                  className="guide-view__modal-caret "
+                  icon={arrowBack}
+                />
+              )}
+            </div>
+            {tile.warningSignsOpen ? (
+              <div className="guide-view__modal">
+                {this.renderWarningSigns(tile.info)}
+              </div>
+            ) : null}
+          </div>
+          <div>
+            <div
+              className="guide-view__modal-header"
+              onClick={this.handleToggleDosAndDontsOpen(tile)}
+            >
+              {"Do's & Don'ts"}
+              {tile.dosAndDontsOpen ? (
+                <IonIcon
+                  className="guide-view__modal-caret "
+                  icon={arrowDown}
+                />
+              ) : (
+                <IonIcon
+                  className="guide-view__modal-caret "
+                  icon={arrowBack}
+                />
+              )}
+            </div>
+            {tile.dosAndDontsOpen ? (
+              <div>{this.renderDosDonts(tile.info)}</div>
+            ) : null}
+          </div>
+          <div>
+            <div className="guide-view__modal-header" onClick={this.handleToggleResourcesRelevantOpen(tile)}>
+              Relevant Resources
+              {tile.resourcesRelevantOpen ? (
+                <IonIcon
+                  className="guide-view__modal-caret "
+                  icon={arrowDown}
+                />
+              ) : (
+                <IonIcon
+                  className="guide-view__modal-caret "
+                  icon={arrowBack}
+                />
+              )}
+            </div>
+            {tile.resourcesRelevantOpen ? (
+              <div>{this.renderResources(tile)}</div>
+            ) : null}
+          </div>
           <div className="view-emergency">
             <EmergencyButton />
           </div>
@@ -279,6 +344,24 @@ export default class GuideView extends React.Component<ViewProps> {
     tile.open = open;
   }
 
+  @action
+  private handleToggleWarningSignsOpen = (tile: GuideTile) => {
+    return () => {
+      tile.warningSignsOpen = !tile.warningSignsOpen;
+    };
+  };
+  @action
+  private handleToggleDosAndDontsOpen = (tile: GuideTile) => {
+    return () => {
+      tile.dosAndDontsOpen = !tile.dosAndDontsOpen;
+    };
+  };
+  @action
+  private handleToggleResourcesRelevantOpen = (tile: GuideTile) => {
+    return () => {
+      tile.resourcesRelevantOpen = !tile.resourcesRelevantOpen;
+    };
+  };
   @action
   private handleToggleBodyOpen = (tile: GuideTile) => {
     return () => {

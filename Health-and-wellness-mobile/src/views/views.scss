@@ -86,11 +86,18 @@
 }
 
 .guide-view__modal-header {
-    margin-top: $pad-lg;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
     @include font-sub-header();
     font-size: 24px;
     color: black;
+    position:relative;
     text-align: center;
+
+    ion-icon {
+      position: absolute;
+      right: 0px;;
+    }
 }
 
 .guide-view__modal-subheader {
