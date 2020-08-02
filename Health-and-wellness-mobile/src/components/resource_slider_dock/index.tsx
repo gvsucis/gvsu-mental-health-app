@@ -63,7 +63,7 @@ export default class ResourceSlideDock extends React.Component<
     }
     return (
       <div>
-      <Slides slides={slides} stretchCards={this.props.stretchCards} />
+        <Slides slides={slides} stretchCards={this.props.stretchCards} />
         <InfiniteScroll threshold={'100px'} infinite={this.onInfinite} />
       </div>
     );
