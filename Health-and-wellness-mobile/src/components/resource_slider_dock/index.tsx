@@ -33,18 +33,22 @@ export default class ResourceSlideDock extends React.Component<
   };
 
   public render() {
-    const slides = this.props.resources.map((item) => {
-      return {
-        title: item.department,
-        body: (
-          <>
-            {this.renderImage(item)}
-            {this.renderContact(item)}
-            {this.renderBody(item)}
-          </>
-        ),
-      };
-    });
+    const slides = this.props.resources
+      .filter((item) => {
+        return !(item.hidden === true) || !(this.props.resourceView === true);
+      })
+      .map((item) => {
+        return {
+          title: item.department,
+          body: (
+            <>
+              {this.renderImage(item)}
+              {this.renderContact(item)}
+              {this.renderBody(item)}
+            </>
+          ),
+        };
+      });
     if (!this.props.resourceView) {
       slides.push({
         title: 'Other Resources',

@@ -296,7 +296,7 @@ export default class GuideView extends React.Component<ViewProps> {
           </div>
           <div className="guide-view__modal-text guide-view__dont">
             <div>
-              <div className="guide-view__modal-subheader">Dont</div>
+              <div className="guide-view__modal-subheader">Don't</div>
               {item.dont}
             </div>
             <ul>{dontBull}</ul>

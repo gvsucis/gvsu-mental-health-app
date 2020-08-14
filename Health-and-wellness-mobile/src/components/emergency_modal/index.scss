@@ -21,4 +21,5 @@
 .emergency-modal__description {
     margin: $pad-lg 0;
     @include font-description();
+    font-weight: 200;
 }

@@ -51,6 +51,7 @@ export interface ResourceTile {
     phone: string
     email?: string
     picture: string
+    hidden?: boolean
 }
 
 export interface TechniqueBody {

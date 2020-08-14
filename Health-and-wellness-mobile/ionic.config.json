@@ -1,5 +1,7 @@
 {
   "name": "health-and-wellness-mobile",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "react"
 }
