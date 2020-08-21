@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "health-and-wellness-mobile",
+  "appId": "edu.gvsu.mentalhealth",
+  "appName": "GV Mental Health",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
