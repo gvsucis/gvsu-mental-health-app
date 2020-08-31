@@ -1,6 +1,6 @@
 import React from 'react';
 import { classNames } from '../../utils/system';
-import VideoPlayer from '../video_player';
+import VideoPreview from '../video_player';
 import { IonImg } from '@ionic/react';
 import anxiety from '../../assets/Anxiety.png';
 import depression from '../../assets/Depression.png';
@@ -72,10 +72,10 @@ export default class TextBlock extends React.Component<TextBlockProps> {
 
       if (sec.includes('[video')) {
         vidLink = sec.substr(
-          sec.indexOf('[') + 6,
-          sec.indexOf(']') - (sec.indexOf('[') + 6),
+          sec.indexOf('[') + 8,
+          sec.indexOf(']') - (sec.indexOf('[') + 8),
         );
-        video = <VideoPlayer video={vidLink} />;
+        video = <VideoPreview video={vidLink} />;
       }
 
       if (sec.includes('[phone')) {
@@ -100,7 +100,7 @@ export default class TextBlock extends React.Component<TextBlockProps> {
         preLink = sec.substr(0, sec.indexOf('['));
         postLink = sec.substr(sec.indexOf(']') + 1);
       } else if (video && vidLink) {
-        postLink = sec.substr(0, sec.length - (vidLink.length + 7));
+        postLink = sec.substr(0, sec.length - (vidLink.length + 9));
       } else if (header) {
         postLink = '';
       } else {

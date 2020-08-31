@@ -29,7 +29,7 @@ export default class Modal extends React.Component<ModalProps> {
 
   public render() {
     return (
-      <IonModal isOpen={this.props.showModal}>
+      <IonModal isOpen={this.props.showModal} backdropDismiss={false}>
         {!this.props.forceModal ? (
           <IonHeader>
             <IonToolbar>

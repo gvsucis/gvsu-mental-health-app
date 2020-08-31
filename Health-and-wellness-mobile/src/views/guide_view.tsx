@@ -7,7 +7,7 @@ import { GuideTileInfo } from '../stores/models/data_models';
 import ResourceSlideDock from '../components/resource_slider_dock';
 import TextBlock from '../components/text_block';
 import { observable, action } from 'mobx';
-import VideoPlayer from '../components/video_player';
+import VideoPreview from '../components/video_player';
 import EmergencyButton from '../components/emergency_button';
 import { IonIcon } from '@ionic/react';
 import { arrowBack, arrowDown } from 'ionicons/icons';
@@ -201,7 +201,7 @@ export default class GuideView extends React.Component<ViewProps> {
       return;
     }
 
-    return <VideoPlayer video={tile.videoLink} />;
+    return <VideoPreview video={tile.videoLink} />;
   }
 
   private renderWarningSigns(tile: GuideTileInfo) {
