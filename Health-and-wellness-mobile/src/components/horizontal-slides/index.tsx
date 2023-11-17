@@ -1,11 +1,16 @@
 import React from 'react';
-import { IonSlides, IonSlide } from '@ionic/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Card from '../card';
 import './index.scss';
+import { Swiper as SwiperInterface } from 'swiper';
+import 'swiper/css';
+import '@ionic/react/css/ionic-swiper.css';
+
 export interface Slide {
   title?: string;
   body: JSX.Element;
 }
+
 
 export interface SlideProps {
   slides: Slide[];
@@ -22,16 +27,13 @@ export default class Slides extends React.Component<SlideProps> {
 
   public render() {
     const { slides, loop, slidesPerView } = this.props;
-    const slidesOpts = {
-      loop: loop,
-      slidesPerView: slidesPerView,
-    };
 
     let swiper: any = null;
 
     const init = async function (this: any) {
-      swiper = await this.getSwiper();
+      swiper = await SwiperSlide
     };
+
     let prevClicked = () => {
       if (swiper !== null && swiper !== undefined) {
         swiper.slidePrev();
@@ -44,19 +46,19 @@ export default class Slides extends React.Component<SlideProps> {
     };
     return (
       <div className="slides-container">
-        <IonSlides options={slidesOpts} onIonSlidesDidLoad={init}>
+        <Swiper loop={loop} slidesPerView={slidesPerView} onInit={init}>
           {slides.map((slide, idx) => {
             const title = slide.title ? slide.title : undefined;
             const stretch = this.props.stretchCards;
             return (
-              <IonSlide key={idx}>
+               <SwiperSlide key={idx}>
                 <Card title={title} stretch={stretch}>
                   {slide.body}
                 </Card>
-              </IonSlide>
+                </SwiperSlide>
             );
           })}
-        </IonSlides>
+        </Swiper>
         <div className="swiper-button-prev" onClick={prevClicked}></div>
         <div className="swiper-button-next" onClick={nextClicked}></div>
       </div>
