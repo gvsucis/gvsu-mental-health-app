@@ -227,7 +227,7 @@
           },
           {
             "name": "National Resources",
-            "body": "Additional resources are available for those experiencing suicidal thoughts.  It might be helpful to post these somewhere in your office or share them with students of concern, but providing these resources should not take the place of seeking help directly when confronted with a suicidal student.\nCrisisText:  Text [phone 741741]\nNational Suicide Hotline: [phone 1-800-273-8255]\nTrevor Lifeline (LGBTQIA+ suicide prevention / support):  Call [phone 1-866-488-7386]\n Trans Lifeline:  Text \"Trevor\" to [phone 1-202-304-1200] \n Call [phone 1-877-565-8860]\nVeterans Crisis Line: Text [phone 838255] \n Call [phone 1-800-273-8255]\n[phone 911]"
+            "body": "Additional resources are available for those experiencing suicidal thoughts.  It might be helpful to post these somewhere in your office or share them with students of concern, but providing these resources should not take the place of seeking help directly when confronted with a suicidal student.\nCrisisText:  Text [phone 741741]\nNational Suicide Hotline: [phone 1-800-273-8255]\nTrevor Lifeline (LGBTQIA+ suicide prevention / support):  Call [phone 1-866-488-7386]\n Trans Lifeline:  Text \"Trevor\" to [phone 1-202-304-1200] \n Call [phone 1-877-565-8860]\nVeterans Crisis Line: Text [phone 838255] \n Call [phone 1-800-273-8255]\n[phone 988]"
           }
         ],
         "videoLink": "AecNqFk8glo",
@@ -561,14 +561,14 @@
       {
         "department": "GVPD Non-emergency",
         "link": "https://www.gvsu.edu/dps/",
-        "phone": "616-685-7600",
+        "phone": "616-331-3255",
         "email": "",
         "picture": ""
       },
       {
         "department": "Health Center",
         "link": "https://www.gvsu.edu/campushealth/",
-        "phone": "616-252-6030",
+        "phone": "616-685-7600",
         "email": "",
         "picture": ""
       },

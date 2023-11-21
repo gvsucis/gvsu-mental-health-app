@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@capacitor/android": "^5.5.1",
+    "@capacitor/android": "5.5.1",
     "@capacitor/core": "5.5.1",
-    "@capacitor/ios": "^5.5.1",
+    "@capacitor/ios": "5.5.1",
     "@ionic-native/call-number": "^5.23.0",
     "@ionic-native/core": "^5.23.0",
     "@ionic/cli": "^7.1.1",
